@@ -8,8 +8,11 @@ namespace RPGopnik
 {
     class Map
     {
-        TmxMap map;
         Texture2D tileset;
+        TmxMap map;
+
+        public int width;
+        public int height;
 
         int tileWidth;
         int tileHeight;
@@ -19,6 +22,8 @@ namespace RPGopnik
         public Map(string tmxFile)
         {
             map = new TmxMap(tmxFile);
+            width = map.Width * map.TileWidth;
+            height = map.Height * map.TileHeight;
         }
 
         public void LoadContent(ContentManager Content)
@@ -33,12 +38,10 @@ namespace RPGopnik
 
         public void Draw(SpriteBatch spritebatch, string layerPos)
         {
-            spritebatch.Begin();
             for (int j = 0; j < map.Layers.Count; j++)
             {
-                if (map.Layers[j].Name.Contains("Overlay") && layerPos == "Underlay")
-                    continue;
-                if (!map.Layers[j].Name.Contains("Overlay") && layerPos == "Overlay")
+                if (map.Layers[j].Name.Contains("Overlay") && layerPos == "Underlay"
+                    || !map.Layers[j].Name.Contains("Overlay") && layerPos == "Overlay")
                     continue;
                 for (int i = 0; i < map.Layers[j].Tiles.Count; i++)
                 {
@@ -59,8 +62,6 @@ namespace RPGopnik
                     }
                 }
             }
-
-            spritebatch.End();
         }
     }
 }

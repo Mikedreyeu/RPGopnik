@@ -2,40 +2,13 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>background.png</Source>
-      <Name>background</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+      <Source>bt_font.spritefont</Source>
+      <Name>bt_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\background.xnb</Output>
-      <Time>2017-04-24T21:24:33.2866884+03:00</Time>
-    </Item>
-    <Item>
-      <Source>GUI\hover.png</Source>
-      <Name>GUI\hover</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\hover.xnb</Output>
-      <Time>2017-04-24T21:24:22.292825+03:00</Time>
-    </Item>
-    <Item>
-      <Source>GUI\main.png</Source>
-      <Name>GUI\main</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\main.xnb</Output>
-      <Time>2017-04-24T21:24:22.292825+03:00</Time>
-    </Item>
-    <Item>
-      <Source>GUI\pressed.png</Source>
-      <Name>GUI\pressed</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pressed.xnb</Output>
-      <Time>2017-04-24T21:24:22.308445+03:00</Time>
+      <Output>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\bt_font.xnb</Output>
+      <Time>2017-05-05T22:51:59.2983788+03:00</Time>
     </Item>
     <Item>
       <Source>help.png</Source>
@@ -43,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\help.xnb</Output>
-      <Time>2017-04-24T21:17:52.8600824+03:00</Time>
+      <Output>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\help.xnb</Output>
+      <Time>2017-05-05T22:51:59.3453194+03:00</Time>
     </Item>
     <Item>
       <Source>Tilesets\magecity.png</Source>
@@ -52,17 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\magecity.xnb</Output>
-      <Time>2017-04-24T21:17:52.9190835+03:00</Time>
-    </Item>
-    <Item>
-      <Source>bt_font.spritefont</Source>
-      <Name>bt_font</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\bt_font.xnb</Output>
-      <Time>2017-04-24T21:17:52.8340879+03:00</Time>
+      <Output>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\magecity.xnb</Output>
+      <Time>2017-05-05T22:51:59.2983788+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\logo.png</Source>
@@ -70,8 +34,44 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\logo.xnb</Output>
-      <Time>2017-04-24T21:24:08.0525444+03:00</Time>
+      <Output>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\logo.xnb</Output>
+      <Time>2017-05-05T22:51:59.2827711+03:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\hover.png</Source>
+      <Name>GUI\hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\hover.xnb</Output>
+      <Time>2017-05-05T22:51:59.2827711+03:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\main.png</Source>
+      <Name>GUI\main</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\main.xnb</Output>
+      <Time>2017-05-05T22:51:59.2827711+03:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\pressed.png</Source>
+      <Name>GUI\pressed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pressed.xnb</Output>
+      <Time>2017-05-05T22:51:59.2827711+03:00</Time>
+    </Item>
+    <Item>
+      <Source>background.png</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\background.xnb</Output>
+      <Time>2017-05-05T22:51:59.2983788+03:00</Time>
     </Item>
     <Item>
       <Source>enemy.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\enemy.xnb</Output>
-      <Time>2017-05-04T13:57:03.8787956+03:00</Time>
+      <Output>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\enemy.xnb</Output>
+      <Time>2017-05-05T22:51:59.2983788+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -89,39 +89,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\</RootDirectory>
+      <LoggerRootDirectory>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2011-09-01T17:22:30+04:00</Value>
+        <Value>2011-09-01T16:22:30+03:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2011-09-01T17:22:30+04:00</Value>
+        <Value>2011-09-01T16:22:30+03:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2011-09-01T17:22:30+04:00</Value>
+        <Value>2011-09-01T16:22:30+03:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2011-09-01T17:22:30+04:00</Value>
+        <Value>2011-09-01T16:22:30+03:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2011-09-01T17:22:30+04:00</Value>
+        <Value>2011-09-01T16:22:30+03:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2011-09-01T17:22:30+04:00</Value>
+        <Value>2011-09-01T16:22:30+03:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2017-04-22T00:25:32.7776746+03:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2017-04-10T17:47:06.9199027+03:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

@@ -1,9 +1,9 @@
-Content\background.xnb
+Content\bt_font.xnb
+Content\help.xnb
+Content\Tilesets\magecity.xnb
+Content\GUI\logo.xnb
 Content\GUI\hover.xnb
 Content\GUI\main.xnb
 Content\GUI\pressed.xnb
-Content\help.xnb
-Content\Tilesets\magecity.xnb
-Content\bt_font.xnb
-Content\GUI\logo.xnb
+Content\background.xnb
 Content\enemy.xnb
