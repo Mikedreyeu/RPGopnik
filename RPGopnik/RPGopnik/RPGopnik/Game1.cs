@@ -37,22 +37,24 @@ namespace RPGopnik
         {
             base.Initialize();
         }
-        
+
         protected override void LoadContent()
         {
             Events.g = this;
-            Menu.background = new Background(Content.Load<Texture2D>("background"));
+            ContentLoader content_loader = new ContentLoader(Content);
+            Menu.background = content_loader.menu_content.background;
             Button.font = Content.Load<SpriteFont>("bt_font");
-            main = new Menu(new List<RPGopnik.Content> { new Content(new Rectangle(50, 0, 700, 200), Content.Load<Texture2D>(@"GUI\logo")),
-                                                         new Button(new Rectangle(200, 230, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.game), "Game"),
-                                                         new Button(new Rectangle(200, 300, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.help), "Help"),
-                                                         new Button(new Rectangle(200, 370, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.exit), "Exit")});
-            help = new Menu(new List<RPGopnik.Content> { new Content(new Rectangle(50, 200, 700, 300), Content.Load<Texture2D>("help")),
-                                                         new Button(new Rectangle(200, 500, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.main), "Main menu")});
+            main = new Menu(new List<RPGopnik.Content> { content_loader.menu_content.logo,
+                                                         content_loader.main_menu_content.game_button,
+                                                         content_loader.main_menu_content.help_button,
+                                                         content_loader.main_menu_content.exit_button});
+            help = new Menu(new List<RPGopnik.Content> { content_loader.menu_content.logo,
+                                                         content_loader.help_menu_content.info,
+                                                         content_loader.help_menu_content.main_menu});
             spriteBatch = new SpriteBatch(GraphicsDevice);
             map = new Map(@"Content\mainArea.tmx");
             map.LoadContent(Content);
-            game = new Game(map, new Enemy(new Rectangle(100, 100, 30, 32), Content.Load<Texture2D>("enemy")));
+            game = new Game(map, content_loader.game_content.enemy);
         }
 
         protected override void UnloadContent()

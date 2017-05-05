@@ -65,6 +65,7 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Content.cs" />
+    <Compile Include="ContentLoader.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Game.cs" />
