@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{C04199D9-87BF-4CA6-9C95-A4F9E1167EC4}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnikContent\</RootDirectory>
+      <LoggerRootDirectory>c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\</LoggerRootDirectory>
+      <IntermediateDirectory>c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2017-04-22T00:25:32.7776746+03:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

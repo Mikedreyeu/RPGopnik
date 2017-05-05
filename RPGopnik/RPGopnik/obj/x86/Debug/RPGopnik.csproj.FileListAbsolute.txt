@@ -1,0 +1,16 @@
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.exe
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.pdb
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.dll
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.xml
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.csprojResolveAssemblyReference.cache
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.exe
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.pdb

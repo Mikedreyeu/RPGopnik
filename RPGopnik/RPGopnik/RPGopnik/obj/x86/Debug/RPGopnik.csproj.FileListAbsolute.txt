@@ -1,0 +1,74 @@
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.exe
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.pdb
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.dll
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.xml
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.csprojResolveAssemblyReference.cache
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.exe
+c:\users\godlike\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.pdb
+C:\Users\GODLIKE\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\hover.xnb
+C:\Users\GODLIKE\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\main.xnb
+C:\Users\GODLIKE\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\pressed.xnb
+C:\Users\GODLIKE\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\background.xnb
+C:\Users\GODLIKE\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\bt_font.xnb
+C:\Users\GODLIKE\documents\visual studio 2015\Projects\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\help.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\background.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\help.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\bt_font.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.exe
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.pdb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.dll
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.xml
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.csprojResolveAssemblyReference.cache
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.exe
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.pdb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\hover.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\main.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pressed.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\magecity.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\TiledSharp.dll
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\TiledSharp.pdb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\background.xnb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\hover.xnb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\main.xnb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pressed.xnb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\help.xnb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\magecity.xnb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\bt_font.xnb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.exe
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.pdb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\TiledSharp.dll
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\TiledSharp.pdb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.csprojResolveAssemblyReference.cache
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.exe
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.pdb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\logo.xnb
+C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\enemy.xnb
