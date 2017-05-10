@@ -52,7 +52,7 @@ namespace RPGopnik
                                                          content_loader.help_menu_content.info,
                                                          content_loader.help_menu_content.main_menu});
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            map = new Map(@"Content\mainArea.tmx");
+            map = new Map(@"Content\StartArea.tmx");
             map.LoadContent(Content);
             game = new Game(map, content_loader.game_content.enemy);
         }

@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using TiledSharp;
+using System.Collections.Generic;
 
 namespace RPGopnik
 {
@@ -10,6 +11,8 @@ namespace RPGopnik
     {
         Texture2D tileset;
         TmxMap map;
+
+        public List<Rectangle> collisionObjects;
 
         public int width;
         public int height;
@@ -24,6 +27,10 @@ namespace RPGopnik
             map = new TmxMap(tmxFile);
             width = map.Width * map.TileWidth;
             height = map.Height * map.TileHeight;
+
+            collisionObjects = new List<Rectangle>();
+            foreach (var o in map.ObjectGroups["Collision"].Objects)
+                collisionObjects.Add(new Rectangle((int)o.X, (int)o.Y, (int)o.Width, (int)o.Height));
         }
 
         public void LoadContent(ContentManager Content)
