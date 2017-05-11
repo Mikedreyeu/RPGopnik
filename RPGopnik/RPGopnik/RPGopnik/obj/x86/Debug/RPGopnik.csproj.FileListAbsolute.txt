@@ -75,7 +75,6 @@ D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\logo.x
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\enemy.xnb
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\bt_font.xnb
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\help.xnb
-C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\magecity.xnb
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\logo.xnb
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\hover.xnb
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\main.xnb
@@ -125,3 +124,4 @@ D:\RPGopnik\yes\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.cspro
 D:\RPGopnik\yes\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\RPGopnik\yes\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.exe
 D:\RPGopnik\yes\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.pdb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\MainTileset.xnb
