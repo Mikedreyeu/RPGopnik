@@ -8,57 +8,57 @@ using Microsoft.Xna.Framework.Input;
 
 namespace RPGopnik
 {
-    class Enemy : Content
+    enum Direction { Down, Left, Right, Up };
+    class Enemy
     {
-        private Point velocity = new Point(0,0);
-        public enum Direction {Up, Down, Left, Right};
+        int x, y;
+        Animation animation;
+        private int max_velocity;
+        private Point velocity_now = new Point(0,0);
         public Direction Enemy_Direction = Direction.Down;
-        public Enemy(Rectangle rectangle, Texture2D texture) : base(rectangle, texture) { }
-
-        public override void Update(MouseState mouse)
+        public Enemy(int x, int y, int max_velocity, Animation animation)
         {
-            velocity.Y = 0;
-            velocity.X = 0;
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
-            {
-                Enemy_Direction = Direction.Up;
-                velocity.Y = -1;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
-            {
-                Enemy_Direction = Direction.Down;
-                velocity.Y = 1;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.A))
-            {
-                Enemy_Direction = Direction.Left;
-                velocity.X = -1;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.D))
-            {
-                Enemy_Direction = Direction.Right;
-                velocity.X = 1;
-            }
-            rect.Location = new Point(rect.Location.X + velocity.X, rect.Location.Y + velocity.Y);
+            this.animation = animation;
+            this.x = x;
+            this.y = y;
+            this.max_velocity = max_velocity;
         }
 
-        public override void Draw(SpriteBatch spritebatch)
+        public void Update(MouseState mouse)
         {
-            switch(Enemy_Direction)
+            velocity_now.Y = 0;
+            velocity_now.X = 0;
+            if (Keyboard.GetState().GetPressedKeys().Length != 0)
             {
-                case Direction.Down:
-                    spritebatch.Draw(main_texture, rect, new Rectangle(30, 0, 30, 32), Color.White);
-                    break;
-                case Direction.Left:
-                    spritebatch.Draw(main_texture, rect, new Rectangle(30, 32, 30, 32), Color.White);
-                    break;
-                case Direction.Right:
-                    spritebatch.Draw(main_texture, rect, new Rectangle(30, 64, 30, 32), Color.White);
-                    break;
-                case Direction.Up:
-                    spritebatch.Draw(main_texture, rect, new Rectangle(30, 96, 30, 32), Color.White);
-                    break;
+                animation.Update();
+                if (Keyboard.GetState().IsKeyDown(Keys.W))
+                {
+                    Enemy_Direction = Direction.Up;
+                    velocity_now.Y = -max_velocity;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.S))
+                {
+                    Enemy_Direction = Direction.Down;
+                    velocity_now.Y = max_velocity;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.A))
+                {
+                    Enemy_Direction = Direction.Left;
+                    velocity_now.X = -max_velocity;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.D))
+                {
+                    Enemy_Direction = Direction.Right;
+                    velocity_now.X = max_velocity;
+                }
+                x += velocity_now.X;
+                y += velocity_now.Y;
             }
+        }
+
+        public void Draw(SpriteBatch spritebatch)
+        {
+            animation.Draw(spritebatch, x, y, Enemy_Direction);
         }
     }
 }

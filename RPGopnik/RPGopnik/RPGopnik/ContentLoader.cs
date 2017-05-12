@@ -49,7 +49,7 @@ namespace RPGopnik
             main_menu_content.game_button = new Button(new Rectangle(200, 230, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.game), "Game");
             main_menu_content.help_button = new Button(new Rectangle(200, 300, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.help), "Help");
             main_menu_content.exit_button = new Button(new Rectangle(200, 370, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.exit), "Exit");
-            game_content.enemy = new Enemy(new Rectangle(100, 100, 30, 32), Content.Load<Texture2D>("enemy"));
+            game_content.enemy = new Enemy(100, 100, 3, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3));
 
         }
     }

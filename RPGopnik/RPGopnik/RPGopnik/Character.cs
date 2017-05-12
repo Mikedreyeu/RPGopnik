@@ -16,8 +16,7 @@ namespace RPGopnik
 
     class Character : IComparable 
     {
-        private Rectangle rect;
-        private Texture2D main_texture;
+        
         private readonly uint id;
         private static uint next_id = 1;
         private readonly string name;
