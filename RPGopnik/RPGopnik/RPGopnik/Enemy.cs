@@ -8,16 +8,17 @@ using Microsoft.Xna.Framework.Input;
 
 namespace RPGopnik
 {
-    enum Direction { Down, Left, Right, Up };
     class Enemy
     {
-        int x, y;
+        public int x, y;
         Animation animation;
+        Random rand;
         private int max_velocity;
         private Point velocity_now = new Point(0,0);
         public Direction Enemy_Direction = Direction.Down;
         public Enemy(int x, int y, int max_velocity, Animation animation)
         {
+            rand = new Random();
             this.animation = animation;
             this.x = x;
             this.y = y;
@@ -28,32 +29,24 @@ namespace RPGopnik
         {
             velocity_now.Y = 0;
             velocity_now.X = 0;
-            if (Keyboard.GetState().GetPressedKeys().Length != 0)
+            Enemy_Direction = (Direction)rand.Next(4);
+            switch(Enemy_Direction)
             {
-                animation.Update();
-                if (Keyboard.GetState().IsKeyDown(Keys.W))
-                {
-                    Enemy_Direction = Direction.Up;
-                    velocity_now.Y = -max_velocity;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.S))
-                {
-                    Enemy_Direction = Direction.Down;
+                case Direction.Down:
                     velocity_now.Y = max_velocity;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.A))
-                {
-                    Enemy_Direction = Direction.Left;
-                    velocity_now.X = -max_velocity;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.D))
-                {
-                    Enemy_Direction = Direction.Right;
+                    break;
+                case Direction.Up:
+                    velocity_now.Y = -max_velocity;
+                    break;
+                case Direction.Right:
                     velocity_now.X = max_velocity;
-                }
-                x += velocity_now.X;
-                y += velocity_now.Y;
+                    break;
+                case Direction.Left:
+                    velocity_now.X = -max_velocity;
+                    break;
             }
+            x += velocity_now.X;
+            y += velocity_now.Y;
         }
 
         public void Draw(SpriteBatch spritebatch)

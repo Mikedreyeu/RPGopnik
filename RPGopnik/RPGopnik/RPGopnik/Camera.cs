@@ -14,14 +14,14 @@ namespace RPGopnik
         public Matrix inverseTransform;
         Vector2 pos;
         
-
         public Camera()
         {
             pos = Vector2.Zero;
         }
 
-        public void Update(Map map)
+        public void Update(Map map, int x, int y)
         {
+            pos = new Vector2(x, y);
             if (pos.X > 0)
             {
                 pos.X = 0;

@@ -13,14 +13,16 @@ namespace RPGopnik
 {
     enum Conditions { Normal, Weak, Sick, Poisoned, Paralyzed, Dead };
     enum Races { Gopnik, Petuh, Kolshik, Baryga };
+    enum Direction { Down, Left, Right, Up };
 
     class Character : IComparable 
     {
-        
+        Animation animation;
+        Direction character_Direction;
         private readonly uint id;
         private static uint next_id = 1;
         private readonly string name;
-        private readonly string race;
+        private readonly Races race;
         private readonly string gender;
         private int age;
         private int xp;
@@ -29,6 +31,8 @@ namespace RPGopnik
         private bool can_speak;
         private bool can_move;
         private byte condition;
+        public int X { get; set; }
+        public int Y { get; set; }
         public uint ID
         {
             get { return id; }
@@ -37,7 +41,7 @@ namespace RPGopnik
         {
             get { return name; }
         }
-        public string Race
+        public Races Race
         {
             get { return race; }
         }
@@ -94,8 +98,12 @@ namespace RPGopnik
             else if (percentage == 0)
                 ch.Condition = (byte)Conditions.Dead;
         }
-        public Character(string name_, string race_, string gender_)
+        public Character(string name_, Races race_, string gender_, Animation animation, int x, int y)
         {
+            character_Direction = Direction.Down;
+            X = x;
+            Y = y;
+            this.animation = animation;
             this.id = next_id++;
             this.name = name_;
             this.race = race_;
@@ -107,6 +115,35 @@ namespace RPGopnik
             return "Имя: " + ch.Name + "\nРаса: " + ch.Race + "\nПол: " + ch.Gender +
                 "\nВозраст: " + ch.Age + "\nИдентификатор: " + ch.ID + "\nТекущие очки здоровья: " +
                 ch.Curr_HP + "\nТекущие очки опыта: " + ch.XP;
+        }
+        public void Update()
+        {
+            if(Keyboard.GetState().GetPressedKeys().Length != 0)
+                animation.Update(); 
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            {
+                character_Direction = Direction.Up;
+                Y -= 2;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+            {
+                character_Direction = Direction.Down;
+                Y += 2;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+            {
+                character_Direction = Direction.Left;
+                X -= 2;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            {
+                character_Direction = Direction.Right;
+                X += 2;
+            }
+        }
+        public void Draw(SpriteBatch spritebatch)
+        {
+            animation.Draw(spritebatch, X, Y, character_Direction);
         }
     }
 
@@ -125,7 +162,7 @@ namespace RPGopnik
             get { return max_mana; }
             set { max_mana = value; }
         }
-        public Mage_Character(string name, string race, string gender) : base(name, race, gender)
+        public Mage_Character(string name, Races race, string gender, Animation animation, int x, int y) : base(name, race, gender, animation, x, y)
         {
         }
         public void Add_HP_Spell(Character ch)

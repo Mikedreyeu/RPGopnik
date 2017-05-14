@@ -7,3 +7,4 @@ Content\GUI\pressed.xnb
 Content\background.xnb
 Content\enemy.xnb
 Content\Tilesets\MainTileset.xnb
+Content\gopnik_texture.xnb

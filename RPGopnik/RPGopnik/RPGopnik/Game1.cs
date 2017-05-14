@@ -54,7 +54,7 @@ namespace RPGopnik
             spriteBatch = new SpriteBatch(GraphicsDevice);
             map = new Map(@"Content\StartArea.tmx");
             map.LoadContent(Content);
-            game = new Game(map, content_loader.game_content.enemy);
+            game = new Game(map, content_loader.game_content.character);
         }
 
         protected override void UnloadContent()

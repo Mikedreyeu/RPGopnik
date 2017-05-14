@@ -125,3 +125,4 @@ D:\RPGopnik\yes\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\Microsoft.Xna.
 D:\RPGopnik\yes\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.exe
 D:\RPGopnik\yes\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.pdb
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\MainTileset.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\gopnik_texture.xnb

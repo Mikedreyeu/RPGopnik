@@ -82,6 +82,15 @@
       <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\MainTileset.xnb</Output>
       <Time>2017-05-11T12:22:52.0317069+03:00</Time>
     </Item>
+    <Item>
+      <Source>gopnik_texture.png</Source>
+      <Name>gopnik_texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\gopnik_texture.xnb</Output>
+      <Time>2017-05-14T23:04:46.5069761+03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{C04199D9-87BF-4CA6-9C95-A4F9E1167EC4}</ContentProjectGUID>
