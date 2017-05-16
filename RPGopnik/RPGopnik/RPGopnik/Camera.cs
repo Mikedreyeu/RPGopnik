@@ -13,30 +13,32 @@ namespace RPGopnik
         public Matrix transform;
         public Matrix inverseTransform;
         Vector2 pos;
-        
-        public Camera()
+        Viewport viewport;
+
+        public Camera(Viewport viewp)
         {
             pos = Vector2.Zero;
+            viewport = viewp;
         }
 
-        public void Update(Map map, int x, int y)
+        public void Update(Map map, Vector2 playerPos)
         {
-            pos = new Vector2(x, y);
+            pos = new Vector2(-playerPos.X + viewport.Width / 2, -playerPos.Y + viewport.Height / 2);
             if (pos.X > 0)
             {
                 pos.X = 0;
             }
-            if (pos.X < -map.width + 800)
+            if (pos.X < -map.width + viewport.Width)
             {
-                pos.X = -map.width + 800;
+                pos.X = -map.width + viewport.Width;
             }
             if (pos.Y > 0)
             {
                 pos.Y = 0;
             }
-            if (pos.Y < -map.height + 600)
+            if (pos.Y < -map.height + viewport.Height)
             {
-                pos.Y = -map.height + 600;
+                pos.Y = -map.height + viewport.Height;
             }
             transform = Matrix.CreateScale(new Vector3(1, 1, 1)) * Matrix.CreateTranslation(pos.X, pos.Y, 0);
             inverseTransform = Matrix.Invert(transform);

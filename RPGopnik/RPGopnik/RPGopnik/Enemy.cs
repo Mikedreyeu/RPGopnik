@@ -10,18 +10,17 @@ namespace RPGopnik
 {
     class Enemy
     {
-        public int x, y;
+        public Vector2 pos;
         Animation animation;
         Random rand;
         private int max_velocity;
         private Point velocity_now = new Point(0,0);
         public Direction Enemy_Direction = Direction.Down;
-        public Enemy(int x, int y, int max_velocity, Animation animation)
+        public Enemy(Vector2 rect, int max_velocity, Animation animation)
         {
             rand = new Random();
             this.animation = animation;
-            this.x = x;
-            this.y = y;
+            this.pos = rect;
             this.max_velocity = max_velocity;
         }
 
@@ -45,13 +44,13 @@ namespace RPGopnik
                     velocity_now.X = -max_velocity;
                     break;
             }
-            x += velocity_now.X;
-            y += velocity_now.Y;
+            pos.X += velocity_now.X;
+            pos.X += velocity_now.Y;
         }
 
         public void Draw(SpriteBatch spritebatch)
         {
-            animation.Draw(spritebatch, x, y, Enemy_Direction);
+            animation.Draw(spritebatch, pos, Enemy_Direction);
         }
     }
 }

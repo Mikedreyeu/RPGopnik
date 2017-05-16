@@ -14,17 +14,17 @@ namespace RPGopnik
         Camera camera;
         Character character;
 
-        public Game(Map map, Character character)
+        public Game(Map map, Viewport viewport, Character character)
         {
-            camera = new Camera();
+            camera = new Camera(viewport);
             this.map = map;
             this.character = character;
         }
 
         public void Update()
         {
-            camera.Update(map, character.X, character.Y);
-            character.Update();   
+            camera.Update(map, character.pos);
+            character.Update(map.collisionObjects);   
         }
 
         public void Draw(SpriteBatch spriteBatch)

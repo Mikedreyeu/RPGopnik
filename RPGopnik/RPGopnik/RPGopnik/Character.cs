@@ -31,8 +31,12 @@ namespace RPGopnik
         private bool can_speak;
         private bool can_move;
         private byte condition;
-        public int X { get; set; }
-        public int Y { get; set; }
+        public Vector2 pos;
+
+        public Rectangle Rect
+        {
+            get { return new Rectangle((int)pos.X, (int)pos.Y, 30, 32); }
+        }
         public uint ID
         {
             get { return id; }
@@ -98,11 +102,10 @@ namespace RPGopnik
             else if (percentage == 0)
                 ch.Condition = (byte)Conditions.Dead;
         }
-        public Character(string name_, Races race_, string gender_, Animation animation, int x, int y)
+        public Character(string name_, Races race_, string gender_, Animation animation, Vector2 pos)
         {
             character_Direction = Direction.Down;
-            X = x;
-            Y = y;
+            this.pos = pos;
             this.animation = animation;
             this.id = next_id++;
             this.name = name_;
@@ -116,34 +119,39 @@ namespace RPGopnik
                 "\nВозраст: " + ch.Age + "\nИдентификатор: " + ch.ID + "\nТекущие очки здоровья: " +
                 ch.Curr_HP + "\nТекущие очки опыта: " + ch.XP;
         }
-        public void Update()
+        public void Update(List<Rectangle> collisionObjects)
         {
             if(Keyboard.GetState().GetPressedKeys().Length != 0)
                 animation.Update(); 
             if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
                 character_Direction = Direction.Up;
-                Y -= 2;
+                pos.Y -= 2;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 character_Direction = Direction.Down;
-                Y += 2;
+                pos.Y += 2;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
                 character_Direction = Direction.Left;
-                X -= 2;
+                pos.X -= 2;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 character_Direction = Direction.Right;
-                X += 2;
+                pos.X += 2;
+            }
+
+            foreach (Rectangle co in collisionObjects)
+            {
+                // обработка коллизии
             }
         }
         public void Draw(SpriteBatch spritebatch)
         {
-            animation.Draw(spritebatch, X, Y, character_Direction);
+            animation.Draw(spritebatch, pos, character_Direction);
         }
     }
 
@@ -162,7 +170,7 @@ namespace RPGopnik
             get { return max_mana; }
             set { max_mana = value; }
         }
-        public Mage_Character(string name, Races race, string gender, Animation animation, int x, int y) : base(name, race, gender, animation, x, y)
+        public Mage_Character(string name, Races race, string gender, Animation animation, Vector2 pos) : base(name, race, gender, animation, pos)
         {
         }
         public void Add_HP_Spell(Character ch)

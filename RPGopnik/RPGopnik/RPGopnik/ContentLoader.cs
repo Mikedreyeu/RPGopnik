@@ -50,8 +50,8 @@ namespace RPGopnik
             main_menu_content.game_button = new Button(new Rectangle(200, 230, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.game), "Game");
             main_menu_content.help_button = new Button(new Rectangle(200, 300, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.help), "Help");
             main_menu_content.exit_button = new Button(new Rectangle(200, 370, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.exit), "Exit");
-            game_content.enemy = new Enemy(100, 100, 3, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3));
-            game_content.character = new Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), 200, 200);
+            game_content.enemy = new Enemy(new Vector2(100, 100), 3, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3));
+            game_content.character = new Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300));
         }
     }
 }

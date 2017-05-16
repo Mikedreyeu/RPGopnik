@@ -3,3 +3,4 @@ D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopnikCon
 C:\Users\GODLIKE\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopnikContent.contentprojResolveAssemblyReference.cache
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopnikContent.contentprojResolveAssemblyReference.cache
 D:\RPGopnik\yes\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopnikContent.contentprojResolveAssemblyReference.cache
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopnikContent.contentprojResolveAssemblyReference.cache

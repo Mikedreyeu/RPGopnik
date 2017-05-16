@@ -42,9 +42,9 @@ namespace RPGopnik
             }
         }
 
-        public void Draw(SpriteBatch spritebatch, int x, int y, Direction direction)
+        public void Draw(SpriteBatch spritebatch, Vector2 pos, Direction direction)
         {
-            spritebatch.Draw(texture, new Rectangle(x, y, frame_width, frame_height), new Rectangle(frame_width * frame_now, frame_height * (int)direction, frame_width, frame_height), Color.White);
+            spritebatch.Draw(texture, new Rectangle((int)pos.X, (int)pos.Y, frame_width, frame_height), new Rectangle(frame_width * frame_now, frame_height * (int)direction, frame_width, frame_height), Color.White);
         }
     }
 }
