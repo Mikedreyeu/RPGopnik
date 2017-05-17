@@ -18,7 +18,7 @@ namespace RPGopnik
     class Character : IComparable 
     {
         Animation animation;
-        Direction character_Direction;
+        Direction direction;
         private readonly uint id;
         private static uint next_id = 1;
         private readonly string name;
@@ -104,7 +104,7 @@ namespace RPGopnik
         }
         public Character(string name_, Races race_, string gender_, Animation animation, Vector2 pos)
         {
-            character_Direction = Direction.Down;
+            direction = Direction.Down;
             this.pos = pos;
             this.animation = animation;
             this.id = next_id++;
@@ -125,22 +125,22 @@ namespace RPGopnik
                 animation.Update(); 
             if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
-                character_Direction = Direction.Up;
+                direction = Direction.Up;
                 pos.Y -= 2;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
-                character_Direction = Direction.Down;
+                direction = Direction.Down;
                 pos.Y += 2;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
-                character_Direction = Direction.Left;
+                direction = Direction.Left;
                 pos.X -= 2;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
-                character_Direction = Direction.Right;
+                direction = Direction.Right;
                 pos.X += 2;
             }
 
@@ -151,7 +151,7 @@ namespace RPGopnik
         }
         public void Draw(SpriteBatch spritebatch)
         {
-            animation.Draw(spritebatch, pos, character_Direction);
+            animation.Draw(spritebatch, pos, direction);
         }
     }
 
