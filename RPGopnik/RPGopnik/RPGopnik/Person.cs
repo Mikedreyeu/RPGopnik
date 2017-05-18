@@ -11,6 +11,6 @@ namespace RPGopnik
 {
     interface IPerson
     {
-        public Vector2 pos;
+        //public Vector2 pos;       поле в интерфейсе
     }
 }
