@@ -4,7 +4,7 @@ Content\GUI\logo.xnb
 Content\GUI\hover.xnb
 Content\GUI\main.xnb
 Content\GUI\pressed.xnb
-Content\background.xnb
 Content\enemy.xnb
 Content\Tilesets\MainTileset.xnb
 Content\gopnik_texture.xnb
+Content\title_screen_background.xnb

@@ -14,20 +14,19 @@ namespace RPGopnik
         Animation animation;
         Random rand;
         private int max_velocity;
-        private Point velocity_now = new Point(0,0);
+        private Vector2 velocity_now = new Vector2(0,0);
         public Direction Enemy_Direction = Direction.Down;
-        public Enemy(Vector2 rect, int max_velocity, Animation animation)
+        public Enemy(Vector2 pos, int max_velocity, Animation animation)
         {
             rand = new Random();
             this.animation = animation;
-            this.pos = rect;
+            this.pos = pos;
             this.max_velocity = max_velocity;
         }
 
         public void Update(MouseState mouse)
         {
-            velocity_now.Y = 0;
-            velocity_now.X = 0;
+            velocity_now = Vector2.Zero;
             Enemy_Direction = (Direction)rand.Next(4);
             switch(Enemy_Direction)
             {
@@ -44,8 +43,7 @@ namespace RPGopnik
                     velocity_now.X = -max_velocity;
                     break;
             }
-            pos.X += velocity_now.X;
-            pos.X += velocity_now.Y;
+            pos += velocity_now;
         }
 
         public void Draw(SpriteBatch spritebatch)

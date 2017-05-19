@@ -15,7 +15,7 @@ namespace RPGopnik
         public Background(Texture2D background)
         {
             bg_texture = background;
-            bg_rect = new Rectangle(0, 0, 800, 600);
+            bg_rect = new Rectangle(0, 0, 1280, 720);
         }
 
         public void Draw(SpriteBatch spritebatch)

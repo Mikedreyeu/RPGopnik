@@ -132,7 +132,6 @@ D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\G
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\hover.xnb
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\main.xnb
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pressed.xnb
-D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\background.xnb
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\enemy.xnb
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\MainTileset.xnb
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\gopnik_texture.xnb
@@ -153,3 +152,4 @@ D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.exe
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.pdb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\title_screen_background.xnb

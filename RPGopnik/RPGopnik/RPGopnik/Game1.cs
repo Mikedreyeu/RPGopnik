@@ -29,8 +29,8 @@ namespace RPGopnik
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             graphics.IsFullScreen = false;
-            graphics.PreferredBackBufferHeight = 600;
-            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 1280;
         }
 
         protected override void Initialize()
@@ -41,7 +41,7 @@ namespace RPGopnik
         protected override void LoadContent()
         {
             Events.g = this;
-            ContentLoader content_loader = new ContentLoader(Content);
+            ContentLoader content_loader = new ContentLoader(Content, GraphicsDevice.Viewport);
             Menu.background = content_loader.menu_content.background;
             Button.font = Content.Load<SpriteFont>("bt_font");
             main = new Menu(new List<RPGopnik.Content> { content_loader.menu_content.logo,
@@ -52,7 +52,7 @@ namespace RPGopnik
                                                          content_loader.help_menu_content.info,
                                                          content_loader.help_menu_content.main_menu});
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            map = new Map(@"Content\StartArea.tmx");
+            map = new Map(@"Content\StartingArea.tmx");
             map.LoadContent(Content);
             game = new Game(map, GraphicsDevice.Viewport, content_loader.game_content.character);
         }

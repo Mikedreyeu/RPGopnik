@@ -32,6 +32,8 @@ namespace RPGopnik
         private bool can_move;
         private byte condition;
         public Vector2 pos;
+        private int max_velocity;
+        private Vector2 velocity_now = new Vector2(0, 0);
 
         public Rectangle Rect
         {
@@ -102,7 +104,7 @@ namespace RPGopnik
             else if (percentage == 0)
                 ch.Condition = (byte)Conditions.Dead;
         }
-        public Character(string name_, Races race_, string gender_, Animation animation, Vector2 pos)
+        public Character(string name_, Races race_, string gender_, Animation animation, Vector2 pos, int max_velocity)
         {
             direction = Direction.Down;
             this.pos = pos;
@@ -111,6 +113,7 @@ namespace RPGopnik
             this.name = name_;
             this.race = race_;
             this.gender = gender_;
+            this.max_velocity = max_velocity;
 
         }
         public string Character_Info(Character ch)
@@ -121,33 +124,54 @@ namespace RPGopnik
         }
         public void Update(List<Rectangle> collisionObjects)
         {
-            if(Keyboard.GetState().GetPressedKeys().Length != 0)
+            velocity_now = Vector2.Zero;
+            if (Keyboard.GetState().GetPressedKeys().Length != 0)
                 animation.Update(); 
             if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
                 direction = Direction.Up;
-                pos.Y -= 2;
+                velocity_now.Y = -max_velocity;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 direction = Direction.Down;
-                pos.Y += 2;
+                velocity_now.Y = max_velocity;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
                 direction = Direction.Left;
-                pos.X -= 2;
+                velocity_now.X = -max_velocity;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 direction = Direction.Right;
-                pos.X += 2;
+                velocity_now.X = max_velocity;
             }
 
             foreach (Rectangle co in collisionObjects)
             {
-                // обработка коллизии
+                if (velocity_now.X > 0 && Rect.Right + velocity_now.X > co.Left && Rect.Left < co.Left 
+                    && Rect.Bottom > co.Top && Rect.Top < co.Bottom)
+                {
+                    velocity_now.X = Rect.Right - co.Left;
+                }
+                if (velocity_now.X < 0 && Rect.Left + velocity_now.X < co.Right && Rect.Right > co.Right 
+                    && Rect.Bottom > co.Top && Rect.Top < co.Bottom)
+                {
+                    velocity_now.X = co.Right - Rect.Left;
+                }
+                if (velocity_now.Y > 0 && Rect.Bottom + velocity_now.Y > co.Top && Rect.Top < co.Top 
+                    && Rect.Right > co.Left && Rect.Left < co.Right)
+                {
+                    velocity_now.Y = Rect.Bottom - co.Top;
+                }
+                if (velocity_now.Y < 0 && Rect.Top + velocity_now.Y < co.Bottom && Rect.Bottom > co.Bottom 
+                    && Rect.Right > co.Left && Rect.Left < co.Right)
+                {
+                    velocity_now.Y = co.Bottom - Rect.Top;
+                }
             }
+            pos += velocity_now;
         }
         public void Draw(SpriteBatch spritebatch)
         {
@@ -170,7 +194,7 @@ namespace RPGopnik
             get { return max_mana; }
             set { max_mana = value; }
         }
-        public Mage_Character(string name, Races race, string gender, Animation animation, Vector2 pos) : base(name, race, gender, animation, pos)
+        public Mage_Character(string name, Races race, string gender, Animation animation, Vector2 pos, int max_velocity) : base(name, race, gender, animation, pos, max_velocity)
         {
         }
         public void Add_HP_Spell(Character ch)
