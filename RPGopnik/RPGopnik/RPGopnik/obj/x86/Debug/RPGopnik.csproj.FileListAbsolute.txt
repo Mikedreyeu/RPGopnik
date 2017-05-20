@@ -79,7 +79,6 @@ C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Conten
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\hover.xnb
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\main.xnb
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pressed.xnb
-C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\background.xnb
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\enemy.xnb
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.exe
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.pdb
@@ -153,3 +152,5 @@ D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\Microsoft
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.exe
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.pdb
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\title_screen_background.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\title_screen_background.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\beer.xnb

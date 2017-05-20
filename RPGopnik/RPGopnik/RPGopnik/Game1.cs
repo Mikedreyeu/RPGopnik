@@ -42,6 +42,7 @@ namespace RPGopnik
         {
             Events.g = this;
             ContentLoader content_loader = new ContentLoader(Content, GraphicsDevice.Viewport);
+            Pivas.texture = content_loader.game_content.beer;
             Menu.background = content_loader.menu_content.background;
             Button.font = Content.Load<SpriteFont>("bt_font");
             main = new Menu(new List<RPGopnik.Content> { content_loader.menu_content.logo,
@@ -54,7 +55,7 @@ namespace RPGopnik
             spriteBatch = new SpriteBatch(GraphicsDevice);
             map = new Map(@"Content\StartingArea.tmx");
             map.LoadContent(Content);
-            game = new Game(map, GraphicsDevice.Viewport, content_loader.game_content.character);
+            game = new Game(map, GraphicsDevice.Viewport, content_loader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300))});
         }
 
         protected override void UnloadContent()

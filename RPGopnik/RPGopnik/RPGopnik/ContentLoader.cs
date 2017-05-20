@@ -15,6 +15,7 @@ namespace RPGopnik
         {
             public Enemy enemy;
             public Character character;
+            public Texture2D beer;
         }
 
         public struct Menu_Content
@@ -52,6 +53,7 @@ namespace RPGopnik
             main_menu_content.exit_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height / 2 + 140, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.exit), "Exit");
             game_content.enemy = new Enemy(new Vector2(100, 100), 3, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3));
             game_content.character = new Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 2);
+            game_content.beer = Content.Load<Texture2D>("beer");
         }
     }
 }

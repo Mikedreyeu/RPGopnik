@@ -2,83 +2,68 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace RPGopnik
 {
     interface IMagic
     {
-        void Use();
-        void Use(Character character);
-        void Use(double power);
-        void Use(Character character, double power);
+        void Use(Character user);
+        void Use(Character user, Character character);
+        void Use(Character user, uint power);
+        void Use(Character user, Character character, uint power);
     }
 
     abstract class Artefact : IMagic
     {
-        protected double power;
+        public Vector2 pos;
+        public enum Size { Little = 10, Middle = 25, Big = 50 }
+        protected uint power;
         protected bool renewable;
-        public virtual void Use() { }
-        public virtual void Use(Character character) { }
-        public virtual void Use(double power) { }
-        public virtual void Use(Character character, double power) { }
-    }
+        public void Use(Character user)
+        {
+            Use(user, user, 1);
+        }
+        public void Use(Character user, Character character)
+        {
+            Use(user, character, 1);
+        }
+        public void Use(Character user, uint power)
+        {
+            Use(user, user, power);
+        }
+        public virtual void Use(Character user, Character character, uint power) { }
 
-    abstract class Spell : IMagic
-    {
-        protected uint minMana;
-        protected bool canSpeakRequired;
-        protected bool canMoveRequired;
-        protected Spell(uint minMana, bool canSpeakRequired, bool canMoveRequired)
-        {
-            this.minMana = minMana;
-            this.canSpeakRequired = canSpeakRequired;
-            this.canMoveRequired = canMoveRequired;
-        }
-        public virtual void Use() { }
-        public virtual void Use(Character character) { }
-        public virtual void Use(double power) { }
-        public virtual void Use(Character character, double power)
-        {
-            if (power <= 0)
-                throw new ArgumentException("Power must be greater than zero.");
-            if (character == null)
-                throw new ArgumentException("._.");
-        }
+        public virtual void Draw(SpriteBatch spritebatch) { }
     }
 
     class Pivas : Artefact
     {
-        public override void Use(Character character)
+        static public Texture2D texture;
+        public Pivas(Size size, Vector2 pos)
         {
-            if (character.Curr_HP + power < character.Max_HP)
-                character.Curr_HP = character.Curr_HP + (uint)power;
-            else
+            this.pos = pos;
+            power = (uint)size;
+            renewable = false;
+        }
+
+        public override void Use(Character user, Character character, uint power)
+        {
+            if (character.Curr_HP + this.power > character.Max_HP)
                 character.Curr_HP = character.Max_HP;
-        }
-
-        public override void Use(Character character, double power)
-        {
-
-        }
-    }
-
-    class AddHpSpell : Spell
-    {
-        public AddHpSpell() : base(2, true, true)
-        {
-            
-        }
-
-        public override void Use(Character character, double power)
-        {
-            base.Use(character, power);
-
-            //как-то посмотреть ману того, кто кастует
-
-            if (character.Curr_HP + power < character.Max_HP)
-                character.Curr_HP = character.Curr_HP + (uint) power;
             else
-                character.Curr_HP = character.Max_HP;
+                character.Curr_HP = character.Curr_HP + this.power;
+        }
+
+        public override void Draw(SpriteBatch spritebatch)
+        {
+            spritebatch.Draw(texture, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
         }
     }
 }

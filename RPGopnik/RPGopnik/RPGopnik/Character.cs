@@ -148,6 +148,8 @@ namespace RPGopnik
                 velocity_now.X = max_velocity;
             }
 
+
+
             foreach (Rectangle co in collisionObjects)
             {
                 if (velocity_now.X > 0 && Rect.Right + velocity_now.X > co.Left && Rect.Left < co.Left 
