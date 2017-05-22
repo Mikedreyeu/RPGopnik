@@ -45,7 +45,10 @@ namespace RPGopnik
                 artefact.Draw(spriteBatch);
             character.Draw(spriteBatch);
             map.Draw(spriteBatch, "Overlay");
-
+            spriteBatch.Draw(map.game_interface, -camera.pos, Color.White);
+            spriteBatch.DrawString(map.hp_mana_font, character.Curr_HP + "/" + character.Max_HP, new Vector2(-camera.pos.X + 360, -camera.pos.Y + 10), Color.White);
+            spriteBatch.DrawString(map.hp_mana_font, character.XP.ToString(), new Vector2(-camera.pos.X + 620, -camera.pos.Y + 10), Color.White);
+            // маг spriteBatch.DrawString(map.hp_mana_font,  + "/" + , new Vector2(camera.pos.X + 430, camera.pos.Y + 10), Color.White);
             spriteBatch.End();
         }
     }

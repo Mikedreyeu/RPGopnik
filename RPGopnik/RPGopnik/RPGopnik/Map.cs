@@ -11,6 +11,8 @@ namespace RPGopnik
     {
         Texture2D tileset;
         TmxMap map;
+        public Texture2D game_interface;
+        public SpriteFont hp_mana_font;
 
         public List<Rectangle> collisionObjects;
 
@@ -41,6 +43,9 @@ namespace RPGopnik
             tileHeight = map.Tilesets[0].TileHeight;
             tilesetTilesWide = tileset.Width / tileWidth;
             tilesetTilesHigh = tileset.Height / tileHeight;
+
+            hp_mana_font = Content.Load<SpriteFont>("bt_font");
+            game_interface = Content.Load<Texture2D>("interface");
         }
 
         public void Draw(SpriteBatch spritebatch, string layerPos)

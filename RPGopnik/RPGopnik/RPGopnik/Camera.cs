@@ -12,7 +12,7 @@ namespace RPGopnik
     {
         public Matrix transform;
         public Matrix inverseTransform;
-        Vector2 pos;
+        public Vector2 pos;
         Viewport viewport;
 
         public Camera(Viewport viewp)
