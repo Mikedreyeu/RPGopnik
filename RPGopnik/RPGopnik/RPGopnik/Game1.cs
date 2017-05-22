@@ -19,7 +19,8 @@ namespace RPGopnik
         public static gs game_state = gs.MAIN; 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Menu main, help;
+        ContentLoader content_loader;
+        Menu main, help, pause;
         Map map;
         Game game;
 
@@ -41,21 +42,23 @@ namespace RPGopnik
         protected override void LoadContent()
         {
             Events.g = this;
-            ContentLoader content_loader = new ContentLoader(Content, GraphicsDevice.Viewport);
+            LoadNewGame();
             Pivas.texture = content_loader.game_content.beer;
-            Menu.background = content_loader.menu_content.background;
             Button.font = Content.Load<SpriteFont>("bt_font");
-            main = new Menu(new List<RPGopnik.Content> { content_loader.menu_content.logo,
+            main = new Menu(new List<Content> { content_loader.menu_content.background,
+                                                         content_loader.menu_content.logo,
                                                          content_loader.main_menu_content.game_button,
                                                          content_loader.main_menu_content.help_button,
                                                          content_loader.main_menu_content.exit_button});
-            help = new Menu(new List<RPGopnik.Content> { content_loader.menu_content.logo,
+            help = new Menu(new List<Content> { content_loader.menu_content.background,
+                                                         content_loader.menu_content.logo,
                                                          content_loader.help_menu_content.info,
                                                          content_loader.help_menu_content.main_menu});
+            pause = new Menu(new List<Content> { content_loader.pause_content.background,
+                                                         content_loader.pause_content.pause_header,
+                                                         content_loader.pause_menu_content.resume_button,
+                                                         content_loader.pause_menu_content.exit_button});
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            map = new Map(@"Content\StartingArea.tmx");
-            map.LoadContent(Content);
-            game = new Game(map, GraphicsDevice.Viewport, content_loader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300))});
         }
 
         protected override void UnloadContent()
@@ -63,8 +66,12 @@ namespace RPGopnik
         }
 
         protected override void Update(GameTime gameTime)
-        { 
-            switch(game_state)
+        {
+            if (game_state == gs.GAME && Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                game_state = gs.PAUSE;
+            }
+            switch (game_state)
             {
                 case gs.MAIN:
                     main.Update();
@@ -76,9 +83,16 @@ namespace RPGopnik
                     break;
                 case gs.GAME:
                     game.Update();
-                    game.Draw(spriteBatch);
+                    game.Draw(spriteBatch, content_loader.game_gui_content.foundation);
                     break;
                 case gs.PAUSE:
+                    pause.Update();
+                    game.Draw(spriteBatch, content_loader.game_gui_content.foundation);
+                    pause.Draw(spriteBatch);
+                    if (game_state == gs.MAIN)
+                    {
+                        LoadNewGame();
+                    }
                     break;
             }
             base.Update(gameTime);
@@ -87,6 +101,15 @@ namespace RPGopnik
         protected override void Draw(GameTime gameTime)
         {
             base.Draw(gameTime);
+        }
+
+        private void LoadNewGame()
+        {
+            content_loader = new ContentLoader(Content, GraphicsDevice.Viewport);
+            map = new Map(@"Content\StartingArea.tmx");
+            map.LoadContent(Content);
+            game = new Game(map, GraphicsDevice.Viewport, content_loader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300)) });
+            game.LoadContent(Content); // просто впихнул
         }
     }
 }

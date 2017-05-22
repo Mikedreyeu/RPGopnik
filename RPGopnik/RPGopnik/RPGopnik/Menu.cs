@@ -10,7 +10,6 @@ namespace RPGopnik
 {
     class Menu
     {
-        public static Background background;
         List<Content> content_list;
 
         public Menu(List<Content> content_list)
@@ -27,7 +26,6 @@ namespace RPGopnik
         public void Draw(SpriteBatch spritebatch)
         {
             spritebatch.Begin();
-            background.Draw(spritebatch);
             foreach(Content ct in content_list)
                 ct.Draw(spritebatch);
             spritebatch.End();

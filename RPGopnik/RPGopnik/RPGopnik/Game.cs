@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -14,6 +15,7 @@ namespace RPGopnik
         Camera camera;
         Character character;
         List<Artefact> artefacts;
+        SpriteFont hp_mana_font; //просто впихнул, скорее всего, в дальнейшем будет в классе с GUI
 
         public Game(Map map, Viewport viewport, Character character, List<Artefact> artefacts)
         {
@@ -21,7 +23,13 @@ namespace RPGopnik
             camera = new Camera(viewport);
             this.map = map;
             this.character = character;
+            
         }
+
+        public void LoadContent(ContentManager Content)         // просто впихнул, скорее всего, в дальнейшем будет в классе с GUI
+        {                                                       //
+            hp_mana_font = Content.Load<SpriteFont>("bt_font"); //
+        }                                                       //
 
         void Pick_up(Artefact artefact)
         {
@@ -36,7 +44,7 @@ namespace RPGopnik
             artefacts.ForEach(Pick_up);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Content GUIfund)
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
 
@@ -45,10 +53,15 @@ namespace RPGopnik
                 artefact.Draw(spriteBatch);
             character.Draw(spriteBatch);
             map.Draw(spriteBatch, "Overlay");
-            spriteBatch.Draw(map.game_interface, -camera.pos, Color.White);
-            spriteBatch.DrawString(map.hp_mana_font, character.Curr_HP + "/" + character.Max_HP, new Vector2(-camera.pos.X + 360, -camera.pos.Y + 10), Color.White);
-            spriteBatch.DrawString(map.hp_mana_font, character.XP.ToString(), new Vector2(-camera.pos.X + 620, -camera.pos.Y + 10), Color.White);
-            // маг spriteBatch.DrawString(map.hp_mana_font,  + "/" + , new Vector2(camera.pos.X + 430, camera.pos.Y + 10), Color.White);
+            spriteBatch.End();
+
+            spriteBatch.Begin();
+            GUIfund.Draw(spriteBatch);
+            ///////////////////////////////// скорее всего, в дальнейшем будет в классе с GUI ////////////////////////////////////////////////
+            spriteBatch.DrawString(hp_mana_font, character.Curr_HP + "/" + character.Max_HP, new Vector2(360,  10), Color.White);           //
+            spriteBatch.DrawString(hp_mana_font, character.XP.ToString(), new Vector2(620,  10), Color.White);                              //
+            // маг spriteBatch.DrawString(map.hp_mana_font,  + "/" + , new Vector2(camera.pos.X + 430, camera.pos.Y + 10), Color.White);    //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             spriteBatch.End();
         }
     }

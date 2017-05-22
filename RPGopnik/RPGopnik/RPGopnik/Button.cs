@@ -23,7 +23,7 @@ namespace RPGopnik
             pressed_texture = pressed;
             ev = del;
             this.text = text;
-            text_pos = new Vector2(rect.Center.X - text.Length * 11, rect.Top + 3);
+            text_pos = new Vector2(rect.Center.X - text.Length * 12, rect.Top + 3);
         }
         
         public override void Update(MouseState mouse)

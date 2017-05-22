@@ -12,7 +12,7 @@ namespace RPGopnik
     {
         public Matrix transform;
         public Matrix inverseTransform;
-        public Vector2 pos;
+        Vector2 pos;
         Viewport viewport;
 
         public Camera(Viewport viewp)
@@ -23,18 +23,18 @@ namespace RPGopnik
 
         public void Update(Map map, Vector2 playerPos)
         {
-            pos = new Vector2(-playerPos.X + viewport.Width / 2, -playerPos.Y + viewport.Height / 2);
-            if (pos.X > 0)
+            pos = new Vector2(-playerPos.X - 15 + viewport.Width / 2, -playerPos.Y - 16 + (viewport.Height + 56) / 2);
+            if (pos.X > 123)
             {
-                pos.X = 0;
+                pos.X = 123;
             }
-            if (pos.X < -map.width + viewport.Width)
+            if (pos.X < -map.width - 126 + viewport.Width)
             {
-                pos.X = -map.width + viewport.Width;
+                pos.X = -map.width - 126 + viewport.Width;
             }
-            if (pos.Y > 0)
+            if (pos.Y > 56)
             {
-                pos.Y = 0;
+                pos.Y = 56;
             }
             if (pos.Y < -map.height + viewport.Height)
             {

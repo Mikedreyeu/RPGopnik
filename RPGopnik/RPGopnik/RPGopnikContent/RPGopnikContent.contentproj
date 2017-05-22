@@ -107,8 +107,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="interface.png">
-      <Name>interface</Name>
+    <Compile Include="GUI\foundation.png">
+      <Name>foundation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GUI\pause.png">
+      <Name>pause</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GUI\pause_background_opacity.png">
+      <Name>pause_background_opacity</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

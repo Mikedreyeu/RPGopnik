@@ -151,30 +151,62 @@ namespace RPGopnik
             }
 
 
-
+            #region Collision Handling Region
             foreach (Rectangle co in collisionObjects)
             {
-                if (velocity_now.X > 0 && Rect.Right + velocity_now.X > co.Left && Rect.Left < co.Left 
+
+                if (velocity_now.X > 0 && Rect.Right + velocity_now.X > co.Left && Rect.Left < co.Left
                     && Rect.Bottom > co.Top && Rect.Top < co.Bottom)
                 {
-                    velocity_now.X = Rect.Right - co.Left;
+                    velocity_now.X = co.Left - Rect.Right;
                 }
-                if (velocity_now.X < 0 && Rect.Left + velocity_now.X < co.Right && Rect.Right > co.Right 
+                if (velocity_now.X < 0 && Rect.Left + velocity_now.X < co.Right && Rect.Right > co.Right
                     && Rect.Bottom > co.Top && Rect.Top < co.Bottom)
                 {
                     velocity_now.X = co.Right - Rect.Left;
                 }
-                if (velocity_now.Y > 0 && Rect.Bottom + velocity_now.Y > co.Top && Rect.Top < co.Top 
+                if (velocity_now.Y > 0 && Rect.Bottom + velocity_now.Y > co.Top && Rect.Top < co.Top
                     && Rect.Right > co.Left && Rect.Left < co.Right)
                 {
-                    velocity_now.Y = Rect.Bottom - co.Top;
+                    velocity_now.Y = co.Top - Rect.Bottom;
                 }
-                if (velocity_now.Y < 0 && Rect.Top + velocity_now.Y < co.Bottom && Rect.Bottom > co.Bottom 
+                if (velocity_now.Y < 0 && Rect.Top + velocity_now.Y < co.Bottom && Rect.Bottom > co.Bottom
                     && Rect.Right > co.Left && Rect.Left < co.Right)
                 {
                     velocity_now.Y = co.Bottom - Rect.Top;
                 }
+
+                if (velocity_now.X < 0 && velocity_now.Y < 0
+                    && Rect.Top + velocity_now.Y < co.Bottom && Rect.Left + velocity_now.X < co.Right
+                    && Rect.Bottom > co.Top && Rect.Right > co.Left)
+                {
+                    velocity_now.X = co.Right - Rect.Left;
+                    velocity_now.Y = co.Left - Rect.Top;
+                }
+                if (velocity_now.X > 0 && velocity_now.Y > 0
+                    && Rect.Bottom + velocity_now.Y > co.Top && Rect.Right + velocity_now.X > co.Left
+                    && Rect.Top < co.Bottom && Rect.Left < co.Right)
+                {
+                    velocity_now.X = co.Left - Rect.Right;
+                    velocity_now.Y = co.Top - Rect.Bottom;
+                }
+                if (velocity_now.X > 0 && velocity_now.Y < 0
+                    && Rect.Top + velocity_now.Y < co.Bottom && Rect.Right + velocity_now.X > co.Left
+                    && Rect.Bottom > co.Top && Rect.Left < co.Right)
+                {
+                    velocity_now.X = co.Left - Rect.Right;
+                    velocity_now.Y = co.Bottom - Rect.Top;
+                }
+                if (velocity_now.X < 0 && velocity_now.Y > 0
+                    && Rect.Left + velocity_now.X < co.Right && Rect.Bottom + velocity_now.Y > co.Top
+                    && Rect.Top < co.Bottom && Rect.Right > co.Left)
+                {
+                    velocity_now.X = co.Right - Rect.Left;
+                    velocity_now.Y = co.Top - Rect.Bottom;
+                }
             }
+            #endregion
+
             pos += velocity_now;
         }
         public void Draw(SpriteBatch spritebatch)
