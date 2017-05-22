@@ -17,6 +17,7 @@ namespace RPGopnik
 
     class Character : IComparable 
     {
+        public Inventory inventory;
         Animation animation;
         Direction direction;
         private readonly uint id;
@@ -106,6 +107,7 @@ namespace RPGopnik
         }
         public Character(string name_, Races race_, string gender_, Animation animation, Vector2 pos, int max_velocity)
         {
+            inventory = new Inventory();
             direction = Direction.Down;
             this.pos = pos;
             this.animation = animation;

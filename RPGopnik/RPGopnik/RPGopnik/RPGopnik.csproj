@@ -70,6 +70,7 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="inventory.cs" />
     <Compile Include="Magic.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Menu.cs" />

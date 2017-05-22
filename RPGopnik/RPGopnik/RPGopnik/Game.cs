@@ -23,20 +23,17 @@ namespace RPGopnik
             this.character = character;
         }
 
+        void Pick_up(Artefact artefact)
+        {
+            if (character.Rect.Intersects(new Rectangle((int)artefact.pos.X, (int)artefact.pos.Y, 20, 20)))
+                character.inventory.Add(artefact, artefacts);
+        }
+
         public void Update()
         {
-            int index_to_remove = -1;
             camera.Update(map, character.pos);
-            character.Update(map.collisionObjects); 
-            foreach(Artefact artefact in artefacts)
-            {
-                if(character.Rect.Intersects(new Rectangle((int)artefact.pos.X, (int)artefact.pos.Y, 50, 50)))
-                {
-                    index_to_remove = artefacts.IndexOf(artefact);
-                }
-            }
-            if (index_to_remove != -1)
-                artefacts.Remove(artefacts[index_to_remove]);
+            character.Update(map.collisionObjects);
+            artefacts.ForEach(Pick_up);
         }
 
         public void Draw(SpriteBatch spriteBatch)
