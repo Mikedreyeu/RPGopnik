@@ -54,13 +54,13 @@ namespace RPGopnik
             public Button exit_button;
         }
 
-        public Menu_Content menu_content;
-        public Help_Menu_Content help_menu_content;
-        public Main_Menu_Content main_menu_content;
-        public Pause_Content pause_content;
-        public Pause_Menu_Content pause_menu_content;
-        public Game_GUI_Content game_gui_content;
-        public Game_Content game_content;
+        public static Menu_Content menu_content;
+        public static Help_Menu_Content help_menu_content;
+        public static Main_Menu_Content main_menu_content;
+        public static Pause_Content pause_content;
+        public static Pause_Menu_Content pause_menu_content;
+        public static Game_GUI_Content game_gui_content;
+        public static Game_Content game_content;
 
         public ContentLoader(ContentManager Content, Viewport viewp)
         {

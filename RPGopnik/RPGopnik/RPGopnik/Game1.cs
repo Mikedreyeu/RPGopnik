@@ -43,21 +43,10 @@ namespace RPGopnik
         {
             Events.g = this;
             LoadNewGame();
-            Pivas.texture = content_loader.game_content.beer;
             Button.font = Content.Load<SpriteFont>("bt_font");
-            main = new Menu(new List<Content> { content_loader.menu_content.background,
-                                                         content_loader.menu_content.logo,
-                                                         content_loader.main_menu_content.game_button,
-                                                         content_loader.main_menu_content.help_button,
-                                                         content_loader.main_menu_content.exit_button});
-            help = new Menu(new List<Content> { content_loader.menu_content.background,
-                                                         content_loader.menu_content.logo,
-                                                         content_loader.help_menu_content.info,
-                                                         content_loader.help_menu_content.main_menu});
-            pause = new Menu(new List<Content> { content_loader.pause_content.background,
-                                                         content_loader.pause_content.pause_header,
-                                                         content_loader.pause_menu_content.resume_button,
-                                                         content_loader.pause_menu_content.exit_button});
+            main = new MainMenu();
+            help = new HelpMenu();
+            pause = new Pause();
             spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
@@ -83,11 +72,11 @@ namespace RPGopnik
                     break;
                 case gs.GAME:
                     game.Update();
-                    game.Draw(spriteBatch, content_loader.game_gui_content.foundation);
+                    game.Draw(spriteBatch);
                     break;
                 case gs.PAUSE:
                     pause.Update();
-                    game.Draw(spriteBatch, content_loader.game_gui_content.foundation);
+                    game.Draw(spriteBatch);
                     pause.Draw(spriteBatch);
                     if (game_state == gs.MAIN)
                     {
@@ -108,7 +97,7 @@ namespace RPGopnik
             content_loader = new ContentLoader(Content, GraphicsDevice.Viewport);
             map = new Map(@"Content\StartingArea.tmx");
             map.LoadContent(Content);
-            game = new Game(map, GraphicsDevice.Viewport, content_loader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300)) });
+            game = new Game(map, GraphicsDevice.Viewport, ContentLoader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300)) });
             game.LoadContent(Content); // просто впихнул
         }
     }
