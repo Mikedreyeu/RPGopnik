@@ -138,7 +138,7 @@ namespace RPGopnik
 
     class Colesa : Artefact
     {
-        Colesa(Vector2 pos)
+        public Colesa(Vector2 pos)
         {
             this.pos = pos;
             this.renewable = false;
@@ -154,7 +154,7 @@ namespace RPGopnik
 
         public override void Draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(ContentLoader.game_content.rose, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
+            spritebatch.Draw(ContentLoader.game_content.colesa, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
         }
     }
 
@@ -201,7 +201,27 @@ namespace RPGopnik
 
         public override void Draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(ContentLoader.game_content.rose, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
+            spritebatch.Draw(ContentLoader.game_content.balanda, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
+        }
+    }
+
+    class PlayBoy : Artefact
+    {
+        public PlayBoy(Vector2 pos)
+        {
+            this.pos = pos;
+        }
+        public override void Use(Character user, Character character, uint power)
+        {
+            if (character.Condition != (byte)Conditions.Dead)
+            {
+                character.Condition = (byte)Conditions.Paralyzed;
+            }
+        }
+
+        public override void Draw(SpriteBatch spritebatch)
+        {
+            spritebatch.Draw(ContentLoader.game_content.playBoy, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
         }
     }
 }

@@ -18,6 +18,9 @@ namespace RPGopnik
             public Texture2D beer;
             public Texture2D boyarishnik;
             public Texture2D rose;
+            public Texture2D colesa;
+            public Texture2D balanda;
+            public Texture2D playBoy;
         }
 
         public struct Game_GUI_Content
@@ -83,6 +86,9 @@ namespace RPGopnik
             game_content.beer = Content.Load<Texture2D>("beer");
             game_content.boyarishnik = Content.Load<Texture2D>("boyarishnik");
             game_content.rose = Content.Load<Texture2D>("rose");
+            game_content.balanda = Content.Load<Texture2D>("balanda");
+            game_content.colesa = Content.Load<Texture2D>("colesa");
+            game_content.playBoy = Content.Load<Texture2D>("playboy");
         }
     }
 }

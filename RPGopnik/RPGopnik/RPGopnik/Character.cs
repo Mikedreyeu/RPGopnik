@@ -109,6 +109,7 @@ namespace RPGopnik
         {
             inventory = new Inventory();
             direction = Direction.Down;
+            this.max_hp = 100;
             this.pos = pos;
             this.animation = animation;
             this.id = next_id++;

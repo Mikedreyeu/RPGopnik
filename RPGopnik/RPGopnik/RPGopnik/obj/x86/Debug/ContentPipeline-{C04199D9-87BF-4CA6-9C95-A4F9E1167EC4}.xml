@@ -134,7 +134,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\boyarishnik.xnb</Output>
-      <Time>2017-05-24T08:41:39.0021881+03:00</Time>
+      <Time>2017-05-24T16:58:15.9237404+03:00</Time>
     </Item>
     <Item>
       <Source>rose.png</Source>
@@ -143,7 +143,34 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\rose.xnb</Output>
-      <Time>2017-05-24T09:07:28.9479523+03:00</Time>
+      <Time>2017-05-24T16:58:15.9437615+03:00</Time>
+    </Item>
+    <Item>
+      <Source>balanda.png</Source>
+      <Name>balanda</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\balanda.xnb</Output>
+      <Time>2017-05-24T17:37:19.1928459+03:00</Time>
+    </Item>
+    <Item>
+      <Source>colesa.png</Source>
+      <Name>colesa</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\colesa.xnb</Output>
+      <Time>2017-05-24T17:37:19.1943478+03:00</Time>
+    </Item>
+    <Item>
+      <Source>playboy.png</Source>
+      <Name>playboy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\playboy.xnb</Output>
+      <Time>2017-05-24T17:37:19.2100185+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
