@@ -45,7 +45,6 @@ namespace RPGopnik
 
     class Pivas : Artefact
     {
-        static public Texture2D texture;
         public Pivas(Size size, Vector2 pos)
         {
             this.pos = pos;
@@ -59,6 +58,33 @@ namespace RPGopnik
                 character.Curr_HP = character.Max_HP;
             else
                 character.Curr_HP = character.Curr_HP + this.power;
+        }
+
+        public override void Draw(SpriteBatch spritebatch)
+        {
+            spritebatch.Draw(ContentLoader.game_content.beer, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
+        }
+    }
+
+    class Boyarishnik : Artefact
+    {
+        static public Texture2D texture;
+        public Boyarishnik(Size size, Vector2 pos)
+        {
+            this.pos = pos;
+            power = (uint)size;
+            renewable = false;
+        }
+
+        public override void Use(Character user, Character character, uint power)
+        {
+            if (character is Mage_Character)
+            {
+                if ((character as Mage_Character).Curr_Mana + this.power > (character as Mage_Character).Max_Mana)
+                    (character as Mage_Character).Curr_Mana = (character as Mage_Character).Max_Mana;
+                else
+                    (character as Mage_Character).Curr_Mana = (character as Mage_Character).Curr_Mana + this.power;
+            }
         }
 
         public override void Draw(SpriteBatch spritebatch)
