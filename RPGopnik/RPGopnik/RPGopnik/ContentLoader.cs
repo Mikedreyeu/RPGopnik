@@ -16,8 +16,6 @@ namespace RPGopnik
             public Enemy enemy;
             public Character character;
             public Texture2D beer;
-            public Texture2D boyarishnik;
-            public Texture2D rose;
         }
 
         public struct Game_GUI_Content
@@ -64,7 +62,7 @@ namespace RPGopnik
         public static Game_GUI_Content game_gui_content;
         public static Game_Content game_content;
 
-        public static void Load(ContentManager Content, Viewport viewp)
+        public ContentLoader(ContentManager Content, Viewport viewp)
         {
             help_menu_content.info = new Content(new Rectangle(viewp.Width / 2 - 350, viewp.Height - 400, 700, 250), Content.Load<Texture2D>("help"));
             help_menu_content.main_menu = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height - 100, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.main), "Main menu");
@@ -81,8 +79,6 @@ namespace RPGopnik
             game_content.enemy = new Enemy(new Vector2(100, 100), 3, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3));
             game_content.character = new Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 2);
             game_content.beer = Content.Load<Texture2D>("beer");
-            game_content.boyarishnik = Content.Load<Texture2D>("boyarishnik");
-            game_content.rose = Content.Load<Texture2D>("rose");
         }
     }
 }

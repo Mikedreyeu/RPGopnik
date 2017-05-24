@@ -12,5 +12,3 @@ Content\beer.xnb
 Content\GUI\foundation.xnb
 Content\GUI\pause.xnb
 Content\GUI\pause_background_opacity.xnb
-Content\boyarishnik.xnb
-Content\rose.xnb

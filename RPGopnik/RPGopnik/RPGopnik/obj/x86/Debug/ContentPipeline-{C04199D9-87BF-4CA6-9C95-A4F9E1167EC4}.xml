@@ -127,24 +127,6 @@
       <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pause_background_opacity.xnb</Output>
       <Time>2017-05-22T23:23:27.8909003+03:00</Time>
     </Item>
-    <Item>
-      <Source>boyarishnik.png</Source>
-      <Name>boyarishnik</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\boyarishnik.xnb</Output>
-      <Time>2017-05-24T08:41:39.0021881+03:00</Time>
-    </Item>
-    <Item>
-      <Source>rose.png</Source>
-      <Name>rose</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\rose.xnb</Output>
-      <Time>2017-05-24T09:07:28.9479523+03:00</Time>
-    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{C04199D9-87BF-4CA6-9C95-A4F9E1167EC4}</ContentProjectGUID>

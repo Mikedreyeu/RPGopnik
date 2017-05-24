@@ -16,15 +16,16 @@ namespace RPGopnik
 
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        public static gs game_state = gs.MAIN; 
+        public static gs game_state = gs.MAIN;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        ContentLoader content_loader;
         Menu main, help, pause;
         Map map;
         Game game;
 
         public Game1()
-        { 
+        {
             IsMouseVisible = true;
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -40,7 +41,6 @@ namespace RPGopnik
 
         protected override void LoadContent()
         {
-            ContentLoader.Load(Content, GraphicsDevice.Viewport);
             Events.g = this;
             LoadNewGame();
             Button.font = Content.Load<SpriteFont>("bt_font");
@@ -94,9 +94,10 @@ namespace RPGopnik
 
         private void LoadNewGame()
         {
+            content_loader = new ContentLoader(Content, GraphicsDevice.Viewport);
             map = new Map(@"Content\StartingArea.tmx");
             map.LoadContent(Content);
-            game = new Game(map, GraphicsDevice.Viewport, ContentLoader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300)), new Boyarishnik(Artefact.Size.Little, new Vector2(300, 400)), new Rose(100, new Vector2(400,400)) });
+            game = new Game(map, GraphicsDevice.Viewport, ContentLoader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300)) });
             game.LoadContent(Content); // просто впихнул
         }
     }
