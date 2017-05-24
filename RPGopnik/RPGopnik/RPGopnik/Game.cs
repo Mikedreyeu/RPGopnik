@@ -44,7 +44,7 @@ namespace RPGopnik
             artefacts.ForEach(Pick_up);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Content GUIfund)
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
 
@@ -56,7 +56,7 @@ namespace RPGopnik
             spriteBatch.End();
 
             spriteBatch.Begin();
-            ContentLoader.game_gui_content.foundation.Draw(spriteBatch);
+            GUIfund.Draw(spriteBatch);
             ///////////////////////////////// скорее всего, в дальнейшем будет в классе с GUI ////////////////////////////////////////////////
             spriteBatch.DrawString(hp_mana_font, character.Curr_HP + "/" + character.Max_HP, new Vector2(360,  10), Color.White);           //
             spriteBatch.DrawString(hp_mana_font, character.XP.ToString(), new Vector2(620,  10), Color.White);                              //

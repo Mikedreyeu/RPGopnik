@@ -188,6 +188,3 @@ D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\beer.xnb
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\foundation.xnb
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pause.xnb
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pause_background_opacity.xnb
-C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\foundation.xnb
-C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pause.xnb
-C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pause_background_opacity.xnb
