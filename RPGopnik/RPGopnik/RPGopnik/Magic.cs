@@ -68,7 +68,6 @@ namespace RPGopnik
 
     class Boyarishnik : Artefact
     {
-        static public Texture2D texture;
         public Boyarishnik(Size size, Vector2 pos)
         {
             this.pos = pos;
@@ -89,7 +88,120 @@ namespace RPGopnik
 
         public override void Draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(texture, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
+            spritebatch.Draw(ContentLoader.game_content.boyarishnik, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
+        }
+    }
+
+    class Rose : Artefact
+    {
+        uint max_power;
+        DateTime last_update;
+        public Rose(uint power, Vector2 pos)
+        {
+            this.pos = pos;
+            this.power = power;
+            max_power = power;
+            renewable = true;
+        }
+
+        public override void Use(Character user, Character character, uint power)
+        {
+            if(power != 0)
+            {
+                if (power >= character.Curr_HP)
+                {
+                    character.Curr_HP = 0;
+                    character.Condition = (byte)Conditions.Dead;
+                }
+                else
+                    character.Curr_HP -= power;
+            }
+        }
+
+        public void Update()
+        {
+            if(power != max_power)
+            {
+                if((DateTime.Now - last_update).TotalMinutes > 1)
+                {
+                    power++;
+                    last_update = DateTime.Now;
+                }
+            }
+        }
+
+        public override void Draw(SpriteBatch spritebatch)
+        {
+            spritebatch.Draw(ContentLoader.game_content.rose, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
+        }
+    }
+
+    class Colesa : Artefact
+    {
+        Colesa(Vector2 pos)
+        {
+            this.pos = pos;
+            this.renewable = false;
+        }
+
+        public override void Use(Character user, Character character, uint power)
+        {
+            if(character.Condition == (byte)Conditions.Poisoned)
+            {
+                character.Condition = (byte)Conditions.Normal;
+            }
+        }
+
+        public override void Draw(SpriteBatch spritebatch)
+        {
+            spritebatch.Draw(ContentLoader.game_content.rose, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
+        }
+    }
+
+    class Balanda : Artefact
+    {
+        uint max_power;
+        DateTime last_update;
+        public Balanda(uint power, Vector2 pos)
+        {
+            this.pos = pos;
+            this.power = power;
+            max_power = power;
+            renewable = true;
+        }
+
+        public override void Use(Character user, Character character, uint power)
+        {
+            if (power != 0)
+            {
+                if (power >= character.Curr_HP)
+                {
+                    character.Curr_HP = 0;
+                    character.Condition = (byte)Conditions.Dead;
+                }
+                else
+                {
+                    character.Condition = (byte)Conditions.Poisoned;
+                    character.Curr_HP -= power;
+                }
+            }
+        }
+
+        public void Update()
+        {
+            if (power != max_power)
+            {
+                if ((DateTime.Now - last_update).TotalMinutes > 1)
+                {
+                    power++;
+                    last_update = DateTime.Now;
+                }
+            }
+        }
+
+        public override void Draw(SpriteBatch spritebatch)
+        {
+            spritebatch.Draw(ContentLoader.game_content.rose, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
         }
     }
 }
