@@ -13,9 +13,9 @@ namespace RPGopnik
     {
         Map map;
         Camera camera;
+        GUI gui;
         Character character;
         List<Artefact> artefacts;
-        SpriteFont hp_mana_font; //просто впихнул, скорее всего, в дальнейшем будет в классе с GUI
 
         public Game(Map map, Viewport viewport, Character character, List<Artefact> artefacts)
         {
@@ -23,13 +23,13 @@ namespace RPGopnik
             camera = new Camera(viewport);
             this.map = map;
             this.character = character;
-
+            gui = new GUI(viewport, character);
         }
 
-        public void LoadContent(ContentManager Content)         // просто впихнул, скорее всего, в дальнейшем будет в классе с GUI
-        {                                                       //
-            hp_mana_font = Content.Load<SpriteFont>("bt_font"); //
-        }                                                       //
+        public void LoadContent(ContentManager Content)
+        {                                                       
+
+        }                                                       
 
         void Pick_up(Artefact artefact)
         {
@@ -57,11 +57,7 @@ namespace RPGopnik
 
             spriteBatch.Begin();
             ContentLoader.game_gui_content.foundation.Draw(spriteBatch);
-            ///////////////////////////////// скорее всего, в дальнейшем будет в классе с GUI ////////////////////////////////////////////////
-            spriteBatch.DrawString(hp_mana_font, character.Curr_HP + "/" + character.Max_HP, new Vector2(360, 10), Color.White);           //
-            spriteBatch.DrawString(hp_mana_font, character.XP.ToString(), new Vector2(620, 10), Color.White);                              //
-            // маг spriteBatch.DrawString(map.hp_mana_font,  + "/" + , new Vector2(camera.pos.X + 430, camera.pos.Y + 10), Color.White);    //
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            gui.Draw(spriteBatch);
             spriteBatch.End();
         }
     }

@@ -26,6 +26,7 @@ namespace RPGopnik
         public struct Game_GUI_Content
         {
             public Content foundation;
+            public SpriteFont hp_mana_font;
         }
 
         public struct Menu_Content
@@ -69,6 +70,8 @@ namespace RPGopnik
 
         public static void Load(ContentManager Content, Viewport viewp)
         {
+            game_gui_content.hp_mana_font = Content.Load<SpriteFont>("bt_font");
+
             help_menu_content.info = new Content(new Rectangle(viewp.Width / 2 - 350, viewp.Height - 400, 700, 250), Content.Load<Texture2D>("help"));
             help_menu_content.main_menu = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height - 100, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.main), "Main menu");
             menu_content.logo = new Content(new Rectangle(viewp.Width / 2 - 437, viewp.Height / 15, 874, 250), Content.Load<Texture2D>(@"GUI\logo"));

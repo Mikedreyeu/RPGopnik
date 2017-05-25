@@ -318,9 +318,9 @@
   <object id="56" x="256" y="127.333" width="95.3333" height="32"/>
   <object id="57" x="320.333" y="96" width="96" height="32"/>
   <object id="58" x="385" y="64.6667" width="96" height="32"/>
-  <object id="60" x="527.75" y="351.75" width="47.375" height="85.25"/>
-  <object id="61" x="608.625" y="351.5" width="47.375" height="85.5"/>
-  <object id="62" x="576.25" y="351.5" width="31" height="54"/>
+  <object id="60" x="527.75" y="354.045" width="47.375" height="82.7045"/>
+  <object id="61" x="608.625" y="353.864" width="47.375" height="83.1364"/>
+  <object id="62" x="527.813" y="351.5" width="128" height="54"/>
  </objectgroup>
  <objectgroup name="Transition">
   <object id="64" x="576.25" y="406" width="31" height="17.5"/>

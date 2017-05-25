@@ -23,18 +23,18 @@ namespace RPGopnik
 
         public void Update(Map map, Vector2 playerPos)
         {
-            pos = new Vector2(-playerPos.X - 15 + viewport.Width / 2, -playerPos.Y - 16 + (viewport.Height + 56) / 2);
-            if (pos.X > 123)
+            pos = new Vector2(-playerPos.X - 15 + viewport.Width / 2, -playerPos.Y - 16 + (viewport.Height + 84) / 2);
+            if (pos.X > 159)
             {
-                pos.X = 123;
+                pos.X = 159;
             }
-            if (pos.X < -map.width - 126 + viewport.Width)
+            if (pos.X < -map.width - 157 + viewport.Width)
             {
-                pos.X = -map.width - 126 + viewport.Width;
+                pos.X = -map.width - 157 + viewport.Width;
             }
-            if (pos.Y > 56)
+            if (pos.Y > 84)
             {
-                pos.Y = 56;
+                pos.Y = 84;
             }
             if (pos.Y < -map.height + viewport.Height)
             {

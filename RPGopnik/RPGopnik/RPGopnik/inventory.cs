@@ -14,7 +14,7 @@ namespace RPGopnik
 {
     class Inventory
     {
-        List<Artefact> artefacts;
+        public List<Artefact> artefacts;
         public Inventory()
         {
             artefacts = new List<Artefact>();
