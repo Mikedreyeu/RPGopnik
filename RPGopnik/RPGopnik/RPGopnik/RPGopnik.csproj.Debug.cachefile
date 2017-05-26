@@ -9,7 +9,6 @@ Content\Tilesets\MainTileset.xnb
 Content\gopnik_texture.xnb
 Content\title_screen_background.xnb
 Content\beer.xnb
-Content\GUI\foundation.xnb
 Content\GUI\pause.xnb
 Content\GUI\pause_background_opacity.xnb
 Content\boyarishnik.xnb
@@ -17,3 +16,4 @@ Content\rose.xnb
 Content\balanda.xnb
 Content\colesa.xnb
 Content\playboy.xnb
+Content\GUI\foundation.xnb

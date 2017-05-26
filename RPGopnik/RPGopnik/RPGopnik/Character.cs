@@ -129,8 +129,6 @@ namespace RPGopnik
         {
             if (condition != (byte)Conditions.Dead)
             {
-                if (condition == (byte)Conditions.Normal && curr_hp / max_hp <= 0.1)
-                    condition = (byte)Conditions.Sick;
                 velocity_now = Vector2.Zero;
                 if (Keyboard.GetState().GetPressedKeys().Length != 0)
                     animation.Update();

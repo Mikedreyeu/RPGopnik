@@ -43,185 +43,32 @@ namespace RPGopnik
         public virtual void Draw(SpriteBatch spritebatch) { }
     }
 
-    class Pivas : Artefact
+    abstract class Spell : IMagic
     {
-        public Pivas(Size size, Vector2 pos)
+        protected uint minMana;
+        protected bool canSpeakRequired;
+        protected bool canMoveRequired;
+        protected Spell(uint minMana, bool canSpeakRequired, bool canMoveRequired)
         {
-            this.pos = pos;
-            power = (uint)size;
-            renewable = false;
+            this.minMana = minMana;
+            this.canSpeakRequired = canSpeakRequired;
+            this.canMoveRequired = canMoveRequired;
         }
-
-        public override void Use(Character user, Character character, uint power)
+        public void Use(Character user)
         {
-            if (character.Curr_HP + this.power > character.Max_HP)
-                character.Curr_HP = character.Max_HP;
-            else
-                character.Curr_HP = character.Curr_HP + this.power;
+            Use(user, user, 1);
         }
-
-        public override void Draw(SpriteBatch spritebatch)
+        public void Use(Character user, Character character)
         {
-            spritebatch.Draw(ContentLoader.game_content.beer, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
+            Use(user, character, 1);
         }
+        public void Use(Character user, uint power)
+        {
+            Use(user, user, power);
+        }
+        public virtual void Use(Character user ,Character character, uint power)
+        {}
     }
 
-    class Boyarishnik : Artefact
-    {
-        public Boyarishnik(Size size, Vector2 pos)
-        {
-            this.pos = pos;
-            power = (uint)size;
-            renewable = false;
-        }
 
-        public override void Use(Character user, Character character, uint power)
-        {
-            if (character is Mage_Character)
-            {
-                if ((character as Mage_Character).Curr_Mana + this.power > (character as Mage_Character).Max_Mana)
-                    (character as Mage_Character).Curr_Mana = (character as Mage_Character).Max_Mana;
-                else
-                    (character as Mage_Character).Curr_Mana = (character as Mage_Character).Curr_Mana + this.power;
-            }
-        }
-
-        public override void Draw(SpriteBatch spritebatch)
-        {
-            spritebatch.Draw(ContentLoader.game_content.boyarishnik, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
-        }
-    }
-
-    class Rose : Artefact
-    {
-        uint max_power;
-        DateTime last_update;
-        public Rose(uint power, Vector2 pos)
-        {
-            this.pos = pos;
-            this.power = power;
-            max_power = power;
-            renewable = true;
-        }
-
-        public override void Use(Character user, Character character, uint power)
-        {
-            if(power != 0)
-            {
-                if (power >= character.Curr_HP)
-                {
-                    character.Curr_HP = 0;
-                    character.Condition = (byte)Conditions.Dead;
-                }
-                else
-                    character.Curr_HP -= power;
-            }
-        }
-
-        public void Update()
-        {
-            if(power != max_power)
-            {
-                if((DateTime.Now - last_update).TotalMinutes > 1)
-                {
-                    power++;
-                    last_update = DateTime.Now;
-                }
-            }
-        }
-
-        public override void Draw(SpriteBatch spritebatch)
-        {
-            spritebatch.Draw(ContentLoader.game_content.rose, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
-        }
-    }
-
-    class Colesa : Artefact
-    {
-        public Colesa(Vector2 pos)
-        {
-            this.pos = pos;
-            this.renewable = false;
-        }
-
-        public override void Use(Character user, Character character, uint power)
-        {
-            if(character.Condition == (byte)Conditions.Poisoned)
-            {
-                character.Condition = (byte)Conditions.Normal;
-            }
-        }
-
-        public override void Draw(SpriteBatch spritebatch)
-        {
-            spritebatch.Draw(ContentLoader.game_content.colesa, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
-        }
-    }
-
-    class Balanda : Artefact
-    {
-        uint max_power;
-        DateTime last_update;
-        public Balanda(uint power, Vector2 pos)
-        {
-            this.pos = pos;
-            this.power = power;
-            max_power = power;
-            renewable = true;
-        }
-
-        public override void Use(Character user, Character character, uint power)
-        {
-            if (power != 0)
-            {
-                if (power >= character.Curr_HP)
-                {
-                    character.Curr_HP = 0;
-                    character.Condition = (byte)Conditions.Dead;
-                }
-                else
-                {
-                    character.Condition = (byte)Conditions.Poisoned;
-                    character.Curr_HP -= power;
-                }
-            }
-        }
-
-        public void Update()
-        {
-            if (power != max_power)
-            {
-                if ((DateTime.Now - last_update).TotalMinutes > 1)
-                {
-                    power++;
-                    last_update = DateTime.Now;
-                }
-            }
-        }
-
-        public override void Draw(SpriteBatch spritebatch)
-        {
-            spritebatch.Draw(ContentLoader.game_content.balanda, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
-        }
-    }
-
-    class PlayBoy : Artefact
-    {
-        public PlayBoy(Vector2 pos)
-        {
-            this.pos = pos;
-        }
-        public override void Use(Character user, Character character, uint power)
-        {
-            if (character.Condition != (byte)Conditions.Dead)
-            {
-                character.Condition = (byte)Conditions.Paralyzed;
-            }
-        }
-
-        public override void Draw(SpriteBatch spritebatch)
-        {
-            spritebatch.Draw(ContentLoader.game_content.playBoy, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
-        }
-    }
 }
