@@ -49,9 +49,9 @@ namespace RPGopnik
         }
     }
 
-    class Revieve : Spell
+    class Revive : Spell
     {
-        public Revieve() : base(30, false, true)
+        public Revive() : base(30, false, true)
         {
 
         }

@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace RPGopnik
 {
-    public enum gs { MAIN, HELP, PAUSE, GAME };
+    public enum gs { MAIN, HELP, PAUSE, GAME, SLSCREEN };
     delegate void Event();
 
     public class Game1 : Microsoft.Xna.Framework.Game
@@ -19,7 +19,7 @@ namespace RPGopnik
         public static gs game_state = gs.MAIN; 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Menu main, help, pause;
+        Menu main, help, pause, slScreen;
         Map map;
         Game game;
 
@@ -40,7 +40,6 @@ namespace RPGopnik
 
         protected override void LoadContent()
         {
-            ContentLoader.Load(Content, GraphicsDevice.Viewport);
             Events.g = this;
             LoadNewGame();
             Button.font = Content.Load<SpriteFont>("bt_font");
@@ -83,6 +82,11 @@ namespace RPGopnik
                         LoadNewGame();
                     }
                     break;
+                case gs.SLSCREEN:
+                    slScreen.Update();
+                    game.Draw(spriteBatch);
+                    slScreen.Draw(spriteBatch);
+                    break;
             }
             base.Update(gameTime);
         }
@@ -94,9 +98,11 @@ namespace RPGopnik
 
         private void LoadNewGame()
         {
+            ContentLoader.Load(Content, GraphicsDevice.Viewport);
             map = new Map(@"Content\StartingArea.tmx");
             map.LoadContent(Content);
-            game = new Game(map, GraphicsDevice.Viewport, ContentLoader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300)), new Boyarishnik(Artefact.Size.Little, new Vector2(300, 400)), new Rose(100, new Vector2(400,400)), new Colesa(new Vector2(350, 350)), new Balanda(100, new Vector2(200,400)), new PlayBoy(new Vector2(400,200)) });
+            game = new Game(map, GraphicsDevice.Viewport, ContentLoader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300)), new Boyarishnik(Artefact.Size.Little, new Vector2(300, 400)), new Rose(100, new Vector2(400, 400)), new Colesa(new Vector2(350, 350)), new Balanda(100, new Vector2(200, 400)), new PlayBoy(new Vector2(400, 200)) });
+            slScreen = new SLScreen(game);
         }
     }
 }

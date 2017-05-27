@@ -14,7 +14,7 @@ namespace RPGopnik
         Map map;
         Camera camera;
         GUI gui;
-        Character character;
+        public Character character;
         List<Artefact> artefacts;
 
         public Game(Map map, Viewport viewport, Character character, List<Artefact> artefacts)
@@ -24,6 +24,7 @@ namespace RPGopnik
             this.map = map;
             this.character = character;
             gui = new GUI(viewport, character);
+            character.XP = 150;
         }
 
         public void LoadContent(ContentManager Content)
@@ -42,12 +43,16 @@ namespace RPGopnik
             camera.Update(map, character.pos);
             character.Update(map.collisionObjects);
             artefacts.ForEach(Pick_up);
+
+            if (character.Rect.Intersects(map.spellLearningArea) && Keyboard.GetState().IsKeyDown(Keys.F))
+            {
+                Game1.game_state = gs.SLSCREEN;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
-
             map.Draw(spriteBatch, "Underlay");
             foreach (Artefact artefact in artefacts)
                 artefact.Draw(spriteBatch);

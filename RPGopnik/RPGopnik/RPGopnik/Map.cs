@@ -13,6 +13,7 @@ namespace RPGopnik
         TmxMap map;
 
         public List<Rectangle> collisionObjects;
+        public Rectangle spellLearningArea;
 
         public int width;
         public int height;
@@ -27,6 +28,9 @@ namespace RPGopnik
             map = new TmxMap(tmxFile);
             width = map.Width * map.TileWidth;
             height = map.Height * map.TileHeight;
+
+            var lArea = map.ObjectGroups["Spell Learning"].Objects[0];
+            spellLearningArea = new Rectangle((int)lArea.X, (int)lArea.Y, (int)lArea.Width, (int)lArea.Height);
 
             collisionObjects = new List<Rectangle>();
             foreach (var o in map.ObjectGroups["Collision"].Objects)

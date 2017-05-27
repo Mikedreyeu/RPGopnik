@@ -17,13 +17,13 @@ namespace RPGopnik
             this.content_list = content_list;
         }
 
-        public void Update()
+        public virtual void Update()
         {
             foreach (Content ct in content_list)
                 ct.Update(Mouse.GetState());
         }
 
-        public void Draw(SpriteBatch spritebatch)
+        public virtual void Draw(SpriteBatch spritebatch)
         {
             spritebatch.Begin();
             foreach (Content ct in content_list)
@@ -58,5 +58,67 @@ namespace RPGopnik
                                                   ContentLoader.pause_menu_content.resume_button,
                                                   ContentLoader.pause_menu_content.exit_button })
         { }
+    }
+
+    class SLScreen : Menu
+    {
+        public static List<Content> unlockedAt100xp_content;
+        public static List<Content> unlockedAt200xp_content;
+        public static List<Content> unlockedIcons_content;
+        private Character character;
+        public SLScreen(Game game) : base(new List<Content> { ContentLoader.pause_content.background,
+                                                              ContentLoader.sl_menu_content.spells_window,
+                                                              ContentLoader.sl_menu_content.resume_button })
+        {
+            character = game.character;
+            unlockedAt100xp_content = new List<Content> { ContentLoader.sl_menu_content.add_hp,
+                                                              ContentLoader.sl_menu_content.antidote,
+                                                              ContentLoader.sl_menu_content.heal,
+                                                              ContentLoader.sl_menu_content.move };
+
+            unlockedAt200xp_content = new List<Content> { ContentLoader.sl_menu_content.revive,
+                                                              ContentLoader.sl_menu_content.shield };
+            unlockedIcons_content = new List<Content> { };
+        }
+
+        public override void Update()
+        {
+            base.Update();
+            if (character.XP >= 100)
+            {
+                for(int i = 0; i < unlockedAt100xp_content.Count; i++)
+                    unlockedAt100xp_content[i].Update(Mouse.GetState());
+            }
+            if (character.XP >= 200)
+            {
+                for (int i = 0; i < unlockedAt200xp_content.Count; i++)
+                    unlockedAt200xp_content[i].Update(Mouse.GetState());
+            }
+        }
+
+        public override void Draw(SpriteBatch spritebatch)
+        {
+            base.Draw(spritebatch);
+            spritebatch.Begin();
+            if (character.XP >= 100)
+            {
+                foreach (Content ct in unlockedAt100xp_content)
+                {
+                    ct.Draw(spritebatch);
+                }
+            }
+            if (character.XP >= 200)
+            {
+                foreach (Content ct in unlockedAt200xp_content)
+                {
+                    ct.Draw(spritebatch);
+                }
+            }
+            foreach(Content ct in unlockedIcons_content)
+            {
+                ct.Draw(spritebatch);
+            }
+            spritebatch.End();
+        }
     }
 }

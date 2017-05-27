@@ -184,7 +184,7 @@ namespace RPGopnik
                         && Rect.Bottom > co.Top && Rect.Right > co.Left)
                     {
                         velocity_now.X = co.Right - Rect.Left;
-                        velocity_now.Y = co.Left - Rect.Top;
+                        velocity_now.Y = co.Bottom - Rect.Top;
                     }
                     if (velocity_now.X > 0 && velocity_now.Y > 0
                         && Rect.Bottom + velocity_now.Y > co.Top && Rect.Right + velocity_now.X > co.Left

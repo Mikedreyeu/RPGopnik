@@ -27,5 +27,47 @@ namespace RPGopnik
         {
             g.Exit();
         }
+
+        public static void AddSpell_AddHP()
+        {
+            SLScreen.unlockedAt100xp_content.Remove(ContentLoader.sl_menu_content.add_hp);
+            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.add_hp_l);
+
+        }
+
+        public static void AddSpell_Heal()
+        {
+            SLScreen.unlockedAt100xp_content.Remove(ContentLoader.sl_menu_content.heal);
+            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.heal_l);
+
+        }
+
+        public static void AddSpell_Move()
+        {
+            SLScreen.unlockedAt100xp_content.Remove(ContentLoader.sl_menu_content.move);
+            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.move_l);
+
+        }
+
+        public static void AddSpell_Revive()
+        {
+            SLScreen.unlockedAt200xp_content.Remove(ContentLoader.sl_menu_content.revive);
+            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.revive_l);
+
+        }
+
+        public static void AddSpell_Antidote()
+        {
+            SLScreen.unlockedAt100xp_content.Remove(ContentLoader.sl_menu_content.antidote);
+            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.antidote_l);
+
+        }
+
+        public static void AddSpell_Shield()
+        {
+            SLScreen.unlockedAt200xp_content.Remove(ContentLoader.sl_menu_content.shield);
+            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.shield_l);
+
+        }
     }
 }
