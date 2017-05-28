@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace RPGopnik
 {
-    class Map
+    public class Map
     {
         Texture2D tileset;
         TmxMap map;

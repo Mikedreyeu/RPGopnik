@@ -7,9 +7,9 @@ namespace RPGopnik
 {
     class AddHp:Spell
     {
-        public AddHp() : base(0, true, false)
+        public AddHp() : base(1, true, false)
         {
-
+            type = Type.AddHp;
         }
         public override void Use(Character user, Character character, uint power)
         {
@@ -25,7 +25,7 @@ namespace RPGopnik
     {
         public Heal() : base(20, true, true)
         {
-
+            type = Type.Heal;
         }
         public override void Use(Character user, Character character, uint power)
         {
@@ -39,7 +39,7 @@ namespace RPGopnik
     {
         public Antidote() : base(30, false, true)
         {
-
+            type = Type.Antidote;
         }
         public override void Use(Character user, Character character, uint power)
         {
@@ -53,14 +53,16 @@ namespace RPGopnik
     {
         public Revive() : base(30, false, true)
         {
-
+            type = Type.Revieve;
         }
         public override void Use(Character user, Character character, uint power)
         {
             (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - minMana;
             if (character.Condition == (byte)Conditions.Dead)
+            {
                 character.Condition = (byte)Conditions.Normal;
-            character.Curr_HP = 1;
+                character.Curr_HP = 1;
+            }
         }
     }
 
@@ -68,7 +70,7 @@ namespace RPGopnik
     {
         public Shield() : base(50, false, true)
         {
-
+            type = Type.Shield;
         }
         public override void Use(Character user, Character character, uint power)
         {
@@ -80,14 +82,16 @@ namespace RPGopnik
     {
         public Move() : base(85, false, true)
         {
-
+            type = Type.Move;
         }
         public override void Use(Character user, Character character, uint power)
         {
             (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - minMana;
             if (character.Condition == (byte)Conditions.Paralyzed)
+            {
                 character.Condition = (byte)Conditions.Normal;
-            character.Curr_HP = 1;
+                character.Curr_HP = 1;
+            }
         }
     }
 }

@@ -16,7 +16,6 @@ namespace RPGopnik
         int frame_width, frame_height;
         int num_frame;
         int frame_now;
-        object locker;
         DateTime last_changeframe;
 
 

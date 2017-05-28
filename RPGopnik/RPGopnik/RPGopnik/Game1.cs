@@ -14,18 +14,17 @@ namespace RPGopnik
     public enum gs { MAIN, HELP, PAUSE, GAME, SLSCREEN };
     delegate void Event();
 
-    public class Game1 : Microsoft.Xna.Framework.Game
+    class Game1 : Microsoft.Xna.Framework.Game
     {
         public static gs game_state = gs.MAIN; 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Menu main, help, pause, slScreen;
         Map map;
-        Game game;
+        public Game game;
 
         public Game1()
-        { 
-            IsMouseVisible = true;
+        {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             graphics.IsFullScreen = false;
@@ -88,6 +87,7 @@ namespace RPGopnik
                     slScreen.Draw(spriteBatch);
                     break;
             }
+            Cursor.Draw(spriteBatch);
             base.Update(gameTime);
         }
 

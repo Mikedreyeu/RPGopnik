@@ -45,6 +45,9 @@ namespace RPGopnik
 
     abstract class Spell : IMagic
     {
+        public enum Type { AddHp, Heal, Move, Antidote, Shield, Revieve};
+        public Type type;
+        public uint MinMana { get { return minMana; } }
         protected uint minMana;
         protected bool canSpeakRequired;
         protected bool canMoveRequired;

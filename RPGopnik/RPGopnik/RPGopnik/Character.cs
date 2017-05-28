@@ -110,6 +110,7 @@ namespace RPGopnik
             inventory = new Inventory();
             direction = Direction.Down;
             this.max_hp = 100;
+            curr_hp = 50;
             this.pos = pos;
             this.animation = animation;
             this.id = next_id++;
@@ -125,12 +126,21 @@ namespace RPGopnik
                 "\nВозраст: " + ch.Age + "\nИдентификатор: " + ch.ID + "\nТекущие очки здоровья: " +
                 ch.Curr_HP + "\nТекущие очки опыта: " + ch.XP;
         }
+
+        private bool is_wasd(Keys key)
+        {
+            if (key == Keys.W || key == Keys.A || key == Keys.S || key == Keys.D)
+                return true;
+            return false;
+        }
+
         public void Update(List<Rectangle> collisionObjects)
         {
-            if (condition != (byte)Conditions.Dead)
+            inventory.Update(this);
+            if (condition != (byte)Conditions.Dead && condition != (byte)Conditions.Paralyzed)
             {
                 velocity_now = Vector2.Zero;
-                if (Keyboard.GetState().GetPressedKeys().Length != 0)
+                if (Keyboard.GetState().GetPressedKeys().Count(is_wasd) > 0)
                     animation.Update();
                 if (Keyboard.GetState().IsKeyDown(Keys.W))
                 {
@@ -216,6 +226,7 @@ namespace RPGopnik
         public void Draw(SpriteBatch spritebatch)
         {
             animation.Draw(spritebatch, pos, direction);
+            inventory.Draw(spritebatch, this);
         }
     }
 
@@ -236,6 +247,8 @@ namespace RPGopnik
         }
         public Mage_Character(string name, Races race, string gender, Animation animation, Vector2 pos, int max_velocity) : base(name, race, gender, animation, pos, max_velocity)
         {
+            max_mana = 100;
+            curr_mana = 100;
         }
         public void Add_HP_Spell(Character ch)
         {

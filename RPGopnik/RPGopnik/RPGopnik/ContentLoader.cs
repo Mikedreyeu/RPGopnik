@@ -11,6 +11,11 @@ namespace RPGopnik
 {
     class ContentLoader
     {
+        public struct Cursor_States
+        {
+            public Texture2D Normal;
+            public Texture2D Choosing;
+        }
         public struct Game_Content
         {
             public Enemy enemy;
@@ -21,6 +26,7 @@ namespace RPGopnik
             public Texture2D colesa;
             public Texture2D balanda;
             public Texture2D playBoy;
+            public SpriteFont PowerFont;
         }
 
         public struct Game_GUI_Content
@@ -84,6 +90,7 @@ namespace RPGopnik
             public Content move_l;
         }
 
+        public static Cursor_States cursor_states;
         public static Menu_Content menu_content;
         public static Help_Menu_Content help_menu_content;
         public static Main_Menu_Content main_menu_content;
@@ -96,6 +103,7 @@ namespace RPGopnik
         public static void Load(ContentManager Content, Viewport viewp)
         {
             game_gui_content.hp_mana_font = Content.Load<SpriteFont>("bt_font");
+            game_content.PowerFont = Content.Load<SpriteFont>("PowerFont");
 
             help_menu_content.info = new Content(new Rectangle(viewp.Width / 2 - 350, viewp.Height - 400, 700, 250), Content.Load<Texture2D>("help"));
             help_menu_content.main_menu = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height - 100, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.main), "Main menu");
@@ -130,13 +138,15 @@ namespace RPGopnik
             sl_menu_content.revive_l = new Content(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection_l"));
             sl_menu_content.shield_l = new Content(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 10, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_armor_l"));
             game_content.enemy = new Enemy(new Vector2(100, 100), 3, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3));
-            game_content.character = new Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 2);
+            game_content.character = new Mage_Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 2);
             game_content.beer = Content.Load<Texture2D>("beer");
             game_content.boyarishnik = Content.Load<Texture2D>("boyarishnik");
             game_content.rose = Content.Load<Texture2D>("rose");
             game_content.balanda = Content.Load<Texture2D>("balanda");
             game_content.colesa = Content.Load<Texture2D>("colesa");
             game_content.playBoy = Content.Load<Texture2D>("playboy");
+            cursor_states.Normal = Content.Load<Texture2D>("cursor");
+            cursor_states.Choosing = Content.Load<Texture2D>("choose_cursor");
         }
     }
 }

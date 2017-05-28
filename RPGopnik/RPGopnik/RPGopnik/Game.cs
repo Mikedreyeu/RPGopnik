@@ -23,7 +23,7 @@ namespace RPGopnik
             camera = new Camera(viewport);
             this.map = map;
             this.character = character;
-            gui = new GUI(viewport, character);
+            gui = new GUI(viewport, character as Mage_Character);
             character.XP = 150;
         }
 
@@ -35,7 +35,10 @@ namespace RPGopnik
         void Pick_up(Artefact artefact)
         {
             if (character.Rect.Intersects(new Rectangle((int)artefact.pos.X, (int)artefact.pos.Y, 20, 20)))
-                character.inventory.Add(artefact, artefacts);
+            {
+                character.inventory.Add(artefact);
+                artefacts.Remove(artefact);
+            }
         }
 
         public void Update()
