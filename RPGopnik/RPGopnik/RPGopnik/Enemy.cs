@@ -24,24 +24,61 @@ namespace RPGopnik
             this.max_velocity = max_velocity;
         }
 
-        public void Update(MouseState mouse)
+        public void Update(Character character)
         {
             velocity_now = Vector2.Zero;
-            Enemy_Direction = (Direction)rand.Next(4);
-            switch(Enemy_Direction)
+            double range = Math.Sqrt(Math.Pow((this.pos.X - character.pos.X), 2) + Math.Pow((this.pos.Y - character.pos.Y), 2));
+            if (range <= 300)
             {
-                case Direction.Down:
-                    velocity_now.Y = max_velocity;
-                    break;
-                case Direction.Up:
-                    velocity_now.Y = -max_velocity;
-                    break;
-                case Direction.Right:
-                    velocity_now.X = max_velocity;
-                    break;
-                case Direction.Left:
+                animation.Update();
+                if (this.pos.X > character.pos.X && this.pos.Y > character.pos.Y)
+                {
                     velocity_now.X = -max_velocity;
-                    break;
+                    velocity_now.Y = -max_velocity;
+                    Enemy_Direction = Direction.Left;
+                }
+                else if (this.pos.X > character.pos.X && this.pos.Y < character.pos.Y)
+                {
+                    velocity_now.X = -max_velocity;
+                    velocity_now.Y = max_velocity;
+                    Enemy_Direction = Direction.Left;
+                }
+                else if (this.pos.X < character.pos.X && this.pos.Y > character.pos.Y)
+                {
+                    velocity_now.X = max_velocity;
+                    velocity_now.Y = -max_velocity;
+                    Enemy_Direction = Direction.Right;
+                }
+                else if (this.pos.X < character.pos.X && this.pos.Y < character.pos.Y)
+                {
+                    velocity_now.X = max_velocity;
+                    velocity_now.Y = max_velocity;
+                    Enemy_Direction = Direction.Right;
+                }
+                else if (this.pos.X == character.pos.X && this.pos.Y > character.pos.Y)
+                {
+                    velocity_now.Y = -max_velocity;
+                    velocity_now.X = 0;
+                    Enemy_Direction = Direction.Up;
+                }
+                else if (this.pos.X == character.pos.X && this.pos.Y < character.pos.Y)
+                {
+                    velocity_now.Y = max_velocity;
+                    velocity_now.X = 0;
+                    Enemy_Direction = Direction.Down;
+                }
+                else if (this.pos.Y == character.pos.Y && this.pos.X < character.pos.X)
+                {
+                    velocity_now.X = max_velocity;
+                    velocity_now.Y = 0;
+                    Enemy_Direction = Direction.Right;
+                }
+                else if (this.pos.Y == character.pos.Y && this.pos.X > character.pos.X)
+                {
+                    velocity_now.X = -max_velocity;
+                    velocity_now.Y = 0;
+                    Enemy_Direction = Direction.Left;
+                }
             }
             pos += velocity_now;
         }
