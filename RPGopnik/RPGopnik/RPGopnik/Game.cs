@@ -13,13 +13,15 @@ namespace RPGopnik
     {
         Map map;
         Camera camera;
+        Enemy enemy;
         GUI gui;
         public Character character;
         List<Artefact> artefacts;
 
-        public Game(Map map, Viewport viewport, Character character, List<Artefact> artefacts)
+        public Game(Map map, Enemy enemy, Viewport viewport, Character character, List<Artefact> artefacts)
         {
             this.artefacts = artefacts;
+            this.enemy = enemy;
             camera = new Camera(viewport);
             this.map = map;
             this.character = character;
@@ -41,6 +43,7 @@ namespace RPGopnik
         public void Update()
         {
             camera.Update(map, character.pos);
+            enemy.Update(character);
             character.Update(map.collisionObjects);
             artefacts.ForEach(Pick_up);
 
@@ -54,6 +57,7 @@ namespace RPGopnik
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
             map.Draw(spriteBatch, "Underlay");
+            enemy.Draw(spriteBatch);
             foreach (Artefact artefact in artefacts)
                 artefact.Draw(spriteBatch);
             character.Draw(spriteBatch);
