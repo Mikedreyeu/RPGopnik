@@ -1,4 +1,5 @@
 Content\bt_font.xnb
+Content\PowerFont.xnb
 Content\help.xnb
 Content\GUI\logo.xnb
 Content\GUI\hover.xnb
@@ -39,4 +40,3 @@ Content\SpellButtons\sp_resurrection_l.xnb
 Content\SpellButtons\sp_unfreeze_l.xnb
 Content\choose_cursor.xnb
 Content\cursor.xnb
-Content\PowerFont.xnb

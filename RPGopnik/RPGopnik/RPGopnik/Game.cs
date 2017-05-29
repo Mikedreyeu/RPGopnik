@@ -46,7 +46,7 @@ namespace RPGopnik
         public void Update()
         {
             camera.Update(map, character.pos);
-            enemy.Update(character);
+            enemy.Update(character, map.collisionObjects);
             character.Update(map.collisionObjects);
             artefacts.ForEach(Pick_up);
 

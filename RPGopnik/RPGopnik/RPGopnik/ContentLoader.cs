@@ -137,7 +137,7 @@ namespace RPGopnik
             sl_menu_content.move_l = new Content(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 + 120, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_unfreeze_l"));
             sl_menu_content.revive_l = new Content(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection_l"));
             sl_menu_content.shield_l = new Content(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 10, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_armor_l"));
-            game_content.enemy = new Enemy(new Vector2(100, 100), 3, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3));
+            game_content.enemy = new Enemy(new Vector2(800, 800), 1, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3));
             game_content.character = new Mage_Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 2);
             game_content.beer = Content.Load<Texture2D>("beer");
             game_content.boyarishnik = Content.Load<Texture2D>("boyarishnik");
