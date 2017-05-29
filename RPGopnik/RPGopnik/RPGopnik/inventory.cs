@@ -35,10 +35,10 @@ namespace RPGopnik
         }
 
         private Spells spells;
-        private List<Artefact> artefacts;
+        private Backpack artefacts;
         public Inventory()
         {
-            artefacts = new List<Artefact>();
+            artefacts = new Backpack();
             spells = new Spells();
         }
 
@@ -85,14 +85,14 @@ namespace RPGopnik
             {
                 if (UsingObject.Item1 is Spell)
                 {
-                    if(Keyboard.GetState().IsKeyDown(UsingObject.Item2) && power <= (owner as Mage_Character).Curr_Mana && (DateTime.Now - prev_powerup).Milliseconds > 300)
+                    if (Keyboard.GetState().IsKeyDown(UsingObject.Item2) && power <= (owner as Mage_Character).Curr_Mana && (DateTime.Now - prev_powerup).Milliseconds > 300)
                     {
                         power++;
                         prev_powerup = DateTime.Now;
                     }
-                    if(Mouse.GetState().LeftButton == ButtonState.Pressed)
+                    if (Mouse.GetState().LeftButton == ButtonState.Pressed)
                     {
-                        if (owner.Rect.Contains(Mouse.GetState().X- 157, Mouse.GetState().Y - 80))
+                        if (owner.Rect.Contains(Mouse.GetState().X - 157, Mouse.GetState().Y - 80))
                         {
                             UsingObject.Item1.Use(owner, owner, power);
                             UsingObject = null;
@@ -116,7 +116,7 @@ namespace RPGopnik
 
         public void Learn(Spell.Type type)
         {
-            switch(type)
+            switch (type)
             {
                 case Spell.Type.AddHp:
                     spells.addhp = new AddHp();
@@ -160,9 +160,14 @@ namespace RPGopnik
 
         }
 
+        public void DrawInventory(SpriteBatch spritebatch)
+        {
+            artefacts.Draw(spritebatch);
+        }
+
         public void Draw(SpriteBatch spritebatch, Character owner)
         {
-            if(UsingObject != null)
+            if (UsingObject != null)
                 spritebatch.DrawString(ContentLoader.game_content.PowerFont, "Power: " + power, new Vector2(owner.pos.X - 35, owner.pos.Y - 20), Color.White);
         }
     }

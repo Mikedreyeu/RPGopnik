@@ -41,7 +41,7 @@ namespace RPGopnik
             spritebatch.DrawString(ContentLoader.game_gui_content.hp_mana_font, character.Curr_HP.ToString(), new Vector2(270 - character.Curr_HP.ToString().Length * 25, 10), Color.White);
             spritebatch.DrawString(ContentLoader.game_gui_content.hp_mana_font, "/" + character.Max_HP, new Vector2(270, 10), Color.White);
             spritebatch.DrawString(ContentLoader.game_gui_content.hp_mana_font, character.XP.ToString(), new Vector2(940 - character.XP.ToString().Length * 12, 10), Color.White);
-
+            character.inventory.DrawInventory(spritebatch);
             DrawControls(spritebatch);
         }
 

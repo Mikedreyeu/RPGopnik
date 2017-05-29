@@ -59,7 +59,6 @@ namespace RPGopnik
 
     class Rose : Artefact
     {
-        uint max_power;
         DateTime last_update;
         public Rose(uint power, Vector2 pos)
         {
@@ -125,7 +124,6 @@ namespace RPGopnik
 
     class Balanda : Artefact
     {
-        uint max_power;
         DateTime last_update;
         public Balanda(uint power, Vector2 pos)
         {

@@ -78,6 +78,7 @@
     <Compile Include="Animation.cs" />
     <Compile Include="Artefacts.cs" />
     <Compile Include="Background.cs" />
+    <Compile Include="Backpack.cs" />
     <Compile Include="Button.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Character.cs" />
