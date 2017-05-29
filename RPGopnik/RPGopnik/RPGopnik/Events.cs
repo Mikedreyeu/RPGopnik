@@ -30,43 +30,43 @@ namespace RPGopnik
 
         public static void AddSpell_AddHP()
         {
-            SLScreen.unlockedAt100xp_content.Remove(ContentLoader.sl_menu_content.add_hp);
-            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.add_hp_l);
+            if (!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.add_hp_l))
+                SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.add_hp_l);
             g.game.character.inventory.Learn(Spell.Type.AddHp);
         }
 
         public static void AddSpell_Heal()
         {
-            SLScreen.unlockedAt100xp_content.Remove(ContentLoader.sl_menu_content.heal);
-            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.heal_l);
+            if (!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.heal_l))
+                SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.heal_l);
             g.game.character.inventory.Learn(Spell.Type.Heal);
         }
 
         public static void AddSpell_Move()
         {
-            SLScreen.unlockedAt100xp_content.Remove(ContentLoader.sl_menu_content.move);
-            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.move_l);
+            if (!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.move_l))
+                SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.move_l);
             g.game.character.inventory.Learn(Spell.Type.Move);
         }
 
         public static void AddSpell_Revive()
         {
-            SLScreen.unlockedAt200xp_content.Remove(ContentLoader.sl_menu_content.revive);
-            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.revive_l);
+            if (!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.revive_l))
+                SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.revive_l);
             g.game.character.inventory.Learn(Spell.Type.Revieve);
         }
 
         public static void AddSpell_Antidote()
         {
-            SLScreen.unlockedAt100xp_content.Remove(ContentLoader.sl_menu_content.antidote);
-            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.antidote_l);
+            if (!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.antidote_l))
+                SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.antidote_l);
             g.game.character.inventory.Learn(Spell.Type.Antidote);
         }
 
         public static void AddSpell_Shield()
         {
-            SLScreen.unlockedAt200xp_content.Remove(ContentLoader.sl_menu_content.shield);
-            SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.shield_l);
+            if(!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.shield_l))
+                SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.shield_l);
             g.game.character.inventory.Learn(Spell.Type.Shield);
         }
     }

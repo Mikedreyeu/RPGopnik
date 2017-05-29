@@ -40,3 +40,4 @@ Content\SpellButtons\sp_resurrection_l.xnb
 Content\SpellButtons\sp_unfreeze_l.xnb
 Content\choose_cursor.xnb
 Content\cursor.xnb
+Content\GUI\infoBox.xnb

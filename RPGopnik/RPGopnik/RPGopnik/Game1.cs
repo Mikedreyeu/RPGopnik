@@ -69,7 +69,7 @@ namespace RPGopnik
                     help.Draw(spriteBatch);
                     break;
                 case gs.GAME:
-                    game.Update();
+                    game.Update(gameTime);
                     game.Draw(spriteBatch);
                     break;
                 case gs.PAUSE:

@@ -134,9 +134,9 @@ namespace RPGopnik
             return false;
         }
 
-        public void Update(List<Rectangle> collisionObjects)
+        public void Update(Camera camera, List<Rectangle> collisionObjects)
         {
-            inventory.Update(this);
+            inventory.Update(camera, this);
             if (condition != (byte)Conditions.Dead && condition != (byte)Conditions.Paralyzed)
             {
                 velocity_now = Vector2.Zero;

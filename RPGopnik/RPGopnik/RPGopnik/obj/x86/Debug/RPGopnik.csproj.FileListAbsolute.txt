@@ -303,3 +303,7 @@ C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Fra
 C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
 C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\TiledSharp.pdb
 C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\PowerFont.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\choose_cursor.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\cursor.xnb
+D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\infoBox.xnb

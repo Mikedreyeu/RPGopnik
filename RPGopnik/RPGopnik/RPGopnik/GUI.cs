@@ -47,44 +47,54 @@ namespace RPGopnik
 
         private void DrawControls(SpriteBatch spritebatch)
         {
-            //////////////////////////// после добавление спеллов в чарактераэ\
-            //Texture2D texture;
-            //string str;
-            //for (int i = 0; i < character.***.Count; i++)
-            //{
-            //    if (character.***[i] is AddHp)
-            //    {
-            //        texture = ContentLoader.game_gui_content.add_hp;
-            //        str = "btn1";
-            //    }
-            //    else if (character.***[i] is Heal)
-            //    {
-            //        texture = ContentLoader.game_gui_content.heal;
-            //        str = "btn2";
-            //    }
-            //    else if (character.***[i] is Antidote)
-            //    {
-            //        texture = ContentLoader.game_gui_content.antidote;
-            //        str = "btn3";
-            //    }
-            //    else if (character.***[i] is Revive)
-            //    {
-            //        texture = ContentLoader.game_gui_content.revive;
-            //        str = "btn4";
-            //    }
-            //    else if (character.***[i] is Shield)
-            //    {
-            //        texture = ContentLoader.game_gui_content.shield;
-            //        str = "btn5";
-            //    }
-            //    else if (character.***[i] is Move)
-            //    {
-            //        texture = ContentLoader.game_gui_content.move; 
-            //        str = "btn6";
-            //    }
-            //    spritebatch.Draw(texture, new Rectangle(16, 44 + 108 * i, 64, 64), Color.White);
-            //    spritebatch.DrawString(ContentLoader.game_gui_content.hp_mana_font, str, new Vector2(100, 61 + 125 * i), Color.White);
-            //}
+            spritebatch.DrawString(ContentLoader.game_gui_content.hp_mana_font, "Spells:", new Vector2(1145, 33), Color.White, 0, Vector2.Zero, 0.7f, SpriteEffects.None, 0);
+            Texture2D texture = null;
+            string str = null;
+            int pos = -1;
+            for (int i = 0; i < 6; i++)
+            {
+                if (i == 0 && character.inventory.spells.addhp != null)
+                {
+                    texture = ContentLoader.game_gui_content.add_hp;
+                    str = "1";
+                    pos++;
+                }
+                else if (i == 1 && character.inventory.spells.heal != null)
+                {
+                    texture = ContentLoader.game_gui_content.heal;
+                    str = "2";
+                    pos++;
+                }
+                else if (i == 2 && character.inventory.spells.antidote != null)
+                {
+                    texture = ContentLoader.game_gui_content.antidote;
+                    str = "3";
+                    pos++;
+                }
+                else if (i == 3 && character.inventory.spells.revieve != null)
+                {
+                    texture = ContentLoader.game_gui_content.revive;
+                    str = "4";
+                    pos++;
+                }
+                else if (i == 4 && character.inventory.spells.shield != null)
+                {
+                    texture = ContentLoader.game_gui_content.shield;
+                    str = "5";
+                    pos++;
+                }
+                else if (i == 5 && character.inventory.spells.move != null)
+                {
+                    texture = ContentLoader.game_gui_content.move;
+                    str = "6";
+                    pos++;
+                }
+                if (texture != null && str != null)
+                {
+                    spritebatch.Draw(texture, new Rectangle(1150, 80 + 108 * pos, 64, 64), Color.White);
+                    spritebatch.DrawString(ContentLoader.game_gui_content.hp_mana_font, str, new Vector2(1230, 86 + 108 * pos), Color.White);
+                }
+            }
         }
     }
 }

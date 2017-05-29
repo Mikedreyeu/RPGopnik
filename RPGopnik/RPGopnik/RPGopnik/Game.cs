@@ -26,7 +26,7 @@ namespace RPGopnik
             this.map = map;
             this.character = character;
             gui = new GUI(viewport, character as Mage_Character);
-            character.XP = 150;
+            character.XP = 420;
         }
 
         public void LoadContent(ContentManager Content)
@@ -43,11 +43,11 @@ namespace RPGopnik
             }
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             camera.Update(map, character.pos);
-            enemy.Update(character, map.collisionObjects);
-            character.Update(map.collisionObjects);
+            enemy.Update(gameTime, character, map.collisionObjects);
+            character.Update(camera, map.collisionObjects);
             artefacts.ForEach(Pick_up);
 
             if (character.Rect.Intersects(map.spellLearningArea) && Keyboard.GetState().IsKeyDown(Keys.F))

@@ -14,6 +14,7 @@ namespace RPGopnik
 {
     class Inventory
     {
+        Vector2 mouse;
         uint power;
         DateTime prev_powerup;
         private Tuple<IMagic, Keys> UsingObject;
@@ -34,7 +35,7 @@ namespace RPGopnik
             public Shield shield;
         }
 
-        private Spells spells;
+        public Spells spells;
         private Backpack artefacts;
         public Inventory()
         {
@@ -72,8 +73,10 @@ namespace RPGopnik
             }
         }
 
-        public void Update(Character owner)
+        public void Update(Camera camera, Character owner)
         {
+            mouse = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
+            mouse = Vector2.Transform(mouse, camera.inverseTransform);
             Choose(owner);
             if (UsingObject != null)
                 Using(owner);
@@ -92,7 +95,7 @@ namespace RPGopnik
                     }
                     if (Mouse.GetState().LeftButton == ButtonState.Pressed)
                     {
-                        if (owner.Rect.Contains(Mouse.GetState().X - 157, Mouse.GetState().Y - 80))
+                        if (owner.Rect.Contains((int)mouse.X, (int)mouse.Y))
                         {
                             UsingObject.Item1.Use(owner, owner, power);
                             UsingObject = null;
@@ -119,22 +122,28 @@ namespace RPGopnik
             switch (type)
             {
                 case Spell.Type.AddHp:
-                    spells.addhp = new AddHp();
+                    if (spells.addhp == null)
+                        spells.addhp = new AddHp();
                     break;
                 case Spell.Type.Antidote:
-                    spells.antidote = new Antidote();
+                    if (spells.antidote == null)
+                        spells.antidote = new Antidote();
                     break;
                 case Spell.Type.Heal:
-                    spells.heal = new Heal();
+                    if (spells.heal == null)
+                        spells.heal = new Heal();
                     break;
                 case Spell.Type.Move:
+                    if(spells.move == null)
                     spells.move = new Move();
                     break;
                 case Spell.Type.Revieve:
-                    spells.revieve = new Revive();
+                    if (spells.revieve == null)
+                        spells.revieve = new Revive();
                     break;
                 case Spell.Type.Shield:
-                    spells.shield = new Shield();
+                    if (spells.shield == null)
+                        spells.shield = new Shield();
                     break;
             }
         }

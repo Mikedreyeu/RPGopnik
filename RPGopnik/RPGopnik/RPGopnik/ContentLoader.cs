@@ -16,6 +16,12 @@ namespace RPGopnik
             public Texture2D Normal;
             public Texture2D Choosing;
         }
+
+        public struct Button_Content
+        {
+            public Texture2D infoBox;
+        }
+
         public struct Game_Content
         {
             public Enemy enemy;
@@ -99,6 +105,7 @@ namespace RPGopnik
         public static SL_Menu_Content sl_menu_content;
         public static Game_GUI_Content game_gui_content;
         public static Game_Content game_content;
+        public static Button_Content button_content;
 
         public static void Load(ContentManager Content, Viewport viewp)
         {
@@ -125,20 +132,21 @@ namespace RPGopnik
             game_gui_content.shield = Content.Load<Texture2D>(@"SpellButtons\sp_armor");
             sl_menu_content.spells_window = new Content(new Rectangle(viewp.Width / 2 - 170, viewp.Height / 2 - 234, 340, 549), Content.Load<Texture2D>(@"GUI\spell_learning"));
             sl_menu_content.resume_button = new Button(new Rectangle(viewp.Width / 2 + 139, viewp.Height / 2 - 211, 20, 20), Content.Load<Texture2D>(@"GUI\btExit"), Content.Load<Texture2D>(@"GUI\btExit"), Content.Load<Texture2D>(@"GUI\btExit"), new Event(Events.game), "");
-            sl_menu_content.add_hp = new Button(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_heal"), Content.Load<Texture2D>(@"SpellButtons\sp_heal"), Content.Load<Texture2D>(@"SpellButtons\sp_heal_p"), new Event(Events.AddSpell_AddHP), "");
-            sl_menu_content.heal = new Button(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 - 10, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_cure"), Content.Load<Texture2D>(@"SpellButtons\sp_cure"), Content.Load<Texture2D>(@"SpellButtons\sp_cure_p"), new Event(Events.AddSpell_Heal), "");
-            sl_menu_content.antidote = new Button(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 + 55, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_antidote"), Content.Load<Texture2D>(@"SpellButtons\sp_antidote"), Content.Load<Texture2D>(@"SpellButtons\sp_antidote_p"), new Event(Events.AddSpell_Antidote), "");
-            sl_menu_content.move = new Button(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 + 120, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_unfreeze"), Content.Load<Texture2D>(@"SpellButtons\sp_unfreeze"), Content.Load<Texture2D>(@"SpellButtons\sp_unfreeze_p"), new Event(Events.AddSpell_Move), "");
-            sl_menu_content.revive = new Button(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection"), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection"), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection_p"), new Event(Events.AddSpell_Revive), "");
-            sl_menu_content.shield = new Button(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 10, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_armor"), Content.Load<Texture2D>(@"SpellButtons\sp_armor"), Content.Load<Texture2D>(@"SpellButtons\sp_armor_p"), new Event(Events.AddSpell_Shield), "");
+            sl_menu_content.add_hp = new Button(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_heal"), Content.Load<Texture2D>(@"SpellButtons\sp_heal"), Content.Load<Texture2D>(@"SpellButtons\sp_heal_p"), new Event(Events.AddSpell_AddHP), "", "Добавить здоровье", "Увеличивает текущее значение HP какого-либо персонажа. Cost: 1HP - 2MP");
+            sl_menu_content.heal = new Button(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 - 10, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_cure"), Content.Load<Texture2D>(@"SpellButtons\sp_cure"), Content.Load<Texture2D>(@"SpellButtons\sp_cure_p"), new Event(Events.AddSpell_Heal), "", "Вылечить", "Переводит какого-либо персонажа из состояния \"болен\" в состояние \"здоров или ослаблен\". Cost: 20MP");
+            sl_menu_content.antidote = new Button(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 + 55, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_antidote"), Content.Load<Texture2D>(@"SpellButtons\sp_antidote"), Content.Load<Texture2D>(@"SpellButtons\sp_antidote_p"), new Event(Events.AddSpell_Antidote), "", "Противоядие", "Переводит какого-либо персонажа из состояния \"отравлен\" в состояние \"здоров или ослаблен\". Cost: 30MP");
+            sl_menu_content.move = new Button(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 + 120, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_unfreeze"), Content.Load<Texture2D>(@"SpellButtons\sp_unfreeze"), Content.Load<Texture2D>(@"SpellButtons\sp_unfreeze_p"), new Event(Events.AddSpell_Move), "", "Отомри!", "Переводит какого-либо персонажа из состояния \"парализован\" в состояние \"здоров или ослаблен\". Текущая величина здоровья становится равной 1HP. Cost: 85MP");
+            sl_menu_content.revive = new Button(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection"), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection"), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection_p"), new Event(Events.AddSpell_Revive), "", "Оживить", "Переводит какого-либо как же я заебался это писать персонажа из состояния \"мертв\" в состояние \"здоров или ослаблен\". Cost: 150MP");
+            sl_menu_content.shield = new Button(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 10, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_armor"), Content.Load<Texture2D>(@"SpellButtons\sp_armor"), Content.Load<Texture2D>(@"SpellButtons\sp_armor_p"), new Event(Events.AddSpell_Shield), "", "Броня", "Персонаж, на которого обращено заклинание, становится неуязвимым в течение некоторого промежутка времени, определяемого силой заклинания. Cost: 1s - 50MP");
             sl_menu_content.add_hp_l = new Content(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_heal_l"));
             sl_menu_content.heal_l = new Content(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 - 10, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_cure_l"));
             sl_menu_content.antidote_l = new Content(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 + 55, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_antidote_l"));
             sl_menu_content.move_l = new Content(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 + 120, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_unfreeze_l"));
             sl_menu_content.revive_l = new Content(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection_l"));
             sl_menu_content.shield_l = new Content(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 10, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_armor_l"));
-            game_content.enemy = new Enemy(new Vector2(800, 800), 1, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3));
-            game_content.character = new Mage_Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 2);
+            button_content.infoBox = Content.Load<Texture2D>(@"GUI\infoBox");
+            game_content.enemy = new Enemy(new Vector2(800, 800), 1, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3), 1, 2);
+            game_content.character = new Mage_Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 3);
             game_content.beer = Content.Load<Texture2D>("beer");
             game_content.boyarishnik = Content.Load<Texture2D>("boyarishnik");
             game_content.rose = Content.Load<Texture2D>("rose");

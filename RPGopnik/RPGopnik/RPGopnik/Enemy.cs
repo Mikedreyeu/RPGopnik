@@ -13,6 +13,10 @@ namespace RPGopnik
         public Vector2 pos;
         Animation animation;
         Random rand;
+        uint attackDamage;
+        bool drawAttack = true;
+        double attackTimer, attackInterval;
+        double distanceToTheCharacter;
         private int max_velocity;
         private Vector2 velocity_now = new Vector2(0,0);
         public Direction Enemy_Direction = Direction.Down;
@@ -21,19 +25,21 @@ namespace RPGopnik
             get { return new Rectangle((int)pos.X, (int)pos.Y, 30, 32); }
         }
 
-        public Enemy(Vector2 pos, int max_velocity, Animation animation)
+        public Enemy(Vector2 pos, int max_velocity, Animation animation, uint attackDamage, double attackInterval)
         {
             rand = new Random();
             this.animation = animation;
             this.pos = pos;
             this.max_velocity = max_velocity;
+            this.attackDamage = attackDamage;
+            this.attackInterval = attackInterval;
         }
 
-        public void Update(Character character, List<Rectangle> collisionObjects)
+        public void Update(GameTime gameTime, Character character, List<Rectangle> collisionObjects)
         {
             velocity_now = Vector2.Zero;
-            double range = Math.Sqrt(Math.Pow((this.pos.X - character.pos.X), 2) + Math.Pow((this.pos.Y - character.pos.Y), 2));
-            if (range <= 300 && range >= 40)
+            distanceToTheCharacter = Math.Sqrt(Math.Pow((this.pos.X - character.pos.X), 2) + Math.Pow((this.pos.Y - character.pos.Y), 2));
+            if (distanceToTheCharacter <= 300 && distanceToTheCharacter >= 40)
             {
                 animation.Update();
                 if (this.pos.X > character.pos.X && this.pos.Y > character.pos.Y)
@@ -83,6 +89,21 @@ namespace RPGopnik
                     velocity_now.X = -max_velocity;
                     velocity_now.Y = 0;
                     Enemy_Direction = Direction.Left;
+                }
+            }
+
+            attackTimer -= gameTime.ElapsedGameTime.TotalSeconds;
+            if (attackTimer < 0)
+            {
+                attackTimer = attackInterval;
+                if (distanceToTheCharacter <= 100)
+                {
+                    character.Curr_HP -= attackDamage;
+                    drawAttack = true;
+                }
+                else
+                {
+                    drawAttack = false;
                 }
             }
 
@@ -148,6 +169,10 @@ namespace RPGopnik
         public void Draw(SpriteBatch spritebatch)
         {
             animation.Draw(spritebatch, pos, Enemy_Direction);
+            if (attackTimer > attackInterval/2 && drawAttack == true)
+            {
+                spritebatch.DrawString(ContentLoader.game_gui_content.hp_mana_font, "molodoy chelovek proydomte", new Vector2(pos.X - 110, pos.Y - 25), Color.White, 0, Vector2.Zero, 0.4f, SpriteEffects.None, 0);
+            }
         }
     }
 }
