@@ -78,7 +78,7 @@ namespace RPGopnik
         }
         public Character(string name_, Races race_, string gender_, Animation animation, Vector2 pos, int max_velocity)
         {
-            inventory = new Inventory();
+            inventory = new Inventory(this);
             direction = Direction.Down;
             this.max_hp = 100;
             curr_hp = 50;

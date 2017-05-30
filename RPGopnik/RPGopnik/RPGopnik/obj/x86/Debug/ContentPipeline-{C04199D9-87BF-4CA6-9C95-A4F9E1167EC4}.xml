@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\bt_font.xnb</Output>
-      <Time>2017-05-30T09:53:14.2360034+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\bt_font.xnb</Output>
+      <Time>2017-05-30T12:38:44.156373+03:00</Time>
     </Item>
     <Item>
       <Source>PowerFont.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\PowerFont.xnb</Output>
-      <Time>2017-05-30T09:53:14.3234426+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\PowerFont.xnb</Output>
+      <Time>2017-05-28T16:58:43.8761761+03:00</Time>
     </Item>
     <Item>
       <Source>help.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\help.xnb</Output>
-      <Time>2017-05-30T09:53:14.2755391+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\help.xnb</Output>
+      <Time>2017-05-05T17:59:59.164412+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\logo.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\logo.xnb</Output>
-      <Time>2017-05-30T09:53:14.2553033+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\logo.xnb</Output>
+      <Time>2017-05-20T12:48:14.8239626+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\hover.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\hover.xnb</Output>
-      <Time>2017-05-30T09:53:14.2522835+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\hover.xnb</Output>
+      <Time>2017-05-05T17:59:59.1624147+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\main.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\main.xnb</Output>
-      <Time>2017-05-30T09:53:14.267051+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\main.xnb</Output>
+      <Time>2017-05-05T17:59:59.164412+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\pressed.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pressed.xnb</Output>
-      <Time>2017-05-30T09:53:14.2720546+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pressed.xnb</Output>
+      <Time>2017-05-05T17:59:59.164412+03:00</Time>
     </Item>
     <Item>
       <Source>enemy.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\enemy.xnb</Output>
-      <Time>2017-05-30T09:53:14.2417524+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\enemy.xnb</Output>
+      <Time>2017-05-05T17:59:59.1604159+03:00</Time>
     </Item>
     <Item>
       <Source>Tilesets\MainTileset.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\MainTileset.xnb</Output>
-      <Time>2017-05-30T09:53:14.3695112+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Tilesets\MainTileset.xnb</Output>
+      <Time>2017-05-11T12:22:52.0317069+03:00</Time>
     </Item>
     <Item>
       <Source>gopnik_texture.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\gopnik_texture.xnb</Output>
-      <Time>2017-05-30T09:53:14.2437707+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\gopnik_texture.xnb</Output>
+      <Time>2017-05-14T23:04:46.5069761+03:00</Time>
     </Item>
     <Item>
       <Source>title_screen_background.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\title_screen_background.xnb</Output>
-      <Time>2017-05-30T09:53:14.374538+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\title_screen_background.xnb</Output>
+      <Time>2017-05-20T12:48:14.8294676+03:00</Time>
     </Item>
     <Item>
       <Source>beer.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\beer.xnb</Output>
-      <Time>2017-05-30T09:53:14.2266331+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\beer.xnb</Output>
+      <Time>2017-05-20T13:31:06.0507321+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\pause.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pause.xnb</Output>
-      <Time>2017-05-30T09:53:14.2690338+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pause.xnb</Output>
+      <Time>2017-05-22T23:23:27.8899196+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\pause_background_opacity.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pause_background_opacity.xnb</Output>
-      <Time>2017-05-30T09:53:14.2705342+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\pause_background_opacity.xnb</Output>
+      <Time>2017-05-22T23:23:27.8909003+03:00</Time>
     </Item>
     <Item>
       <Source>boyarishnik.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\boyarishnik.xnb</Output>
-      <Time>2017-05-30T09:53:14.2281339+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\boyarishnik.xnb</Output>
+      <Time>2017-05-24T16:58:15.9237404+03:00</Time>
     </Item>
     <Item>
       <Source>rose.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\rose.xnb</Output>
-      <Time>2017-05-30T09:53:14.3249266+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\rose.xnb</Output>
+      <Time>2017-05-24T16:58:15.9437615+03:00</Time>
     </Item>
     <Item>
       <Source>balanda.png</Source>
@@ -151,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\balanda.xnb</Output>
-      <Time>2017-05-30T09:53:14.2251682+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\balanda.xnb</Output>
+      <Time>2017-05-24T17:37:19.1928459+03:00</Time>
     </Item>
     <Item>
       <Source>colesa.png</Source>
@@ -160,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\colesa.xnb</Output>
-      <Time>2017-05-30T09:53:14.2387685+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\colesa.xnb</Output>
+      <Time>2017-05-24T17:37:19.1943478+03:00</Time>
     </Item>
     <Item>
       <Source>playboy.png</Source>
@@ -169,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\playboy.xnb</Output>
-      <Time>2017-05-30T09:53:14.2900874+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\playboy.xnb</Output>
+      <Time>2017-05-24T17:37:19.2100185+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\foundation.png</Source>
@@ -178,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\foundation.xnb</Output>
-      <Time>2017-05-30T09:53:14.2507798+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\foundation.xnb</Output>
+      <Time>2017-05-29T21:06:47.7069293+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\btExit.png</Source>
@@ -187,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\btExit.xnb</Output>
-      <Time>2017-05-30T09:53:14.2452748+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\btExit.xnb</Output>
+      <Time>2017-05-28T11:31:53.6392274+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\spell_learning.png</Source>
@@ -196,8 +196,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\spell_learning.xnb</Output>
-      <Time>2017-05-30T09:53:14.2745365+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\spell_learning.xnb</Output>
+      <Time>2017-05-28T11:31:53.7393184+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_antidote.png</Source>
@@ -205,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_antidote.xnb</Output>
-      <Time>2017-05-30T09:53:14.3349519+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_antidote.xnb</Output>
+      <Time>2017-05-28T11:31:53.9553287+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_armor.png</Source>
@@ -214,8 +214,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_armor.xnb</Output>
-      <Time>2017-05-30T09:53:14.3394544+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_armor.xnb</Output>
+      <Time>2017-05-28T11:31:54.0400278+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_cure.png</Source>
@@ -223,8 +223,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_cure.xnb</Output>
-      <Time>2017-05-30T09:53:14.3439583+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_cure.xnb</Output>
+      <Time>2017-05-28T11:31:54.1238584+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_heal.png</Source>
@@ -232,8 +232,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_heal.xnb</Output>
-      <Time>2017-05-30T09:53:14.3484421+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_heal.xnb</Output>
+      <Time>2017-05-28T11:31:54.1551855+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_resurrection.png</Source>
@@ -241,8 +241,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_resurrection.xnb</Output>
-      <Time>2017-05-30T09:53:14.3537051+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_resurrection.xnb</Output>
+      <Time>2017-05-28T11:31:54.2556028+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_unfreeze.png</Source>
@@ -250,8 +250,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_unfreeze.xnb</Output>
-      <Time>2017-05-30T09:53:14.3582253+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_unfreeze.xnb</Output>
+      <Time>2017-05-28T11:31:54.3485914+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_antidote_p.png</Source>
@@ -259,8 +259,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_antidote_p.xnb</Output>
-      <Time>2017-05-30T09:53:14.338435+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_antidote_p.xnb</Output>
+      <Time>2017-05-28T11:31:54.0087259+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_armor_p.png</Source>
@@ -268,8 +268,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_armor_p.xnb</Output>
-      <Time>2017-05-30T09:53:14.3424565+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_armor_p.xnb</Output>
+      <Time>2017-05-28T11:31:54.1081276+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_cure_p.png</Source>
@@ -277,8 +277,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_cure_p.xnb</Output>
-      <Time>2017-05-30T09:53:14.3469604+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_cure_p.xnb</Output>
+      <Time>2017-05-28T11:31:54.1551855+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_heal_p.png</Source>
@@ -286,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_heal_p.xnb</Output>
-      <Time>2017-05-30T09:53:14.3521235+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_heal_p.xnb</Output>
+      <Time>2017-05-28T11:31:54.2398859+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_resurrection_p.png</Source>
@@ -295,8 +295,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_resurrection_p.xnb</Output>
-      <Time>2017-05-30T09:53:14.3572078+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_resurrection_p.xnb</Output>
+      <Time>2017-05-28T11:31:54.3402967+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_unfreeze_p.png</Source>
@@ -304,8 +304,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_unfreeze_p.xnb</Output>
-      <Time>2017-05-30T09:53:14.3617285+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_unfreeze_p.xnb</Output>
+      <Time>2017-05-28T11:31:54.4080893+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_antidote_l.png</Source>
@@ -313,8 +313,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_antidote_l.xnb</Output>
-      <Time>2017-05-30T09:53:14.3364527+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_antidote_l.xnb</Output>
+      <Time>2017-05-28T11:31:53.9709491+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_armor_l.png</Source>
@@ -322,8 +322,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_armor_l.xnb</Output>
-      <Time>2017-05-30T09:53:14.3409562+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_armor_l.xnb</Output>
+      <Time>2017-05-28T11:31:54.0713371+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_cure_l.png</Source>
@@ -331,8 +331,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_cure_l.xnb</Output>
-      <Time>2017-05-30T09:53:14.3454395+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_cure_l.xnb</Output>
+      <Time>2017-05-28T11:31:54.1238584+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_heal_l.png</Source>
@@ -340,8 +340,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_heal_l.xnb</Output>
-      <Time>2017-05-30T09:53:14.3506227+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_heal_l.xnb</Output>
+      <Time>2017-05-28T11:31:54.2398859+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_resurrection_l.png</Source>
@@ -349,8 +349,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_resurrection_l.xnb</Output>
-      <Time>2017-05-30T09:53:14.3557247+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_resurrection_l.xnb</Output>
+      <Time>2017-05-28T11:31:54.335297+03:00</Time>
     </Item>
     <Item>
       <Source>SpellButtons\sp_unfreeze_l.png</Source>
@@ -358,8 +358,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_unfreeze_l.xnb</Output>
-      <Time>2017-05-30T09:53:14.3602099+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\SpellButtons\sp_unfreeze_l.xnb</Output>
+      <Time>2017-05-28T11:31:54.406071+03:00</Time>
     </Item>
     <Item>
       <Source>choose_cursor.png</Source>
@@ -367,8 +367,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\choose_cursor.xnb</Output>
-      <Time>2017-05-30T09:53:14.2375914+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\choose_cursor.xnb</Output>
+      <Time>2017-05-28T11:59:10.0292789+03:00</Time>
     </Item>
     <Item>
       <Source>cursor.png</Source>
@@ -376,8 +376,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\cursor.xnb</Output>
-      <Time>2017-05-30T09:53:14.2402502+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\cursor.xnb</Output>
+      <Time>2017-05-28T11:59:10.0292789+03:00</Time>
     </Item>
     <Item>
       <Source>GUI\infoBox.png</Source>
@@ -385,8 +385,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\infoBox.xnb</Output>
-      <Time>2017-05-30T09:53:14.253301+03:00</Time>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\infoBox.xnb</Output>
+      <Time>2017-05-30T12:38:44.156373+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -395,10 +395,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -426,8 +426,8 @@
         <Value>2011-09-01T17:22:30+04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2017-04-23T17:23:21.5497949+03:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2017-04-22T00:25:32.7776746+03:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

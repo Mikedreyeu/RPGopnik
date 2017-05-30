@@ -14,6 +14,7 @@ namespace RPGopnik
 {
     class Inventory
     {
+        Character owner;
         Vector2 mouse;
         uint power;
         DateTime prev_powerup;
@@ -37,8 +38,9 @@ namespace RPGopnik
 
         public Spells spells;
         private Backpack artefacts;
-        public Inventory()
+        public Inventory(Character owner)
         {
+            this.owner = owner;
             artefacts = new Backpack();
             spells = new Spells();
         }
@@ -48,8 +50,12 @@ namespace RPGopnik
             if (!(Object is Spell) || (Object as Spell).MinMana <= (owner as Mage_Character).Curr_Mana)
             {
                 prev_powerup = DateTime.Now;
-                power = 0;
-                Cursor.cursorstate = Cursor.CursorState.Choose;
+                if (Object is Spell)
+                    power = (Object as Spell).MinMana;
+                else
+                    power = 0;
+                if(Object.choosable)
+                    Cursor.cursorstate = Cursor.CursorState.Choose;
                 UsingObject = new Tuple<IMagic, Keys>(Object, key);
             }
         }
@@ -86,12 +92,24 @@ namespace RPGopnik
         {
             if (Mouse.GetState().RightButton != ButtonState.Pressed)
             {
-                if (UsingObject.Item1 is Spell)
+                if (UsingObject.Item1.choosable)
                 {
-                    if (Keyboard.GetState().IsKeyDown(UsingObject.Item2) && power <= (owner as Mage_Character).Curr_Mana && (DateTime.Now - prev_powerup).Milliseconds > 300)
+                    if (UsingObject.Item1.powerable && Keyboard.GetState().IsKeyDown(UsingObject.Item2) && (DateTime.Now - prev_powerup).Milliseconds > 300)
                     {
-                        power++;
-                        prev_powerup = DateTime.Now;
+                        if (UsingObject.Item1 is Spell)
+                        {
+                            if (power < (owner as Mage_Character).Curr_Mana)
+                            {
+                                power++;
+                                prev_powerup = DateTime.Now;
+                            }
+                        }
+                        else
+                            if (power < (UsingObject.Item1 as Artefact).max_power)
+                        {
+                            power++;
+                            prev_powerup = DateTime.Now;
+                        }
                     }
                     if (Mouse.GetState().LeftButton == ButtonState.Pressed)
                     {
@@ -103,6 +121,34 @@ namespace RPGopnik
                         }
                     }
                 }
+                else
+                {
+                    if (UsingObject.Item1.powerable && Keyboard.GetState().IsKeyDown(UsingObject.Item2))
+                    {
+                        if ((DateTime.Now - prev_powerup).Milliseconds > 300)
+                        {
+                            if (UsingObject.Item1 is Spell)
+                            {
+                                if (power < (owner as Mage_Character).Curr_Mana)
+                                {
+                                    power++;
+                                    prev_powerup = DateTime.Now;
+                                }
+                            }
+                            else
+                                if (power < (UsingObject.Item1 as Artefact).max_power)
+                            {
+                                power++;
+                                prev_powerup = DateTime.Now;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        UsingObject.Item1.Use(owner, owner, power);
+                        UsingObject = null;
+                    }
+                }
             }
             else
             {
@@ -111,7 +157,6 @@ namespace RPGopnik
                 return;
             }
         }
-
         public void Add(Artefact artefact)
         {
             artefacts.Add(artefact);
@@ -161,7 +206,7 @@ namespace RPGopnik
 
         public void Use(Artefact artefact)
         {
-
+            SetUsingObject(artefact, Keys.Q, owner);
         }
 
         public void Use(Spell spell)
@@ -176,7 +221,7 @@ namespace RPGopnik
 
         public void Draw(SpriteBatch spritebatch, Character owner)
         {
-            if (UsingObject != null)
+            if (UsingObject != null && UsingObject.Item1.powerable)
                 spritebatch.DrawString(ContentLoader.game_content.PowerFont, "Power: " + power, new Vector2(owner.pos.X - 35, owner.pos.Y - 20), Color.White);
         }
     }

@@ -7,7 +7,7 @@ namespace RPGopnik
 {
     class AddHp:Spell
     {
-        public AddHp() : base(1, true, false)
+        public AddHp() : base(1, true, false, true, true)
         {
             type = Type.AddHp;
         }
@@ -23,7 +23,7 @@ namespace RPGopnik
 
     class Heal : Spell
     {
-        public Heal() : base(20, true, true)
+        public Heal() : base(20, true, true, false, true)
         {
             type = Type.Heal;
         }
@@ -37,7 +37,7 @@ namespace RPGopnik
 
     class Antidote : Spell
     {
-        public Antidote() : base(30, false, true)
+        public Antidote() : base(30, false, true, false, true)
         {
             type = Type.Antidote;
         }
@@ -51,7 +51,7 @@ namespace RPGopnik
 
     class Revive : Spell
     {
-        public Revive() : base(30, false, true)
+        public Revive() : base(30, false, true, false, true)
         {
             type = Type.Revieve;
         }
@@ -68,19 +68,19 @@ namespace RPGopnik
 
     class Shield : Spell
     {
-        public Shield() : base(50, false, true)
+        public Shield() : base(50, false, true, true, false)
         {
             type = Type.Shield;
         }
         public override void Use(Character user, Character character, uint power)
         {
-            //позде запилим
+            (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - (power / 50) * 50;
         }
     }
 
     class Move : Spell
     {
-        public Move() : base(85, false, true)
+        public Move() : base(85, false, true, false, true)
         {
             type = Type.Move;
         }

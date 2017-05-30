@@ -18,16 +18,28 @@ namespace RPGopnik
         void Use(Character user, Character character);
         void Use(Character user, uint power);
         void Use(Character user, Character character, uint power);
+        bool powerable { get; set; }
+        bool choosable { get; set; }
     }
 
     abstract class Artefact : IMagic
     {
+        public bool powerable { get; set; }
+        public bool choosable { get; set; }
         public enum Type { BigHP, MedHP, SmaHP, BigMP, MedMP, SmaMP, Rose, Colesa, Balanda, PlayBoy }
         public Vector2 pos;
         public enum Size { Little = 10, Middle = 25, Big = 50 }
         public uint power;
         public uint max_power;
         public bool renewable;
+        public Artefact(uint max_power, bool renewable, bool powerable, bool choosable, Vector2 pos)
+        {
+            power = max_power;
+            this.renewable = renewable;
+            this.powerable = powerable;
+            this.choosable = choosable;
+            this.pos = pos;
+        }
         public void Use(Character user)
         {
             Use(user, user, 1);
@@ -47,17 +59,21 @@ namespace RPGopnik
 
     abstract class Spell : IMagic
     {
+        public bool powerable { get; set; }
+        public bool choosable { get; set; }
         public enum Type { AddHp, Heal, Move, Antidote, Shield, Revieve };
         public Type type;
         public uint MinMana { get { return minMana; } }
         protected uint minMana;
         protected bool canSpeakRequired;
         protected bool canMoveRequired;
-        protected Spell(uint minMana, bool canSpeakRequired, bool canMoveRequired)
+        protected Spell(uint minMana, bool canSpeakRequired, bool canMoveRequired, bool powerable, bool choosable)
         {
             this.minMana = minMana;
             this.canSpeakRequired = canSpeakRequired;
             this.canMoveRequired = canMoveRequired;
+            this.powerable = powerable;
+            this.choosable = choosable;
         }
         public void Use(Character user)
         {

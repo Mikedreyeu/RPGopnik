@@ -10,11 +10,8 @@ namespace RPGopnik
 {
     class Pivas : Artefact
     {
-        public Pivas(Size size, Vector2 pos)
+        public Pivas(Size size, Vector2 pos) : base((uint)size, false, false, false, pos)
         {
-            this.pos = pos;
-            power = (uint)size;
-            renewable = false;
         }
 
         public override void Use(Character user, Character character, uint power)
@@ -33,11 +30,8 @@ namespace RPGopnik
 
     class Boyarishnik : Artefact
     {
-        public Boyarishnik(Size size, Vector2 pos)
+        public Boyarishnik(Size size, Vector2 pos) : base((uint)size, false, false, false, pos)
         {
-            this.pos = pos;
-            power = (uint)size;
-            renewable = false;
         }
 
         public override void Use(Character user, Character character, uint power)
@@ -60,12 +54,8 @@ namespace RPGopnik
     class Rose : Artefact
     {
         DateTime last_update;
-        public Rose(uint power, Vector2 pos)
+        public Rose(uint power, Vector2 pos) : base(power, true, true, true, pos)
         {
-            this.pos = pos;
-            this.power = power;
-            max_power = power;
-            renewable = true;
         }
 
         public override void Use(Character user, Character character, uint power)
@@ -102,10 +92,8 @@ namespace RPGopnik
 
     class Colesa : Artefact
     {
-        public Colesa(Vector2 pos)
+        public Colesa(Vector2 pos): base(0, false, false, true, pos)
         {
-            this.pos = pos;
-            this.renewable = false;
         }
 
         public override void Use(Character user, Character character, uint power)
@@ -125,12 +113,8 @@ namespace RPGopnik
     class Balanda : Artefact
     {
         DateTime last_update;
-        public Balanda(uint power, Vector2 pos)
+        public Balanda(uint power, Vector2 pos):base(power, true, true, true, pos)
         {
-            this.pos = pos;
-            this.power = power;
-            max_power = power;
-            renewable = true;
         }
 
         public override void Use(Character user, Character character, uint power)
@@ -170,9 +154,8 @@ namespace RPGopnik
 
     class PlayBoy : Artefact
     {
-        public PlayBoy(Vector2 pos)
+        public PlayBoy(Vector2 pos):base(0, false, false, true, pos)
         {
-            this.pos = pos;
         }
         public override void Use(Character user, Character character, uint power)
         {
