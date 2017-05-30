@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace RPGopnik
 {
-    class Enemy
+    class Enemy : Person_Abstract
     {
         public Vector2 pos;
         Animation animation;

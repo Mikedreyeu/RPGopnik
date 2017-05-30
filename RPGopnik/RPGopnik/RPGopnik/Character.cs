@@ -15,7 +15,7 @@ namespace RPGopnik
     enum Races { Gopnik, Petuh, Kolshik, Baryga };
     enum Direction { Down, Left, Right, Up };
 
-    class Character : IComparable 
+    class Character : Person_Abstract 
     {
         public Inventory inventory;
         Animation animation;
@@ -25,14 +25,9 @@ namespace RPGopnik
         private readonly string name;
         private readonly Races race;
         private readonly string gender;
-        private int age;
-        private int xp;
-        private uint curr_hp;
-        private uint max_hp;
+        private int age;    
         private bool can_speak;
         private bool can_move;
-        private byte condition;
-        public Vector2 pos;
         private int max_velocity;
         private Vector2 velocity_now = new Vector2(0, 0);
 
@@ -61,26 +56,6 @@ namespace RPGopnik
             get { return age; }
             set { age = value; }
         }
-        public uint Curr_HP
-        {
-            get { return curr_hp; }
-            set { curr_hp = value; }
-        }
-        public uint Max_HP
-        {
-            get { return max_hp; }
-            set { max_hp = value; }
-        }
-        public int XP
-        {
-            get { return xp; }
-            set { xp = value; }
-        }
-        public byte Condition
-        {
-            get { return condition; }
-            set { condition = value; }
-        }
         public bool Can_Speak
         {
             get { return can_speak; }
@@ -90,10 +65,6 @@ namespace RPGopnik
         {
             get { return can_move; }
             set { can_move = value; }
-        }
-        public int CompareTo(object ch2)
-        {
-            return this.XP.CompareTo((ch2 as Character).XP);
         }
         public void Condition_Check(Character ch)
         {
