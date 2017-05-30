@@ -30,6 +30,8 @@ namespace RPGopnik
         private bool can_move;
         private int max_velocity;
         private Vector2 velocity_now = new Vector2(0, 0);
+        public uint AttackDamage;
+        bool attacking = false;
 
         public Rectangle Rect
         {
@@ -76,7 +78,7 @@ namespace RPGopnik
             else if (percentage == 0)
                 ch.Condition = (byte)Conditions.Dead;
         }
-        public Character(string name_, Races race_, string gender_, Animation animation, Vector2 pos, int max_velocity)
+        public Character(string name_, Races race_, string gender_, Animation animation, Vector2 pos, int max_velocity, uint attackDamage)
         {
             inventory = new Inventory(this);
             direction = Direction.Down;
@@ -89,7 +91,7 @@ namespace RPGopnik
             this.race = race_;
             this.gender = gender_;
             this.max_velocity = max_velocity;
-
+            this.AttackDamage = attackDamage;
         }
         public string Character_Info(Character ch)
         {
@@ -133,7 +135,16 @@ namespace RPGopnik
                     direction = Direction.Right;
                     velocity_now.X = max_velocity;
                 }
-
+                if (Keyboard.GetState().IsKeyDown(Keys.Q) && Enemy.distanceToTheCharacter <= 42)
+                {
+                    attacking = true;
+                    if (ContentLoader.game_content.enemy.Curr_HP > 0)
+                        ContentLoader.game_content.enemy.Curr_HP -= ContentLoader.game_content.character.AttackDamage;
+                    else
+                    {
+                        ContentLoader.game_content.enemy.Condition = (byte)Conditions.Dead;
+                    }
+                }
 
                 #region Collision Handling Region
                 foreach (Rectangle co in collisionObjects)
@@ -196,7 +207,15 @@ namespace RPGopnik
         }
         public void Draw(SpriteBatch spritebatch)
         {
-            animation.Draw(spritebatch, pos, direction);
+            if (!attacking)
+            {
+                animation.Draw(spritebatch, pos, direction);
+            }
+            else
+            {
+                spritebatch.Draw(ContentLoader.game_content.fight_txtr, Rect, Color.White);
+                attacking = false;
+            }
             inventory.Draw(spritebatch, this);
         }
     }
@@ -216,7 +235,7 @@ namespace RPGopnik
             get { return max_mana; }
             set { max_mana = value; }
         }
-        public Mage_Character(string name, Races race, string gender, Animation animation, Vector2 pos, int max_velocity) : base(name, race, gender, animation, pos, max_velocity)
+        public Mage_Character(string name, Races race, string gender, Animation animation, Vector2 pos, int max_velocity, uint AttackDamage) : base(name, race, gender, animation, pos, max_velocity, AttackDamage)
         {
             max_mana = 100;
             curr_mana = 100;

@@ -41,3 +41,5 @@ Content\SpellButtons\sp_unfreeze_l.xnb
 Content\choose_cursor.xnb
 Content\cursor.xnb
 Content\GUI\infoBox.xnb
+Content\Dead_Enemy_Txtr.xnb
+Content\fighttxtr.xnb

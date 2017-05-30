@@ -11,21 +11,24 @@ namespace RPGopnik
     class Enemy : Person_Abstract
     {
         public Vector2 pos;
-        Animation animation;
+        public Animation animation;
         Random rand;
         uint attackDamage;
         bool drawAttack = true;
         double attackTimer, attackInterval;
-        double distanceToTheCharacter;
-        private int max_velocity;
-        private Vector2 velocity_now = new Vector2(0,0);
+        public static double distanceToTheCharacter;
+        public int max_velocity;
+        private Vector2 velocity_now = new Vector2(0, 0);
         public Direction Enemy_Direction = Direction.Down;
+        public int XP_For_Killing;
+        bool xp_Is_Added = true;
+
         public Rectangle Rect
         {
             get { return new Rectangle((int)pos.X, (int)pos.Y, 30, 32); }
         }
 
-        public Enemy(Vector2 pos, int max_velocity, Animation animation, uint attackDamage, double attackInterval)
+        public Enemy(Vector2 pos, int max_velocity, Animation animation, uint attackDamage, double attackInterval, uint start_hp, int xp_for_killing)
         {
             rand = new Random();
             this.animation = animation;
@@ -33,6 +36,8 @@ namespace RPGopnik
             this.max_velocity = max_velocity;
             this.attackDamage = attackDamage;
             this.attackInterval = attackInterval;
+            this.curr_hp = start_hp;
+            this.XP_For_Killing = xp_for_killing;
         }
 
         public void Update(GameTime gameTime, Character character, List<Rectangle> collisionObjects)
@@ -168,10 +173,25 @@ namespace RPGopnik
 
         public void Draw(SpriteBatch spritebatch)
         {
-            animation.Draw(spritebatch, pos, Enemy_Direction);
-            if (attackTimer > attackInterval/2 && drawAttack == true)
+            if (this.Condition != (byte)Conditions.Dead)
             {
-                spritebatch.DrawString(ContentLoader.game_gui_content.hp_mana_font, "molodoy chelovek proydomte", new Vector2(pos.X - 110, pos.Y - 25), Color.White, 0, Vector2.Zero, 0.4f, SpriteEffects.None, 0);
+                animation.Draw(spritebatch, pos, Enemy_Direction);
+                if (attackTimer > attackInterval / 2 && drawAttack == true)
+                {
+                    spritebatch.DrawString(ContentLoader.game_gui_content.hp_mana_font, "molodoy chelovek proydomte", new Vector2(pos.X - 110, pos.Y - 25), Color.White, 0, Vector2.Zero, 0.4f, SpriteEffects.None, 0);
+                }
+            }
+            else if (xp_Is_Added)
+            {
+                xp_Is_Added = false;
+                this.Condition = (byte)Conditions.Dead;
+                ContentLoader.game_content.enemy.max_velocity = 0;
+                ContentLoader.game_content.enemy.attackDamage = 0;
+                ContentLoader.game_content.character.XP += ContentLoader.game_content.enemy.XP_For_Killing;
+            }
+            else if (!xp_Is_Added && this.Condition == (byte)Conditions.Dead)
+            {
+                spritebatch.Draw(ContentLoader.game_content.dead_enemy_txtr, ContentLoader.game_content.enemy.pos, Color.White);
             }
         }
     }
