@@ -111,7 +111,8 @@ namespace RPGopnik
             ContentLoader.Load(Content, GraphicsDevice.Viewport);
             map = new Map(@"Content\StartingArea.tmx");
             map.LoadContent(Content);
-            game = new Game(map, ContentLoader.game_content.enemy, GraphicsDevice.Viewport, ContentLoader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300)), new Boyarishnik(Artefact.Size.Little, new Vector2(300, 400)), new Rose(100, new Vector2(400, 400)), new Colesa(new Vector2(350, 350)), new Balanda(100, new Vector2(200, 400)), new PlayBoy(new Vector2(400, 200)) });
+            List<Enemy> list = new List<Enemy> { ContentLoader.game_content.enemy, ContentLoader.game_content.baryga, ContentLoader.game_content.kolshik, ContentLoader.game_content.petuh };
+            game = new Game(map, list, GraphicsDevice.Viewport, ContentLoader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300)), new Boyarishnik(Artefact.Size.Little, new Vector2(300, 400)), new Rose(100, new Vector2(400, 400)), new Colesa(new Vector2(350, 350)), new Balanda(100, new Vector2(200, 400)), new PlayBoy(new Vector2(400, 200)) });
             slScreen = new SLScreen(game);
         }
     }

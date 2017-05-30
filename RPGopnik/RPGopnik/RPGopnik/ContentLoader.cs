@@ -25,6 +25,9 @@ namespace RPGopnik
         public struct Game_Content
         {
             public Enemy enemy;
+            public Enemy baryga;
+            public Enemy kolshik;
+            public Enemy petuh;
             public Character character;
             public Texture2D fight_txtr;
             public Texture2D dead_enemy_txtr;
@@ -159,8 +162,11 @@ namespace RPGopnik
             sl_menu_content.revive_l = new Content(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection_l"));
             sl_menu_content.shield_l = new Content(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 10, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_armor_l"));
             button_content.infoBox = Content.Load<Texture2D>(@"GUI\infoBox");
-            game_content.enemy = new Enemy(new Vector2(800, 800), 1, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3), 1, 2, 20, 200);
-            game_content.character = new Mage_Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 3, 1);
+            game_content.enemy = new Enemy(new Vector2(800, 800), 1, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3), 1, 2, 20, 200, Content.Load<Texture2D>("Dead_Enemy_Txtr"));
+            game_content.baryga = new Enemy(new Vector2(1300, 800), 1, new Animation(100, Content.Load<Texture2D>("baryga_txtr"), 30, 32, 3), 1, 2, 24, 400, Content.Load<Texture2D>("dead_baryga"));
+            game_content.kolshik = new Enemy(new Vector2(500, 900), 1, new Animation(100, Content.Load<Texture2D>("kolshik_txtr"), 30, 32, 3), 1, 2, 15, 200, Content.Load<Texture2D>("dead_kolshik"));
+            game_content.petuh = new Enemy(new Vector2(1100, 1400), 1, new Animation(100, Content.Load<Texture2D>("petuh_txtr"), 30, 32, 3), 1, 2, 10, 150, Content.Load<Texture2D>("dead_petuh"));
+            game_content.character = new Mage_Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 1, 1);
             game_content.fight_txtr = Content.Load<Texture2D>("fighttxtr");
             game_content.dead_enemy_txtr = Content.Load<Texture2D>("Dead_Enemy_Txtr");
             game_content.beer = Content.Load<Texture2D>("beer");
