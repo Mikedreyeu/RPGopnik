@@ -25,6 +25,9 @@ namespace RPGopnik
         public struct Game_Content
         {
             public Enemy enemy;
+            public Enemy baryga;
+            public Enemy kolshik;
+            public Enemy petuh;
             public Character character;
             public Texture2D fight_txtr;
             public Texture2D dead_enemy_txtr;
@@ -47,22 +50,19 @@ namespace RPGopnik
             public Texture2D revive;
             public Texture2D shield;
             public Texture2D move;
-            public Button BigHP;
-            public Button MedHP;
-            public Button SmaHP;
-            public Button BigMP;
-            public Button MedMP;
-            public Button SmaMP;
-            public Button Rose;
-            public Button Colesa;
-            public Button PlayBoy;
-            public Button Balanda;
         }
 
         public struct Menu_Content
         {
             public Content background;
             public Content logo;
+        }
+        public struct Story_Content
+        {
+            public Button continue_button;
+            public Button game_button;
+            public Content story1;
+            public Content story2;
         }
 
         public struct Main_Menu_Content
@@ -118,6 +118,7 @@ namespace RPGopnik
         public static Game_GUI_Content game_gui_content;
         public static Game_Content game_content;
         public static Button_Content button_content;
+        public static Story_Content story_content;
 
         public static void Load(ContentManager Content, Viewport viewp)
         {
@@ -128,7 +129,7 @@ namespace RPGopnik
             help_menu_content.main_menu = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height - 100, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.main), "Main menu");
             menu_content.logo = new Content(new Rectangle(viewp.Width / 2 - 437, viewp.Height / 15, 874, 250), Content.Load<Texture2D>(@"GUI\logo"));
             menu_content.background = new Content(new Rectangle(0, 0, viewp.Width, viewp.Height), Content.Load<Texture2D>("title_screen_background"));
-            main_menu_content.game_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height / 2, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.game), "New Game");
+            main_menu_content.game_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height / 2, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.story1), "New Game");
             main_menu_content.help_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height / 2 + 70, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.help), "Help");
             main_menu_content.exit_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height / 2 + 140, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.exit), "Exit");
             pause_content.background = new Content(new Rectangle(0, 0, viewp.Width, viewp.Height), Content.Load<Texture2D>(@"GUI\pause_background_opacity"));
@@ -142,6 +143,10 @@ namespace RPGopnik
             game_gui_content.move = Content.Load<Texture2D>(@"SpellButtons\sp_unfreeze");
             game_gui_content.revive = Content.Load<Texture2D>(@"SpellButtons\sp_resurrection");
             game_gui_content.shield = Content.Load<Texture2D>(@"SpellButtons\sp_armor");
+            story_content.story1 = new Content(new Rectangle(0, 0, viewp.Width, viewp.Height), Content.Load<Texture2D>("Story1"));
+            story_content.story2 = new Content(new Rectangle(0, 0, viewp.Width, viewp.Height), Content.Load<Texture2D>("Story2"));
+            story_content.continue_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height - 100, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.story2), "Continue");
+            story_content.game_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height - 100, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.game), "Continue");
             sl_menu_content.spells_window = new Content(new Rectangle(viewp.Width / 2 - 170, viewp.Height / 2 - 234, 340, 549), Content.Load<Texture2D>(@"GUI\spell_learning"));
             sl_menu_content.resume_button = new Button(new Rectangle(viewp.Width / 2 + 139, viewp.Height / 2 - 211, 20, 20), Content.Load<Texture2D>(@"GUI\btExit"), Content.Load<Texture2D>(@"GUI\btExit"), Content.Load<Texture2D>(@"GUI\btExit"), new Event(Events.game), "");
             sl_menu_content.add_hp = new Button(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_heal"), Content.Load<Texture2D>(@"SpellButtons\sp_heal"), Content.Load<Texture2D>(@"SpellButtons\sp_heal_p"), new Event(Events.AddSpell_AddHP), "", "Добавить здоровье", "Увеличивает текущее значение HP какого-либо персонажа. Cost: 1HP - 2MP");
@@ -157,8 +162,11 @@ namespace RPGopnik
             sl_menu_content.revive_l = new Content(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_resurrection_l"));
             sl_menu_content.shield_l = new Content(new Rectangle(viewp.Width / 2 - 57, viewp.Height / 2 - 10, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_armor_l"));
             button_content.infoBox = Content.Load<Texture2D>(@"GUI\infoBox");
-            game_content.enemy = new Enemy(new Vector2(800, 800), 1, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3), 1, 2, 20, 200);
-            game_content.character = new Mage_Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 3, 1);
+            game_content.enemy = new Enemy(new Vector2(800, 800), 1, new Animation(100, Content.Load<Texture2D>("enemy"), 30, 32, 3), 1, 2, 20, 200, Content.Load<Texture2D>("Dead_Enemy_Txtr"));
+            game_content.baryga = new Enemy(new Vector2(1300, 800), 1, new Animation(100, Content.Load<Texture2D>("baryga_txtr"), 30, 32, 3), 1, 2, 24, 400, Content.Load<Texture2D>("dead_baryga"));
+            game_content.kolshik = new Enemy(new Vector2(500, 900), 1, new Animation(100, Content.Load<Texture2D>("kolshik_txtr"), 30, 32, 3), 1, 2, 15, 200, Content.Load<Texture2D>("dead_kolshik"));
+            game_content.petuh = new Enemy(new Vector2(1100, 1400), 1, new Animation(100, Content.Load<Texture2D>("petuh_txtr"), 30, 32, 3), 1, 2, 10, 150, Content.Load<Texture2D>("dead_petuh"));
+            game_content.character = new Mage_Character("pesos", Races.Baryga, "Male", new Animation(100, Content.Load<Texture2D>("gopnik_texture"), 30, 32, 3), new Vector2(300, 300), 1, 1);
             game_content.fight_txtr = Content.Load<Texture2D>("fighttxtr");
             game_content.dead_enemy_txtr = Content.Load<Texture2D>("Dead_Enemy_Txtr");
             game_content.beer = Content.Load<Texture2D>("beer");
@@ -169,17 +177,6 @@ namespace RPGopnik
             game_content.playBoy = Content.Load<Texture2D>("playboy");
             cursor_states.Normal = Content.Load<Texture2D>("cursor");
             cursor_states.Choosing = Content.Load<Texture2D>("choose_cursor");
-            game_gui_content.BigHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_BigHP, "");
-            game_gui_content.MedHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_MedHP, "");
-            game_gui_content.SmaHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_SmaHP, "");
-            game_gui_content.BigMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_BigMP, "");
-            game_gui_content.MedMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_MedMP, "");
-            game_gui_content.SmaMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_SmaMP, "");
-            game_gui_content.Rose = new Button(new Rectangle(-50, -50, 50, 50), game_content.rose, game_content.rose, game_content.rose, Events.Use_Rose, "");
-            game_gui_content.Balanda = new Button(new Rectangle(-50, -50, 50, 50), game_content.balanda, game_content.balanda, game_content.balanda, Events.Use_Balanda, "");
-            game_gui_content.Colesa = new Button(new Rectangle(-50, -50, 50, 50), game_content.colesa, game_content.colesa, game_content.colesa, Events.Use_Colesa, "");
-            game_gui_content.PlayBoy = new Button(new Rectangle(-50, -50, 50, 50), game_content.playBoy, game_content.playBoy, game_content.playBoy, Events.Use_PlayBoy, "");
-
         }
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace RPGopnik
 {
-    public enum gs { MAIN, HELP, PAUSE, GAME, SLSCREEN };
+    public enum gs { MAIN, HELP, PAUSE, GAME, SLSCREEN, STORY1, STORY2 };
     delegate void Event();
 
     class Game1 : Microsoft.Xna.Framework.Game
@@ -19,7 +19,7 @@ namespace RPGopnik
         public static gs game_state = gs.MAIN; 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Menu main, help, pause, slScreen;
+        Menu main, help, pause, slScreen, story1, story2;
         Map map;
         public Game game;
 
@@ -45,6 +45,8 @@ namespace RPGopnik
             main = new MainMenu();
             help = new HelpMenu();
             pause = new Pause();
+            story1 = new Story1();
+            story2 = new Story2();
             spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
@@ -86,6 +88,14 @@ namespace RPGopnik
                     game.Draw(spriteBatch);
                     slScreen.Draw(spriteBatch);
                     break;
+                case gs.STORY1:
+                    story1.Update();
+                    story1.Draw(spriteBatch);
+                    break;
+                case gs.STORY2:
+                    story2.Update();
+                    story2.Draw(spriteBatch);
+                    break;
             }
             Cursor.Draw(spriteBatch);
             base.Update(gameTime);
@@ -101,7 +111,8 @@ namespace RPGopnik
             ContentLoader.Load(Content, GraphicsDevice.Viewport);
             map = new Map(@"Content\StartingArea.tmx");
             map.LoadContent(Content);
-            game = new Game(map, ContentLoader.game_content.enemy, GraphicsDevice.Viewport, ContentLoader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(700, 700)), new Boyarishnik(Artefact.Size.Little, new Vector2(300, 1000)), new Rose(10, new Vector2(400, 400)), new Colesa(new Vector2(1250, 800)), new Balanda(10, new Vector2(200, 700)), new PlayBoy(new Vector2(300, 800)) });
+            List<Enemy> list = new List<Enemy> { ContentLoader.game_content.enemy, ContentLoader.game_content.baryga, ContentLoader.game_content.kolshik, ContentLoader.game_content.petuh };
+            game = new Game(map, list, GraphicsDevice.Viewport, ContentLoader.game_content.character, new List<Artefact> { new Pivas(Artefact.Size.Big, new Vector2(400, 300)), new Boyarishnik(Artefact.Size.Little, new Vector2(300, 400)), new Rose(100, new Vector2(400, 400)), new Colesa(new Vector2(350, 350)), new Balanda(100, new Vector2(200, 400)), new PlayBoy(new Vector2(400, 200)) });
             slScreen = new SLScreen(game);
         }
     }

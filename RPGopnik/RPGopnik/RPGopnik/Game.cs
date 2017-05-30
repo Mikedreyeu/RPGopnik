@@ -13,15 +13,15 @@ namespace RPGopnik
     {
         Map map;
         Camera camera;
-        Enemy enemy;
+        List<Enemy> list;
         GUI gui;
         public Character character;
         List<Artefact> artefacts;
 
-        public Game(Map map, Enemy enemy, Viewport viewport, Character character, List<Artefact> artefacts)
+        public Game(Map map, List<Enemy> list, Viewport viewport, Character character, List<Artefact> artefacts)
         {
             this.artefacts = artefacts;
-            this.enemy = enemy;
+            this.list = list;
             camera = new Camera(viewport);
             this.map = map;
             this.character = character;
@@ -46,21 +46,32 @@ namespace RPGopnik
         public void Update(GameTime gameTime)
         {
             camera.Update(map, character.pos);
-            enemy.Update(gameTime, character, map.collisionObjects);
-            character.Update(camera, map.collisionObjects);
+            foreach (Enemy enemy in list)
+            {
+                enemy.Update(gameTime, character, map.collisionObjects);
+                character.Update(camera, map.collisionObjects, enemy);
+            }
             artefacts.ForEach(Pick_up);
 
             if (character.Rect.Intersects(map.spellLearningArea) && Keyboard.GetState().IsKeyDown(Keys.F))
             {
                 Game1.game_state = gs.SLSCREEN;
             }
+
+            if (ContentLoader.game_content.baryga.Condition == (byte)Conditions.Dead &&
+               ContentLoader.game_content.kolshik.Condition == (byte)Conditions.Dead &&
+               ContentLoader.game_content.enemy.Condition == (byte)Conditions.Dead &&
+               ContentLoader.game_content.petuh.Condition == (byte)Conditions.Dead &&
+               character.pos.X > 640 && character.pos.X < 800 && character.pos.Y > 1460)
+                Game1.game_state = gs.MAIN;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
             map.Draw(spriteBatch, "Underlay");
-            enemy.Draw(spriteBatch);
+            foreach (Enemy enemy in list)
+                enemy.Draw(spriteBatch, enemy);
             foreach (Artefact artefact in artefacts)
                 artefact.Draw(spriteBatch);
             character.Draw(spriteBatch);

@@ -19,15 +19,16 @@ namespace RPGopnik
         public int max_velocity;
         private Vector2 velocity_now = new Vector2(0, 0);
         public Direction Enemy_Direction = Direction.Down;
+        Texture2D dead_txtr;
         public int XP_For_Killing;
-        bool xp_Is_Added = true;
+        bool xp_Isnt_Added = true;
 
         public Rectangle Rect
         {
             get { return new Rectangle((int)pos.X, (int)pos.Y, 30, 32); }
         }
 
-        public Enemy(Vector2 pos, int max_velocity, Animation animation, uint attackDamage, double attackInterval, uint start_hp, int xp_for_killing)
+        public Enemy(Vector2 pos, int max_velocity, Animation animation, uint attackDamage, double attackInterval, uint start_hp, int xp_for_killing, Texture2D dead_txtr)
         {
             rand = new Random();
             this.animation = animation;
@@ -37,6 +38,7 @@ namespace RPGopnik
             this.attackInterval = attackInterval;
             this.curr_hp = start_hp;
             this.XP_For_Killing = xp_for_killing;
+            this.dead_txtr = dead_txtr;
         }
 
         public void Update(GameTime gameTime, Character character, List<Rectangle> collisionObjects)
@@ -170,7 +172,7 @@ namespace RPGopnik
             pos += velocity_now;
         }
 
-        public void Draw(SpriteBatch spritebatch)
+        public void Draw(SpriteBatch spritebatch, Enemy enemy)
         {
             if (this.Condition != (byte)Conditions.Dead)
             {
@@ -180,17 +182,17 @@ namespace RPGopnik
                     spritebatch.DrawString(ContentLoader.game_gui_content.hp_mana_font, "molodoy chelovek proydomte", new Vector2(pos.X - 110, pos.Y - 25), Color.White, 0, Vector2.Zero, 0.4f, SpriteEffects.None, 0);
                 }
             }
-            else if (xp_Is_Added)
+            else if (xp_Isnt_Added)
             {
-                xp_Is_Added = false;
+                xp_Isnt_Added = false;
                 this.Condition = (byte)Conditions.Dead;
-                ContentLoader.game_content.enemy.max_velocity = 0;
-                ContentLoader.game_content.enemy.attackDamage = 0;
-                ContentLoader.game_content.character.XP += ContentLoader.game_content.enemy.XP_For_Killing;
+                this.max_velocity = 0;
+                this.attackDamage = 0;
+                ContentLoader.game_content.character.XP += this.XP_For_Killing;
             }
-            else if (!xp_Is_Added && this.Condition == (byte)Conditions.Dead)
+            else if (!xp_Isnt_Added && this.Condition == (byte)Conditions.Dead)
             {
-                spritebatch.Draw(ContentLoader.game_content.dead_enemy_txtr, ContentLoader.game_content.enemy.pos, Color.White);
+                spritebatch.Draw(enemy.dead_txtr, enemy.pos, Color.White);
             }
         }
     }

@@ -41,6 +41,20 @@ namespace RPGopnik
         { }
     }
 
+    class Story1 : Menu
+    {
+        public Story1() : base(new List<Content> { ContentLoader.story_content.story1,
+                                                        ContentLoader.story_content.continue_button })
+        { }
+    }
+
+    class Story2 : Menu
+    {
+        public Story2() : base(new List<Content> { ContentLoader.story_content.story2,
+                                                        ContentLoader.story_content.game_button })
+        { }
+    }
+
     class MainMenu : Menu
     {
         public MainMenu() : base(new List<Content> { ContentLoader.menu_content.background,

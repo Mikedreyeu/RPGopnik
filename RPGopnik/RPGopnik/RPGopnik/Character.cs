@@ -107,7 +107,7 @@ namespace RPGopnik
             return false;
         }
 
-        public void Update(Camera camera, List<Rectangle> collisionObjects)
+        public void Update(Camera camera, List<Rectangle> collisionObjects, Enemy enemy)
         {
             inventory.Update(camera, this);
             if (condition != (byte)Conditions.Dead && condition != (byte)Conditions.Paralyzed)
@@ -138,11 +138,11 @@ namespace RPGopnik
                 if (Keyboard.GetState().IsKeyDown(Keys.Q) && Enemy.distanceToTheCharacter <= 42)
                 {
                     attacking = true;
-                    if (ContentLoader.game_content.enemy.Curr_HP > 0)
-                        ContentLoader.game_content.enemy.Curr_HP -= ContentLoader.game_content.character.AttackDamage;
+                    if (enemy.Curr_HP > 0)
+                        enemy.Curr_HP -= ContentLoader.game_content.character.AttackDamage;
                     else
                     {
-                        ContentLoader.game_content.enemy.Condition = (byte)Conditions.Dead;
+                        enemy.Condition = (byte)Conditions.Dead;
                     }
                 }
 

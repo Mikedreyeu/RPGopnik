@@ -6,3 +6,5 @@ D:\RPGopnik\yes\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopni
 D:\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopnikContent.contentprojResolveAssemblyReference.cache
 C:\Users\Евгений\Source\Repos\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopnikContent.contentprojResolveAssemblyReference.cache
 C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopnikContent.contentprojResolveAssemblyReference.cache
+C:\Users\misha\Desktop\RPGopnik\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopnikContent.contentprojResolveAssemblyReference.cache
+C:\Downloads\1\RPGopnik\RPGopnik\RPGopnikContent\obj\x86\Debug\RPGopnikContent.contentprojResolveAssemblyReference.cache
