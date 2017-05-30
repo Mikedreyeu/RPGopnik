@@ -47,6 +47,16 @@ namespace RPGopnik
             public Texture2D revive;
             public Texture2D shield;
             public Texture2D move;
+            public Button BigHP;
+            public Button MedHP;
+            public Button SmaHP;
+            public Button BigMP;
+            public Button MedMP;
+            public Button SmaMP;
+            public Button Rose;
+            public Button Colesa;
+            public Button PlayBoy;
+            public Button Balanda;
         }
 
         public struct Menu_Content
@@ -159,6 +169,17 @@ namespace RPGopnik
             game_content.playBoy = Content.Load<Texture2D>("playboy");
             cursor_states.Normal = Content.Load<Texture2D>("cursor");
             cursor_states.Choosing = Content.Load<Texture2D>("choose_cursor");
+            game_gui_content.BigHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_BigHP, "");
+            game_gui_content.MedHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_MedHP, "");
+            game_gui_content.SmaHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_SmaHP, "");
+            game_gui_content.BigMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_BigMP, "");
+            game_gui_content.MedMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_MedMP, "");
+            game_gui_content.SmaMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_SmaMP, "");
+            game_gui_content.Rose = new Button(new Rectangle(-50, -50, 50, 50), game_content.rose, game_content.rose, game_content.rose, Events.Use_Rose, "");
+            game_gui_content.Balanda = new Button(new Rectangle(-50, -50, 50, 50), game_content.balanda, game_content.balanda, game_content.balanda, Events.Use_Balanda, "");
+            game_gui_content.Colesa = new Button(new Rectangle(-50, -50, 50, 50), game_content.colesa, game_content.colesa, game_content.colesa, Events.Use_Colesa, "");
+            game_gui_content.PlayBoy = new Button(new Rectangle(-50, -50, 50, 50), game_content.playBoy, game_content.playBoy, game_content.playBoy, Events.Use_PlayBoy, "");
+
         }
     }
 }

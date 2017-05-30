@@ -10,7 +10,6 @@ namespace RPGopnik
 {
     class Enemy : Person_Abstract
     {
-        public Vector2 pos;
         public Animation animation;
         Random rand;
         uint attackDamage;

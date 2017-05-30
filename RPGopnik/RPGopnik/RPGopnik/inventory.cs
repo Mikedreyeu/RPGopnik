@@ -83,6 +83,7 @@ namespace RPGopnik
         {
             mouse = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
             mouse = Vector2.Transform(mouse, camera.inverseTransform);
+            artefacts.Update();
             Choose(owner);
             if (UsingObject != null)
                 Using(owner);
@@ -105,7 +106,7 @@ namespace RPGopnik
                             }
                         }
                         else
-                            if (power < (UsingObject.Item1 as Artefact).max_power)
+                            if (power < (UsingObject.Item1 as Artefact).power)
                         {
                             power++;
                             prev_powerup = DateTime.Now;
@@ -136,7 +137,7 @@ namespace RPGopnik
                                 }
                             }
                             else
-                                if (power < (UsingObject.Item1 as Artefact).max_power)
+                                if (power < (UsingObject.Item1 as Artefact).power)
                             {
                                 power++;
                                 prev_powerup = DateTime.Now;
@@ -198,9 +199,45 @@ namespace RPGopnik
             Throw(artefact);
         }
 
-        public void Use(Artefact artefact)
+        public void Use(Artefact.Type type)
         {
+            Artefact artefact = artefacts.Find(type);
+            switch(artefact.type)
+            {
+                case Artefact.Type.BigHP:
+                    ContentLoader.game_gui_content.BigHP.ChangePosition(new Vector2(-50, -50));
+                    break;
+                case Artefact.Type.MedHP:
+                    ContentLoader.game_gui_content.MedHP.ChangePosition(new Vector2(-50, -50));
+                    break;
+                case Artefact.Type.SmaHP:
+                    ContentLoader.game_gui_content.SmaHP.ChangePosition(new Vector2(-50, -50));
+                    break;
+                case Artefact.Type.BigMP:
+                    ContentLoader.game_gui_content.BigMP.ChangePosition(new Vector2(-50, -50));
+                    break;
+                case Artefact.Type.MedMP:
+                    ContentLoader.game_gui_content.MedMP.ChangePosition(new Vector2(-50, -50));
+                    break;
+                case Artefact.Type.SmaMP:
+                    ContentLoader.game_gui_content.SmaMP.ChangePosition(new Vector2(-50, -50));
+                    break;
+                case Artefact.Type.Balanda:
+                    ContentLoader.game_gui_content.Balanda.ChangePosition(new Vector2(-50, -50));
+                    break;
+                case Artefact.Type.Rose:
+                    ContentLoader.game_gui_content.Rose.ChangePosition(new Vector2(-50, -50));
+                    break;
+                case Artefact.Type.Colesa:
+                    ContentLoader.game_gui_content.Colesa.ChangePosition(new Vector2(-50, -50));
+                    break;
+                case Artefact.Type.PlayBoy:
+                    ContentLoader.game_gui_content.PlayBoy.ChangePosition(new Vector2(-50, -50));
+                    break;
+            }
             SetUsingObject(artefact, Keys.Q, owner);
+            if(!artefact.renewable)
+                artefacts.Remove(artefact);
         }
 
         public void Use(Spell spell)

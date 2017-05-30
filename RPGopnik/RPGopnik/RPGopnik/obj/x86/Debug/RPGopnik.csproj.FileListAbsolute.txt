@@ -311,3 +311,9 @@ C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\infoB
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\GUI\infoBox.xnb
 C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Dead_Enemy_Txtr.xnb
 C:\Downloads\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\fighttxtr.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Dead_Enemy_Txtr.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\fighttxtr.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.exe.manifest
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.application
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.exe.manifest
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.application

@@ -12,6 +12,18 @@ namespace RPGopnik
     {
         public Pivas(Size size, Vector2 pos) : base((uint)size, false, false, false, pos)
         {
+            switch(size)
+            {
+                case Size.Big:
+                    type = Type.BigHP;
+                    break;
+                case Size.Middle:
+                    type = Type.MedHP;
+                    break;
+                case Size.Little:
+                    type = Type.SmaHP;
+                    break;
+            }
         }
 
         public override void Use(Character user, Character character, uint power)
@@ -32,6 +44,18 @@ namespace RPGopnik
     {
         public Boyarishnik(Size size, Vector2 pos) : base((uint)size, false, false, false, pos)
         {
+            switch (size)
+            {
+                case Size.Big:
+                    type = Type.BigMP;
+                    break;
+                case Size.Middle:
+                    type = Type.MedMP;
+                    break;
+                case Size.Little:
+                    type = Type.SmaMP;
+                    break;
+            }
         }
 
         public override void Use(Character user, Character character, uint power)
@@ -56,6 +80,7 @@ namespace RPGopnik
         DateTime last_update;
         public Rose(uint power, Vector2 pos) : base(power, true, true, true, pos)
         {
+            type = Type.Rose;
         }
 
         public override void Use(Character user, Character character, uint power)
@@ -70,6 +95,7 @@ namespace RPGopnik
                 else
                     character.Curr_HP -= power;
             }
+            this.power -= power;
         }
 
         public void Update()
@@ -94,6 +120,7 @@ namespace RPGopnik
     {
         public Colesa(Vector2 pos): base(0, false, false, true, pos)
         {
+            type = Type.Colesa;
         }
 
         public override void Use(Character user, Character character, uint power)
@@ -115,6 +142,7 @@ namespace RPGopnik
         DateTime last_update;
         public Balanda(uint power, Vector2 pos):base(power, true, true, true, pos)
         {
+            type = Type.Balanda;
         }
 
         public override void Use(Character user, Character character, uint power)
@@ -132,6 +160,7 @@ namespace RPGopnik
                     character.Curr_HP -= power;
                 }
             }
+            this.power -= power;
         }
 
         public void Update()
@@ -156,6 +185,7 @@ namespace RPGopnik
     {
         public PlayBoy(Vector2 pos):base(0, false, false, true, pos)
         {
+            type = Type.PlayBoy;
         }
         public override void Use(Character user, Character character, uint power)
         {

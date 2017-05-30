@@ -110,14 +110,65 @@ namespace RPGopnik
 
         public void Update()
         {
+            ContentLoader.game_gui_content.BigHP.Update(Mouse.GetState());
+            ContentLoader.game_gui_content.MedHP.Update(Mouse.GetState());
+            ContentLoader.game_gui_content.SmaHP.Update(Mouse.GetState());
+            ContentLoader.game_gui_content.BigMP.Update(Mouse.GetState());
+            ContentLoader.game_gui_content.MedMP.Update(Mouse.GetState());
+            ContentLoader.game_gui_content.SmaMP.Update(Mouse.GetState());
+            ContentLoader.game_gui_content.Rose.Update(Mouse.GetState());
+            ContentLoader.game_gui_content.Balanda.Update(Mouse.GetState());
+            ContentLoader.game_gui_content.Colesa.Update(Mouse.GetState()); ;
+            ContentLoader.game_gui_content.PlayBoy.Update(Mouse.GetState());
+        }
 
+        public Artefact Find(Artefact.Type type)
+        {
+            foreach(ArtefactCount pair in artefacts)
+                if (pair.artefact.type == type)
+                    return pair.artefact;
+            return null;
         }
 
         public void Draw(SpriteBatch spritebatch)
         {
+            int i = 1;
             foreach(ArtefactCount pair in artefacts)
             {
-                pair.artefact.Draw(spritebatch);
+                switch(pair.artefact.type)
+                {
+                    case Artefact.Type.BigHP:
+                        ContentLoader.game_gui_content.BigHP.Draw(spritebatch, new Vector2(30 + ((i - 1) % 2) * 70, 200 + ((i - 1) / 2) * 70), pair.number.ToString());
+                        break;
+                    case Artefact.Type.MedHP:
+                        ContentLoader.game_gui_content.MedHP.Draw(spritebatch, new Vector2(30 + ((i - 1) % 2) * 70, 200 + ((i - 1) / 2) * 70), pair.number.ToString());
+                        break;
+                    case Artefact.Type.SmaHP:
+                        ContentLoader.game_gui_content.SmaHP.Draw(spritebatch, new Vector2(30 + ((i - 1) % 2) * 70, 200 + ((i - 1) / 2) * 70), pair.number.ToString());
+                        break;
+                    case Artefact.Type.BigMP:
+                        ContentLoader.game_gui_content.BigMP.Draw(spritebatch, new Vector2(30 + ((i - 1) % 2) * 70, 200 + ((i - 1) / 2) * 70), pair.number.ToString());
+                        break;
+                    case Artefact.Type.MedMP:
+                        ContentLoader.game_gui_content.MedMP.Draw(spritebatch, new Vector2(30 + ((i - 1) % 2) * 70, 200 + ((i - 1) / 2) * 70), pair.number.ToString());
+                        break;
+                    case Artefact.Type.SmaMP:
+                        ContentLoader.game_gui_content.SmaMP.Draw(spritebatch, new Vector2(30 + ((i - 1) % 2) * 70, 200 + ((i - 1) / 2) * 70), pair.number.ToString());
+                        break;
+                    case Artefact.Type.Balanda:
+                        ContentLoader.game_gui_content.Balanda.Draw(spritebatch, new Vector2(30 + ((i - 1) % 2) * 70, 200 + ((i - 1) / 2) * 70), pair.artefact.power.ToString() + "/" + pair.artefact.max_power.ToString());
+                        break;
+                    case Artefact.Type.Rose:
+                        ContentLoader.game_gui_content.Rose.Draw(spritebatch, new Vector2(30 + ((i - 1) % 2) * 70, 200 + ((i - 1) / 2) * 70), pair.artefact.power.ToString() + "/" + pair.artefact.max_power.ToString());
+                        break;
+                    case Artefact.Type.Colesa:
+                        ContentLoader.game_gui_content.Colesa.Draw(spritebatch, new Vector2(30 + ((i - 1) % 2) * 70, 200 + ((i - 1) / 2) * 70), pair.number.ToString());
+                        break;
+                    case Artefact.Type.PlayBoy:
+                        ContentLoader.game_gui_content.PlayBoy.Draw(spritebatch, new Vector2(30 + ((i - 1) % 2) * 70, 200 + ((i - 1) / 2) * 70), pair.number.ToString());
+                        break;
+                }
+                i++;
             }
         }
     }

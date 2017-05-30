@@ -28,6 +28,56 @@ namespace RPGopnik
             g.Exit();
         }
 
+        public static void Use_BigHP()
+        {
+            g.game.character.inventory.Use(Artefact.Type.BigHP);
+        }
+
+        public static void Use_MedHP()
+        {
+            g.game.character.inventory.Use(Artefact.Type.MedHP);
+        }
+
+        public static void Use_SmaHP()
+        {
+            g.game.character.inventory.Use(Artefact.Type.SmaHP);
+        }
+
+        public static void Use_BigMP()
+        {
+            g.game.character.inventory.Use(Artefact.Type.BigMP);
+        }
+
+        public static void Use_MedMP()
+        {
+            g.game.character.inventory.Use(Artefact.Type.MedMP);
+        }
+
+        public static void Use_SmaMP()
+        {
+            g.game.character.inventory.Use(Artefact.Type.SmaMP);
+        }
+
+        public static void Use_Rose()
+        {
+            g.game.character.inventory.Use(Artefact.Type.Rose);
+        }
+
+        public static void Use_Colesa()
+        {
+            g.game.character.inventory.Use(Artefact.Type.Colesa);
+        }
+
+        public static void Use_Balanda()
+        {
+            g.game.character.inventory.Use(Artefact.Type.Balanda);
+        }
+
+        public static void Use_PlayBoy()
+        {
+            g.game.character.inventory.Use(Artefact.Type.PlayBoy);
+        }
+
         public static void AddSpell_AddHP()
         {
             if (g.game.character.inventory.spells.addhp == null)

@@ -19,6 +19,12 @@ namespace RPGopnik
         Vector2 text_pos;
         public static SpriteFont font;
         Event ev;
+
+        public void ChangePosition(Vector2 pos)
+        {
+            rect = new Rectangle((int)pos.X, (int)pos.Y, rect.Width, rect.Height);
+        }
+
         public Button(Rectangle rectangle, Texture2D main, Texture2D hover, Texture2D pressed, Event del, string text) : base(rectangle, main)
         {
             hover_texture = hover;
@@ -55,6 +61,13 @@ namespace RPGopnik
                 }
             else
                 bs = button_state.NONE;
+        }
+
+        public void Draw(SpriteBatch spritebatch, Vector2 pos, string text)
+        {
+            rect = new Rectangle((int)pos.X, (int)pos.Y, rect.Width, rect.Height);
+            Draw(spritebatch);
+            spritebatch.DrawString(ContentLoader.game_content.PowerFont, text, new Vector2(rect.X + (rect.Width)/2 - text.Length*7, rect.Y + 20), Color.Green);
         }
 
         public override void Draw(SpriteBatch spritebatch)

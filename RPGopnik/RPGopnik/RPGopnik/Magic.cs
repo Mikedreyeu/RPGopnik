@@ -27,6 +27,7 @@ namespace RPGopnik
         public bool powerable { get; set; }
         public bool choosable { get; set; }
         public enum Type { BigHP, MedHP, SmaHP, BigMP, MedMP, SmaMP, Rose, Colesa, Balanda, PlayBoy }
+        public Type type { get; protected set; }
         public Vector2 pos;
         public enum Size { Little = 10, Middle = 25, Big = 50 }
         public uint power;
@@ -34,6 +35,7 @@ namespace RPGopnik
         public bool renewable;
         public Artefact(uint max_power, bool renewable, bool powerable, bool choosable, Vector2 pos)
         {
+            this.max_power = max_power;
             power = max_power;
             this.renewable = renewable;
             this.powerable = powerable;
@@ -52,7 +54,10 @@ namespace RPGopnik
         {
             Use(user, user, power);
         }
-        public virtual void Use(Character user, Character character, uint power) { }
+        public virtual void Use(Character user, Character character, uint power)
+        {
+
+        }
 
         public virtual void Draw(SpriteBatch spritebatch) { }
     }
@@ -62,14 +67,13 @@ namespace RPGopnik
         public bool powerable { get; set; }
         public bool choosable { get; set; }
         public enum Type { AddHp, Heal, Move, Antidote, Shield, Revieve };
-        public Type type;
-        public uint MinMana { get { return minMana; } }
-        protected uint minMana;
-        protected bool canSpeakRequired;
-        protected bool canMoveRequired;
+        public Type type { get; protected set; }
+        public uint MinMana { get; protected set; }
+        public bool canSpeakRequired { get; protected set; }
+        public bool canMoveRequired { get; protected set; }
         protected Spell(uint minMana, bool canSpeakRequired, bool canMoveRequired, bool powerable, bool choosable)
         {
-            this.minMana = minMana;
+            this.MinMana = minMana;
             this.canSpeakRequired = canSpeakRequired;
             this.canMoveRequired = canMoveRequired;
             this.powerable = powerable;

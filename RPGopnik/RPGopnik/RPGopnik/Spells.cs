@@ -29,7 +29,7 @@ namespace RPGopnik
         }
         public override void Use(Character user, Character character, uint power)
         {
-            (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - minMana;
+            (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - MinMana;
             if (character.Condition == (byte)Conditions.Sick)
                 character.Condition = (byte)Conditions.Normal;
         }
@@ -43,7 +43,7 @@ namespace RPGopnik
         }
         public override void Use(Character user, Character character, uint power)
         {
-            (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - minMana;
+            (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - MinMana;
             if (character.Condition == (byte)Conditions.Poisoned)
                 character.Condition = (byte)Conditions.Normal;
         }
@@ -57,7 +57,7 @@ namespace RPGopnik
         }
         public override void Use(Character user, Character character, uint power)
         {
-            (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - minMana;
+            (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - MinMana;
             if (character.Condition == (byte)Conditions.Dead)
             {
                 character.Condition = (byte)Conditions.Normal;
@@ -86,7 +86,7 @@ namespace RPGopnik
         }
         public override void Use(Character user, Character character, uint power)
         {
-            (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - minMana;
+            (user as Mage_Character).Curr_Mana = (user as Mage_Character).Curr_Mana - MinMana;
             if (character.Condition == (byte)Conditions.Paralyzed)
             {
                 character.Condition = (byte)Conditions.Normal;
