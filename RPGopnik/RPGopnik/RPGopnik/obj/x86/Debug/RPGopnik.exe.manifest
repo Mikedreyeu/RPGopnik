@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RPGopnik.exe" size="420808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RPGopnik.exe" size="422344">
       <assemblyIdentity name="RPGopnik" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>0hMyBXyjoLO14pT/3EDvybuh7mg=</dsig:DigestValue>
+        <dsig:DigestValue>NKBMpYNfx18mAVGV5rPi4d6rNWQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,6 +133,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>D3Mu6VmDhjOgeWog5RZk+i3v1HU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\baryga_txtr.xnb" size="45243">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3e/olGB3DGfrE/k4Vhu7Z8wsoos=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\beer.xnb" size="10187">
@@ -189,6 +198,15 @@
       <dsig:DigestValue>ZGnqsey7xvgEhXDTAKKg2PbVhXk=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\dead_baryga.xnb" size="4027">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>M5QiI23s/usdCDiXga+AXzTr5es=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Dead_Enemy_Txtr.xnb" size="4027">
     <hash>
       <dsig:Transforms>
@@ -196,6 +214,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>lWUtAHiCtRw3gkpx++YRndnHCLM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\dead_kolshik.xnb" size="4027">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bHr92WC1br3CNwUHIvdy4vW93JE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\dead_petuh.xnb" size="4027">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ckphnf9/rxtD9P84ZkWuavwrAwA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\enemy.xnb" size="46267">
@@ -322,6 +358,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>3To4Z3iKFtfqYaVQqrnY02WtHtI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\kolshik_txtr.xnb" size="45755">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>KNDG8qp1aJHoEuJ4elKXn9Xik+Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\petuh_txtr.xnb" size="47431">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>DvqU2HZOztP0exEiENlmX6pw/jE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\playboy.xnb" size="10187">
@@ -511,6 +565,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>SdeVM4hBsL5bitOg+INPCTeh/wI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Story1.xnb" size="3686587">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HB/zVDAgkppKl1G6UXWjNNYRANw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Story2.xnb" size="3686587">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Fcza+rM4bFoafL9S6DvLMVr58+8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Tilesets\MainTileset.xnb" size="5898427">

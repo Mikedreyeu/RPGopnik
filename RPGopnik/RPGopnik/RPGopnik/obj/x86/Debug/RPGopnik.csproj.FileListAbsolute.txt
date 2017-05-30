@@ -317,3 +317,11 @@ C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopn
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\RPGopnik.application
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.exe.manifest
 C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\obj\x86\Debug\RPGopnik.application
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Story1.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\Story2.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\dead_baryga.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\dead_kolshik.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\dead_petuh.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\baryga_txtr.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\kolshik_txtr.xnb
+C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\petuh_txtr.xnb
