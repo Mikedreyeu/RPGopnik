@@ -43,3 +43,5 @@ Content\cursor.xnb
 Content\GUI\infoBox.xnb
 Content\Dead_Enemy_Txtr.xnb
 Content\fighttxtr.xnb
+Content\Story1.xnb
+Content\Story2.xnb

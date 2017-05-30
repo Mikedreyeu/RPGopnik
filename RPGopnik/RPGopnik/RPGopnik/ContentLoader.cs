@@ -54,6 +54,13 @@ namespace RPGopnik
             public Content background;
             public Content logo;
         }
+        public struct Story_Content
+        {
+            public Button continue_button;
+            public Button game_button;
+            public Content story1;
+            public Content story2;
+        }
 
         public struct Main_Menu_Content
         {
@@ -108,6 +115,7 @@ namespace RPGopnik
         public static Game_GUI_Content game_gui_content;
         public static Game_Content game_content;
         public static Button_Content button_content;
+        public static Story_Content story_content;
 
         public static void Load(ContentManager Content, Viewport viewp)
         {
@@ -118,7 +126,7 @@ namespace RPGopnik
             help_menu_content.main_menu = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height - 100, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.main), "Main menu");
             menu_content.logo = new Content(new Rectangle(viewp.Width / 2 - 437, viewp.Height / 15, 874, 250), Content.Load<Texture2D>(@"GUI\logo"));
             menu_content.background = new Content(new Rectangle(0, 0, viewp.Width, viewp.Height), Content.Load<Texture2D>("title_screen_background"));
-            main_menu_content.game_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height / 2, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.game), "New Game");
+            main_menu_content.game_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height / 2, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.story1), "New Game");
             main_menu_content.help_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height / 2 + 70, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.help), "Help");
             main_menu_content.exit_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height / 2 + 140, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.exit), "Exit");
             pause_content.background = new Content(new Rectangle(0, 0, viewp.Width, viewp.Height), Content.Load<Texture2D>(@"GUI\pause_background_opacity"));
@@ -132,6 +140,10 @@ namespace RPGopnik
             game_gui_content.move = Content.Load<Texture2D>(@"SpellButtons\sp_unfreeze");
             game_gui_content.revive = Content.Load<Texture2D>(@"SpellButtons\sp_resurrection");
             game_gui_content.shield = Content.Load<Texture2D>(@"SpellButtons\sp_armor");
+            story_content.story1 = new Content(new Rectangle(0, 0, viewp.Width, viewp.Height), Content.Load<Texture2D>("Story1"));
+            story_content.story2 = new Content(new Rectangle(0, 0, viewp.Width, viewp.Height), Content.Load<Texture2D>("Story2"));
+            story_content.continue_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height - 100, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.story2), "Continue");
+            story_content.game_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height - 100, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.game), "Continue");
             sl_menu_content.spells_window = new Content(new Rectangle(viewp.Width / 2 - 170, viewp.Height / 2 - 234, 340, 549), Content.Load<Texture2D>(@"GUI\spell_learning"));
             sl_menu_content.resume_button = new Button(new Rectangle(viewp.Width / 2 + 139, viewp.Height / 2 - 211, 20, 20), Content.Load<Texture2D>(@"GUI\btExit"), Content.Load<Texture2D>(@"GUI\btExit"), Content.Load<Texture2D>(@"GUI\btExit"), new Event(Events.game), "");
             sl_menu_content.add_hp = new Button(new Rectangle(viewp.Width / 2 - 126, viewp.Height / 2 - 75, 40, 40), Content.Load<Texture2D>(@"SpellButtons\sp_heal"), Content.Load<Texture2D>(@"SpellButtons\sp_heal"), Content.Load<Texture2D>(@"SpellButtons\sp_heal_p"), new Event(Events.AddSpell_AddHP), "", "Добавить здоровье", "Увеличивает текущее значение HP какого-либо персонажа. Cost: 1HP - 2MP");

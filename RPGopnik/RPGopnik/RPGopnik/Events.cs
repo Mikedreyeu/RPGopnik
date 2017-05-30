@@ -18,6 +18,16 @@ namespace RPGopnik
             Game1.game_state = gs.HELP;
         }
 
+        public static void story1()
+        {
+            Game1.game_state = gs.STORY1;
+        }
+
+        public static void story2()
+        {
+            Game1.game_state = gs.STORY2;
+        }
+
         public static void game()
         {
             Game1.game_state = gs.GAME;
