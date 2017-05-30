@@ -30,44 +30,56 @@ namespace RPGopnik
 
         public static void AddSpell_AddHP()
         {
-            if (!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.add_hp_l))
+            if (g.game.character.inventory.spells.addhp == null)
+            {
                 SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.add_hp_l);
-            g.game.character.inventory.Learn(Spell.Type.AddHp);
+                g.game.character.inventory.Learn(Spell.Type.AddHp);
+            }
         }
 
         public static void AddSpell_Heal()
         {
-            if (!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.heal_l))
+            if (g.game.character.inventory.spells.heal == null)
+            {
                 SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.heal_l);
-            g.game.character.inventory.Learn(Spell.Type.Heal);
+                g.game.character.inventory.Learn(Spell.Type.Heal);
+            }
         }
 
         public static void AddSpell_Move()
         {
-            if (!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.move_l))
+            if (g.game.character.inventory.spells.move == null)
+            {
                 SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.move_l);
-            g.game.character.inventory.Learn(Spell.Type.Move);
+                g.game.character.inventory.Learn(Spell.Type.Move);
+            }
         }
 
         public static void AddSpell_Revive()
         {
-            if (!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.revive_l))
+            if (g.game.character.inventory.spells.revieve == null)
+            {
                 SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.revive_l);
-            g.game.character.inventory.Learn(Spell.Type.Revieve);
+                g.game.character.inventory.Learn(Spell.Type.Revieve);
+            }
         }
 
         public static void AddSpell_Antidote()
         {
-            if (!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.antidote_l))
+            if (g.game.character.inventory.spells.antidote == null)
+            {
                 SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.antidote_l);
-            g.game.character.inventory.Learn(Spell.Type.Antidote);
+                g.game.character.inventory.Learn(Spell.Type.Antidote);
+            }
         }
 
         public static void AddSpell_Shield()
         {
-            if(!SLScreen.unlockedIcons_content.Exists(ct => ct == ContentLoader.sl_menu_content.shield_l))
+            if (g.game.character.inventory.spells.shield == null)
+            {
                 SLScreen.unlockedIcons_content.Add(ContentLoader.sl_menu_content.shield_l);
-            g.game.character.inventory.Learn(Spell.Type.Shield);
+                g.game.character.inventory.Learn(Spell.Type.Shield);
+            }
         }
     }
 }

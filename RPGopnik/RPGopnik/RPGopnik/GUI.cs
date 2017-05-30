@@ -71,21 +71,21 @@ namespace RPGopnik
                     str = "3";
                     pos++;
                 }
-                else if (i == 3 && character.inventory.spells.revieve != null)
+                else if (i == 3 && character.inventory.spells.move != null)
                 {
-                    texture = ContentLoader.game_gui_content.revive;
+                    texture = ContentLoader.game_gui_content.move;
                     str = "4";
                     pos++;
                 }
-                else if (i == 4 && character.inventory.spells.shield != null)
+                else if (i == 4 && character.inventory.spells.revieve != null)
                 {
-                    texture = ContentLoader.game_gui_content.shield;
+                    texture = ContentLoader.game_gui_content.revive;
                     str = "5";
                     pos++;
                 }
-                else if (i == 5 && character.inventory.spells.move != null)
+                else if (i == 5 && character.inventory.spells.shield != null)
                 {
-                    texture = ContentLoader.game_gui_content.move;
+                    texture = ContentLoader.game_gui_content.shield;
                     str = "6";
                     pos++;
                 }

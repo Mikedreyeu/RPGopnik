@@ -54,7 +54,7 @@ namespace RPGopnik
                     power = (Object as Spell).MinMana;
                 else
                     power = 0;
-                if(Object.choosable)
+                if (Object.choosable)
                     Cursor.cursorstate = Cursor.CursorState.Choose;
                 UsingObject = new Tuple<IMagic, Keys>(Object, key);
             }
@@ -167,28 +167,22 @@ namespace RPGopnik
             switch (type)
             {
                 case Spell.Type.AddHp:
-                    if (spells.addhp == null)
-                        spells.addhp = new AddHp();
+                    spells.addhp = new AddHp();
                     break;
                 case Spell.Type.Antidote:
-                    if (spells.antidote == null)
-                        spells.antidote = new Antidote();
+                    spells.antidote = new Antidote();
                     break;
                 case Spell.Type.Heal:
-                    if (spells.heal == null)
-                        spells.heal = new Heal();
+                    spells.heal = new Heal();
                     break;
                 case Spell.Type.Move:
-                    if(spells.move == null)
                     spells.move = new Move();
                     break;
                 case Spell.Type.Revieve:
-                    if (spells.revieve == null)
-                        spells.revieve = new Revive();
+                    spells.revieve = new Revive();
                     break;
                 case Spell.Type.Shield:
-                    if (spells.shield == null)
-                        spells.shield = new Shield();
+                    spells.shield = new Shield();
                     break;
             }
         }
