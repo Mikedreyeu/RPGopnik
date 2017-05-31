@@ -110,7 +110,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Sb8ZAngJj7m84YAgZhVyQz+zwu0=</dsig:DigestValue>
+        <dsig:DigestValue>+/IxbK8RL55/l1c5mMOtNQR00hY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -240,7 +240,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>zeV5+PCL1tSUIJwK7P8Dduse69s=</dsig:DigestValue>
+      <dsig:DigestValue>N8BQps+emENx7AJBka7qClFmbqk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\enemy.xnb" size="46267">

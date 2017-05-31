@@ -204,6 +204,8 @@ namespace RPGopnik
 
                 pos += velocity_now;
             }
+            else
+                direction = Direction.Up;
         }
         public void Draw(SpriteBatch spritebatch)
         {

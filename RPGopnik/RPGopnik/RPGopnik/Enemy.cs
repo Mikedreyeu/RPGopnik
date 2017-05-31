@@ -105,10 +105,12 @@ namespace RPGopnik
                 if (attackTimer < 0)
                 {
                     attackTimer = attackInterval;
-                    if (distanceToTheCharacter <= 100)
+                    if (distanceToTheCharacter <= 100 && character.Curr_HP > 0)
                     {
                         character.Curr_HP -= attackDamage;
                         drawAttack = true;
+                        if (character.Curr_HP == 0)
+                            character.Condition = (byte)Conditions.Dead;
                     }
                     else
                     {
