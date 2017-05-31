@@ -43,7 +43,7 @@ namespace RPGopnik
 
         public int CompareTo(object ch2)
         {
-            return this.XP.CompareTo((ch2 as Character).XP);
+            return this.XP.CompareTo((ch2 as Person_Abstract).XP);
         }
     }
 }

@@ -35,6 +35,19 @@ namespace RPGopnik
             withInfoBox = false;
         }
 
+        public Button(Rectangle rectangle, Texture2D main, Texture2D hover, Texture2D pressed, Event del, string text, string infoHeader, string infoContent, Vector2 windowPos) : base(rectangle, main)
+        {
+            hover_texture = hover;
+            pressed_texture = pressed;
+            ev = del;
+            this.text = text;
+            text_pos = new Vector2(rect.Center.X - text.Length * 12, rect.Top + 3);
+            this.infoContent = infoContent;
+            this.infoHeader = infoHeader;
+            infoBoxRectangle = new Rectangle((int)windowPos.X, (int)windowPos.Y, 285, 190);
+            withInfoBox = true;
+        }
+
         public Button(Rectangle rectangle, Texture2D main, Texture2D hover, Texture2D pressed, Event del, string text, string infoHeader, string infoContent) : base(rectangle, main)
         {
             hover_texture = hover;

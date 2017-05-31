@@ -28,7 +28,7 @@ namespace RPGopnik
         public bool choosable { get; set; }
         public enum Type { BigHP, MedHP, SmaHP, BigMP, MedMP, SmaMP, Rose, Colesa, Balanda, PlayBoy }
         public Type type { get; protected set; }
-        public Vector2 pos;
+        public Vector2 pos { get; protected set; }
         public enum Size { Little = 10, Middle = 25, Big = 50 }
         public uint power;
         public uint max_power;

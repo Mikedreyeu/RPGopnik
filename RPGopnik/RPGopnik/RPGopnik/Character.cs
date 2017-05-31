@@ -107,7 +107,7 @@ namespace RPGopnik
             return false;
         }
 
-        public void Update(Camera camera, List<Rectangle> collisionObjects, Enemy enemy)
+        public virtual void Update(Camera camera, List<Rectangle> collisionObjects, Enemy enemy)
         {
             inventory.Update(camera, this);
             if (condition != (byte)Conditions.Dead && condition != (byte)Conditions.Paralyzed)
@@ -224,6 +224,17 @@ namespace RPGopnik
     {
         private uint curr_mana;
         private uint max_mana;
+        private DateTime last_mana_update;
+
+        public override void Update(Camera camera, List<Rectangle> collisionObjects, Enemy enemy)
+        {
+            base.Update(camera, collisionObjects, enemy);
+            if (condition != (byte)Conditions.Dead && (DateTime.Now - last_mana_update).Seconds > 10 && Curr_Mana < Max_Mana)
+            {
+                last_mana_update = DateTime.Now;
+                Curr_Mana++;
+            }
+        }
 
         public uint Curr_Mana
         {
@@ -233,7 +244,7 @@ namespace RPGopnik
         public uint Max_Mana
         {
             get { return max_mana; }
-            set { max_mana = value; }
+            private set { max_mana = value; }
         }
         public Mage_Character(string name, Races race, string gender, Animation animation, Vector2 pos, int max_velocity, uint AttackDamage) : base(name, race, gender, animation, pos, max_velocity, AttackDamage)
         {

@@ -98,18 +98,6 @@ namespace RPGopnik
             this.power -= power;
         }
 
-        public void Update()
-        {
-            if (power != max_power)
-            {
-                if ((DateTime.Now - last_update).TotalMinutes > 1)
-                {
-                    power++;
-                    last_update = DateTime.Now;
-                }
-            }
-        }
-
         public override void Draw(SpriteBatch spritebatch)
         {
             spritebatch.Draw(ContentLoader.game_content.rose, new Rectangle((int)pos.X, (int)pos.Y, 20, 20), Color.White);
@@ -161,18 +149,6 @@ namespace RPGopnik
                 }
             }
             this.power -= power;
-        }
-
-        public void Update()
-        {
-            if (power != max_power)
-            {
-                if ((DateTime.Now - last_update).TotalMinutes > 1)
-                {
-                    power++;
-                    last_update = DateTime.Now;
-                }
-            }
         }
 
         public override void Draw(SpriteBatch spritebatch)

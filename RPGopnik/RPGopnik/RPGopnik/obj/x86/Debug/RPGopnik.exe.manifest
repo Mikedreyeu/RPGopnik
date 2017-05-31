@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RPGopnik.exe" size="423368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RPGopnik.exe" size="425928">
       <assemblyIdentity name="RPGopnik" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>z8zdj6E+bWH6E8Q+YCiZiKI8eu0=</dsig:DigestValue>
+        <dsig:DigestValue>TeOcG9otkFa2nAHxDLn7iTgofVY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

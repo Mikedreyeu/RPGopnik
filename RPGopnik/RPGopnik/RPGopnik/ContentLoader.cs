@@ -187,16 +187,16 @@ namespace RPGopnik
             game_content.playBoy = Content.Load<Texture2D>("playboy");
             cursor_states.Normal = Content.Load<Texture2D>("cursor");
             cursor_states.Choosing = Content.Load<Texture2D>("choose_cursor");
-            game_gui_content.BigHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_BigHP, "");
-            game_gui_content.MedHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_MedHP, "");
-            game_gui_content.SmaHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_SmaHP, "");
-            game_gui_content.BigMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_BigMP, "");
-            game_gui_content.MedMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_MedMP, "");
-            game_gui_content.SmaMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_SmaMP, "");
-            game_gui_content.Rose = new Button(new Rectangle(-50, -50, 50, 50), game_content.rose, game_content.rose, game_content.rose, Events.Use_Rose, "");
-            game_gui_content.Balanda = new Button(new Rectangle(-50, -50, 50, 50), game_content.balanda, game_content.balanda, game_content.balanda, Events.Use_Balanda, "");
-            game_gui_content.Colesa = new Button(new Rectangle(-50, -50, 50, 50), game_content.colesa, game_content.colesa, game_content.colesa, Events.Use_Colesa, "");
-            game_gui_content.PlayBoy = new Button(new Rectangle(-50, -50, 50, 50), game_content.playBoy, game_content.playBoy, game_content.playBoy, Events.Use_PlayBoy, "");
+            game_gui_content.BigHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_BigHP, "", "Пивас", "Живительный хмельной напиток. Добавляет 50 HP персонажу.", new Vector2(170,180));
+            game_gui_content.MedHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_MedHP, "", "Пивас", "Живительный хмельной напиток. Добавляет 25 HP персонажу.", new Vector2(170, 180));
+            game_gui_content.SmaHP = new Button(new Rectangle(-50, -50, 50, 50), game_content.beer, game_content.beer, game_content.beer, Events.Use_SmaHP, "", "Пивас", "Живительный хмельной напиток. Добавляет 10 HP персонажу.", new Vector2(170, 180));
+            game_gui_content.BigMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_BigMP, "", "Боярышник", "Напиток прозрения, дарующий философские видения каждому, кто хоть немного опробует его. Добавляет 50 MP персонажу.", new Vector2(170, 180));
+            game_gui_content.MedMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_MedMP, "", "Боярышник", "Напиток прозрения, дарующий философские видения каждому, кто хоть немного опробует его. Добавляет 25 MP персонажу.", new Vector2(170, 180));
+            game_gui_content.SmaMP = new Button(new Rectangle(-50, -50, 50, 50), game_content.boyarishnik, game_content.boyarishnik, game_content.boyarishnik, Events.Use_SmaMP, "", "Боярышник", "Напиток прозрения, дарующий философские видения каждому, кто хоть немного опробует его. Добавляет 10 MP персонажу.", new Vector2(170, 180));
+            game_gui_content.Rose = new Button(new Rectangle(-50, -50, 50, 50), game_content.rose, game_content.rose, game_content.rose, Events.Use_Rose, "", "Розочка", "Оружие настоящих дворовых джентельменов. Издавна используется в целях нападения и самообороны. Урон атакуемому персонажу, в зависимости от силы удара", new Vector2(170, 180));
+            game_gui_content.Balanda = new Button(new Rectangle(-50, -50, 50, 50), game_content.balanda, game_content.balanda, game_content.balanda, Events.Use_Balanda, "", "Тухлая баланда", "Некогда - блюдо эстетов. Нынче - неприятная консистенция. Можно вылить на врага. Отравляет врага и наносит урон в зависимости от мощности.", new Vector2(170, 180));
+            game_gui_content.Colesa = new Button(new Rectangle(-50, -50, 50, 50), game_content.colesa, game_content.colesa, game_content.colesa, Events.Use_Colesa, "", "Колеса", "Фармацевтический препарат, неизвестного назначения. Принимать не желательно, если только вы не больны. Излечивает персонажа, на которого они были \nиспользованы.", new Vector2(170, 180));
+            game_gui_content.PlayBoy = new Button(new Rectangle(-50, -50, 50, 50), game_content.playBoy, game_content.playBoy, game_content.playBoy, Events.Use_PlayBoy, "", "PlayBoy", "Прекрасный выпуск хорошего журнала. Осторожно, элементы содержания могут нести оцепеняющий характер. Заставляет застыть персонажа, на которого использован.", new Vector2(170, 180));
         }
     }
 }

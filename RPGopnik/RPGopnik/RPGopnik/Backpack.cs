@@ -59,7 +59,6 @@ namespace RPGopnik
                 {
                     artefacts.Add(new ArtefactCount(artefact));
                     equal = artefacts.Last();
-                    equal.artefact.pos = new Vector2(30 + ((artefacts.Count - 1) % 2) * 70, 200 + ((artefacts.Count - 1) / 2) * 70);
                 }
                 if (equal.artefact.renewable)
                     equal.artefact.power = equal.artefact.max_power;
@@ -73,7 +72,6 @@ namespace RPGopnik
                 {
                     artefacts.Add(new ArtefactCount(artefact));
                     equal = artefacts.Last();
-                    equal.artefact.pos = new Vector2(30 + ((artefacts.Count - 1) % 2) * 70, 200 + ((artefacts.Count - 1) / 2) * 70);
                 }
                 equal.number++;
             }
