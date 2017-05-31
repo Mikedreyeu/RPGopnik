@@ -26,7 +26,7 @@ namespace RPGopnik
             }
         }
 
-        public override void Use(Character user, Character character, uint power)
+        public override void Use(Character user, Person_Abstract character, uint power)
         {
             if (character.Curr_HP + this.power > character.Max_HP)
                 character.Curr_HP = character.Max_HP;
@@ -58,7 +58,7 @@ namespace RPGopnik
             }
         }
 
-        public override void Use(Character user, Character character, uint power)
+        public override void Use(Character user, Person_Abstract character, uint power)
         {
             if (character is Mage_Character)
             {
@@ -83,7 +83,7 @@ namespace RPGopnik
             type = Type.Rose;
         }
 
-        public override void Use(Character user, Character character, uint power)
+        public override void Use(Character user, Person_Abstract character, uint power)
         {
             if (power != 0)
             {
@@ -123,7 +123,7 @@ namespace RPGopnik
             type = Type.Colesa;
         }
 
-        public override void Use(Character user, Character character, uint power)
+        public override void Use(Character user, Person_Abstract character, uint power)
         {
             if (character.Condition == (byte)Conditions.Poisoned)
             {
@@ -145,7 +145,7 @@ namespace RPGopnik
             type = Type.Balanda;
         }
 
-        public override void Use(Character user, Character character, uint power)
+        public override void Use(Character user, Person_Abstract character, uint power)
         {
             if (power != 0)
             {
@@ -187,7 +187,7 @@ namespace RPGopnik
         {
             type = Type.PlayBoy;
         }
-        public override void Use(Character user, Character character, uint power)
+        public override void Use(Character user, Person_Abstract character, uint power)
         {
             if (character.Condition != (byte)Conditions.Dead)
             {

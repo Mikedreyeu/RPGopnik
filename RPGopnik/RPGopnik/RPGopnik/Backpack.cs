@@ -110,6 +110,8 @@ namespace RPGopnik
 
         public void Update()
         {
+            foreach (ArtefactCount pair in artefacts)
+                pair.artefact.Update();
             ContentLoader.game_gui_content.BigHP.Update(Mouse.GetState());
             ContentLoader.game_gui_content.MedHP.Update(Mouse.GetState());
             ContentLoader.game_gui_content.SmaHP.Update(Mouse.GetState());

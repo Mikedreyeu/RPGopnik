@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RPGopnik.exe" size="422344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RPGopnik.exe" size="423368">
       <assemblyIdentity name="RPGopnik" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>NKBMpYNfx18mAVGV5rPi4d6rNWQ=</dsig:DigestValue>
+        <dsig:DigestValue>z8zdj6E+bWH6E8Q+YCiZiKI8eu0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -357,7 +357,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>3To4Z3iKFtfqYaVQqrnY02WtHtI=</dsig:DigestValue>
+      <dsig:DigestValue>GpwF0xtxBSFMNF5mgyg7094Xzsk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\kolshik_txtr.xnb" size="45755">

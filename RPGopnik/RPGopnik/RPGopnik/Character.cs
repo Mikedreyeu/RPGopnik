@@ -56,17 +56,17 @@ namespace RPGopnik
         public int Age
         {
             get { return age; }
-            set { age = value; }
+            private set { age = value; }
         }
         public bool Can_Speak
         {
             get { return can_speak; }
-            set { can_speak = value; }
+            private set { can_speak = value; }
         }
         public bool Can_Move
         {
             get { return can_move; }
-            set { can_move = value; }
+            private set { can_move = value; }
         }
         public void Condition_Check(Character ch)
         {

@@ -135,7 +135,7 @@ namespace RPGopnik
             game_gui_content.hp_mana_font = Content.Load<SpriteFont>("bt_font");
             game_content.PowerFont = Content.Load<SpriteFont>("PowerFont");
 
-            help_menu_content.info = new Content(new Rectangle(viewp.Width / 2 - 350, viewp.Height - 400, 700, 250), Content.Load<Texture2D>("help"));
+            help_menu_content.info = new Content(new Rectangle(viewp.Width / 2 - 520, viewp.Height - 450, 1000, 350), Content.Load<Texture2D>("help"));
             help_menu_content.main_menu = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height - 100, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.main), "Main menu");
             menu_content.logo = new Content(new Rectangle(viewp.Width / 2 - 437, viewp.Height / 15, 874, 250), Content.Load<Texture2D>(@"GUI\logo"));
             menu_content.background = new Content(new Rectangle(0, 0, viewp.Width, viewp.Height), Content.Load<Texture2D>("title_screen_background"));

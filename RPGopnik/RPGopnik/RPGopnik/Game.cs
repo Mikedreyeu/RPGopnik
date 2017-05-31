@@ -13,7 +13,7 @@ namespace RPGopnik
     {
         Map map;
         Camera camera;
-        List<Enemy> list;
+        public List<Enemy> list;
         GUI gui;
         public Character character;
         List<Artefact> artefacts;

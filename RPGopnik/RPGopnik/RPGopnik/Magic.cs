@@ -15,9 +15,9 @@ namespace RPGopnik
     interface IMagic
     {
         void Use(Character user);
-        void Use(Character user, Character character);
+        void Use(Character user, Person_Abstract character);
         void Use(Character user, uint power);
-        void Use(Character user, Character character, uint power);
+        void Use(Character user, Person_Abstract character, uint power);
         bool powerable { get; set; }
         bool choosable { get; set; }
     }
@@ -33,8 +33,10 @@ namespace RPGopnik
         public uint power;
         public uint max_power;
         public bool renewable;
+        private DateTime prev_recharge;
         public Artefact(uint max_power, bool renewable, bool powerable, bool choosable, Vector2 pos)
         {
+            prev_recharge = DateTime.Now;
             this.max_power = max_power;
             power = max_power;
             this.renewable = renewable;
@@ -42,11 +44,19 @@ namespace RPGopnik
             this.choosable = choosable;
             this.pos = pos;
         }
+        public void Update()
+        {
+            if(renewable && power < max_power && (DateTime.Now - prev_recharge).Seconds > 10)
+            {
+                prev_recharge = DateTime.Now;
+                power++;
+            }
+        }
         public void Use(Character user)
         {
             Use(user, user, 1);
         }
-        public void Use(Character user, Character character)
+        public void Use(Character user, Person_Abstract character)
         {
             Use(user, character, 1);
         }
@@ -54,7 +64,7 @@ namespace RPGopnik
         {
             Use(user, user, power);
         }
-        public virtual void Use(Character user, Character character, uint power)
+        public virtual void Use(Character user, Person_Abstract character, uint power)
         {
 
         }
@@ -83,7 +93,7 @@ namespace RPGopnik
         {
             Use(user, user, 1);
         }
-        public void Use(Character user, Character character)
+        public void Use(Character user, Person_Abstract character)
         {
             Use(user, character, 1);
         }
@@ -91,7 +101,7 @@ namespace RPGopnik
         {
             Use(user, user, power);
         }
-        public virtual void Use(Character user, Character character, uint power)
+        public virtual void Use(Character user, Person_Abstract character, uint power)
         { }
     }
 

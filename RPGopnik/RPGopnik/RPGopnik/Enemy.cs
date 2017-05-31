@@ -10,18 +10,19 @@ namespace RPGopnik
 {
     class Enemy : Person_Abstract
     {
-        public Animation animation;
+        Animation animation;
         Random rand;
         uint attackDamage;
         bool drawAttack = true;
         double attackTimer, attackInterval;
-        public static double distanceToTheCharacter;
-        public int max_velocity;
+        int max_velocity;
         private Vector2 velocity_now = new Vector2(0, 0);
         public Direction Enemy_Direction = Direction.Down;
         Texture2D dead_txtr;
         public int XP_For_Killing;
         bool xp_Isnt_Added = true;
+
+        public static double distanceToTheCharacter { get; set; }
 
         public Rectangle Rect
         {
@@ -45,71 +46,74 @@ namespace RPGopnik
         {
             velocity_now = Vector2.Zero;
             distanceToTheCharacter = Math.Sqrt(Math.Pow((this.pos.X - character.pos.X), 2) + Math.Pow((this.pos.Y - character.pos.Y), 2));
-            if (distanceToTheCharacter <= 300 && distanceToTheCharacter >= 40)
+            if (condition != (byte)Conditions.Paralyzed)
             {
-                animation.Update();
-                if (this.pos.X > character.pos.X && this.pos.Y > character.pos.Y)
+                if (distanceToTheCharacter <= 300 && distanceToTheCharacter >= 40)
                 {
-                    velocity_now.X = -max_velocity;
-                    velocity_now.Y = -max_velocity;
-                    Enemy_Direction = Direction.Left;
+                    animation.Update();
+                    if (this.pos.X > character.pos.X && this.pos.Y > character.pos.Y)
+                    {
+                        velocity_now.X = -max_velocity;
+                        velocity_now.Y = -max_velocity;
+                        Enemy_Direction = Direction.Left;
+                    }
+                    else if (this.pos.X > character.pos.X && this.pos.Y < character.pos.Y)
+                    {
+                        velocity_now.X = -max_velocity;
+                        velocity_now.Y = max_velocity;
+                        Enemy_Direction = Direction.Left;
+                    }
+                    else if (this.pos.X < character.pos.X && this.pos.Y > character.pos.Y)
+                    {
+                        velocity_now.X = max_velocity;
+                        velocity_now.Y = -max_velocity;
+                        Enemy_Direction = Direction.Right;
+                    }
+                    else if (this.pos.X < character.pos.X && this.pos.Y < character.pos.Y)
+                    {
+                        velocity_now.X = max_velocity;
+                        velocity_now.Y = max_velocity;
+                        Enemy_Direction = Direction.Right;
+                    }
+                    else if (this.pos.X == character.pos.X && this.pos.Y > character.pos.Y)
+                    {
+                        velocity_now.Y = -max_velocity;
+                        velocity_now.X = 0;
+                        Enemy_Direction = Direction.Up;
+                    }
+                    else if (this.pos.X == character.pos.X && this.pos.Y < character.pos.Y)
+                    {
+                        velocity_now.Y = max_velocity;
+                        velocity_now.X = 0;
+                        Enemy_Direction = Direction.Down;
+                    }
+                    else if (this.pos.Y == character.pos.Y && this.pos.X < character.pos.X)
+                    {
+                        velocity_now.X = max_velocity;
+                        velocity_now.Y = 0;
+                        Enemy_Direction = Direction.Right;
+                    }
+                    else if (this.pos.Y == character.pos.Y && this.pos.X > character.pos.X)
+                    {
+                        velocity_now.X = -max_velocity;
+                        velocity_now.Y = 0;
+                        Enemy_Direction = Direction.Left;
+                    }
                 }
-                else if (this.pos.X > character.pos.X && this.pos.Y < character.pos.Y)
-                {
-                    velocity_now.X = -max_velocity;
-                    velocity_now.Y = max_velocity;
-                    Enemy_Direction = Direction.Left;
-                }
-                else if (this.pos.X < character.pos.X && this.pos.Y > character.pos.Y)
-                {
-                    velocity_now.X = max_velocity;
-                    velocity_now.Y = -max_velocity;
-                    Enemy_Direction = Direction.Right;
-                }
-                else if (this.pos.X < character.pos.X && this.pos.Y < character.pos.Y)
-                {
-                    velocity_now.X = max_velocity;
-                    velocity_now.Y = max_velocity;
-                    Enemy_Direction = Direction.Right;
-                }
-                else if (this.pos.X == character.pos.X && this.pos.Y > character.pos.Y)
-                {
-                    velocity_now.Y = -max_velocity;
-                    velocity_now.X = 0;
-                    Enemy_Direction = Direction.Up;
-                }
-                else if (this.pos.X == character.pos.X && this.pos.Y < character.pos.Y)
-                {
-                    velocity_now.Y = max_velocity;
-                    velocity_now.X = 0;
-                    Enemy_Direction = Direction.Down;
-                }
-                else if (this.pos.Y == character.pos.Y && this.pos.X < character.pos.X)
-                {
-                    velocity_now.X = max_velocity;
-                    velocity_now.Y = 0;
-                    Enemy_Direction = Direction.Right;
-                }
-                else if (this.pos.Y == character.pos.Y && this.pos.X > character.pos.X)
-                {
-                    velocity_now.X = -max_velocity;
-                    velocity_now.Y = 0;
-                    Enemy_Direction = Direction.Left;
-                }
-            }
 
-            attackTimer -= gameTime.ElapsedGameTime.TotalSeconds;
-            if (attackTimer < 0)
-            {
-                attackTimer = attackInterval;
-                if (distanceToTheCharacter <= 100)
+                attackTimer -= gameTime.ElapsedGameTime.TotalSeconds;
+                if (attackTimer < 0)
                 {
-                    character.Curr_HP -= attackDamage;
-                    drawAttack = true;
-                }
-                else
-                {
-                    drawAttack = false;
+                    attackTimer = attackInterval;
+                    if (distanceToTheCharacter <= 100)
+                    {
+                        character.Curr_HP -= attackDamage;
+                        drawAttack = true;
+                    }
+                    else
+                    {
+                        drawAttack = false;
+                    }
                 }
             }
 

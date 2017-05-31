@@ -120,6 +120,17 @@ namespace RPGopnik
                             UsingObject = null;
                             Cursor.cursorstate = Cursor.CursorState.Normal;
                         }
+                        else
+                            foreach (Enemy enemy in Events.g.game.list)
+                            {
+                                if (enemy.Rect.Contains((int)mouse.X, (int)mouse.Y))
+                                {
+                                    UsingObject.Item1.Use(owner, enemy, power);
+                                    UsingObject = null;
+                                    Cursor.cursorstate = Cursor.CursorState.Normal;
+                                    break;
+                                }
+                            }
                     }
                 }
                 else
