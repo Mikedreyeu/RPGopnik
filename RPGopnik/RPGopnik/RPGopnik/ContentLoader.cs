@@ -75,6 +75,12 @@ namespace RPGopnik
             public Content story2;
         }
 
+        public struct End_Menu
+        {
+            public Button aue_button;
+            public Content background;
+        }
+
         public struct Main_Menu_Content
         {
             public Button game_button;
@@ -129,6 +135,7 @@ namespace RPGopnik
         public static Game_Content game_content;
         public static Button_Content button_content;
         public static Story_Content story_content;
+        public static End_Menu end_menu;
 
         public static void Load(ContentManager Content, Viewport viewp)
         {
@@ -197,6 +204,8 @@ namespace RPGopnik
             game_gui_content.Balanda = new Button(new Rectangle(-50, -50, 50, 50), game_content.balanda, game_content.balanda, game_content.balanda, Events.Use_Balanda, "", "Тухлая баланда", "Некогда - блюдо эстетов. Нынче - неприятная консистенция. Можно вылить на врага. Отравляет врага и наносит урон в зависимости от мощности.", new Vector2(170, 180));
             game_gui_content.Colesa = new Button(new Rectangle(-50, -50, 50, 50), game_content.colesa, game_content.colesa, game_content.colesa, Events.Use_Colesa, "", "Колеса", "Фармацевтический препарат, неизвестного назначения. Принимать не желательно, если только вы не больны. Излечивает персонажа, на которого они были \nиспользованы.", new Vector2(170, 180));
             game_gui_content.PlayBoy = new Button(new Rectangle(-50, -50, 50, 50), game_content.playBoy, game_content.playBoy, game_content.playBoy, Events.Use_PlayBoy, "", "PlayBoy", "Прекрасный выпуск хорошего журнала. Осторожно, элементы содержания могут нести оцепеняющий характер. Заставляет застыть персонажа, на которого использован.", new Vector2(170, 180));
+            end_menu.background = new Content(new Rectangle(0, 0, viewp.Width, viewp.Height), Content.Load<Texture2D>("end"));
+            end_menu.aue_button = new Button(new Rectangle(viewp.Width / 2 - 200, viewp.Height / 2 + 140, 400, 70), Content.Load<Texture2D>(@"GUI\main"), Content.Load<Texture2D>(@"GUI\hover"), Content.Load<Texture2D>(@"GUI\pressed"), new Event(Events.main), "AYE");
         }
     }
 }

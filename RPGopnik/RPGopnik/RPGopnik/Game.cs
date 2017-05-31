@@ -63,7 +63,10 @@ namespace RPGopnik
                ContentLoader.game_content.enemy.Condition == (byte)Conditions.Dead &&
                ContentLoader.game_content.petuh.Condition == (byte)Conditions.Dead &&
                character.pos.X > 640 && character.pos.X < 800 && character.pos.Y > 1460)
-                Game1.game_state = gs.MAIN;
+            {
+                Game1.game_state = gs.END;
+                Events.g.LoadNewGame();
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

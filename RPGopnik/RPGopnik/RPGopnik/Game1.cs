@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace RPGopnik
 {
-    public enum gs { MAIN, HELP, PAUSE, GAME, SLSCREEN, STORY1, STORY2 };
+    public enum gs { MAIN, HELP, PAUSE, GAME, SLSCREEN, STORY1, STORY2, END };
     delegate void Event();
 
     class Game1 : Microsoft.Xna.Framework.Game
@@ -19,7 +19,7 @@ namespace RPGopnik
         public static gs game_state = gs.MAIN; 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Menu main, help, pause, slScreen, story1, story2;
+        Menu main, help, pause, slScreen, story1, story2, end;
         Map map;
         public Game game;
 
@@ -47,6 +47,7 @@ namespace RPGopnik
             pause = new Pause();
             story1 = new Story1();
             story2 = new Story2();
+            end = new EndMenu();
             spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
@@ -96,6 +97,10 @@ namespace RPGopnik
                     story2.Update();
                     story2.Draw(spriteBatch);
                     break;
+                case gs.END:
+                    end.Update();
+                    end.Draw(spriteBatch);
+                    break;
             }
             Cursor.Draw(spriteBatch);
             base.Update(gameTime);
@@ -106,7 +111,7 @@ namespace RPGopnik
             base.Draw(gameTime);
         }
 
-        private void LoadNewGame()
+        public void LoadNewGame()
         {
             ContentLoader.Load(Content, GraphicsDevice.Viewport);
             map = new Map(@"Content\StartingArea.tmx");

@@ -478,6 +478,15 @@
       <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\petuh_txtr.xnb</Output>
       <Time>2017-05-31T01:23:15.3255992+03:00</Time>
     </Item>
+    <Item>
+      <Source>end.png</Source>
+      <Name>end</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\GODLIKE\Source\RPGopnik\RPGopnik\RPGopnik\RPGopnik\bin\x86\Debug\Content\end.xnb</Output>
+      <Time>2017-05-31T14:09:26.3760231+03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{C04199D9-87BF-4CA6-9C95-A4F9E1167EC4}</ContentProjectGUID>

@@ -41,6 +41,15 @@ namespace RPGopnik
         { }
     }
 
+    class EndMenu : Menu
+    {
+        public EndMenu() : base(new List<Content> {  ContentLoader.end_menu.background,
+                                                     ContentLoader.end_menu.aue_button})
+        {
+
+        }
+    }
+
     class Story1 : Menu
     {
         public Story1() : base(new List<Content> { ContentLoader.story_content.story1,
